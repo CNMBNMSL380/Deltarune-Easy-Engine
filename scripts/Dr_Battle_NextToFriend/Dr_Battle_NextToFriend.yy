@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Dr_Battle_NextToFriend",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Dr_Battle_NextToFriend",
+  "parent":{
+    "name":"Friend",
+    "path":"folders/Objects/Battle_Dr/SCR/Friend.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

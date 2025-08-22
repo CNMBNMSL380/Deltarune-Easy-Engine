@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Alarm_init",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Alarm_init",
+  "parent":{
+    "name":"Alarm_Event",
+    "path":"folders/Scripts/GMU/Alarm_Event.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"BGM_sans",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":512,
+  "compression":3,
+  "conversionMode":0,
+  "duration":50.65143,
+  "name":"BGM_sans",
+  "parent":{
+    "name":"BGM",
+    "path":"folders/Sounds/BGM.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":48000,
+  "soundFile":"BGM_sans.mp3",
+  "type":1,
+  "volume":1.0,
+}

@@ -1,0 +1,37 @@
+// Script assets have changed for v2.3.0 see
+
+// ---------获取队伍列表中的角色的属性（全部通过Get方法）
+
+function Char_GetTeamName(SLOT){
+    return Char_GetTeamByID(SLOT).Get("name");
+}
+function Char_GetTeamObj(SLOT){
+    return Char_GetTeamByID(SLOT).Get("obj");
+}
+function Char_GetTeamBattleObj(SLOT){
+    return Char_GetTeamByID(SLOT).Get("battle_obj");
+}
+function Char_GetTeamHp(SLOT){
+    return Char_GetTeamByID(SLOT).Get("hp");
+}
+function Char_GetTeamMaxHp(SLOT){
+    return Char_GetTeamByID(SLOT).Get("maxhp");
+}
+function Char_GetTeamAtk(SLOT){
+    return Char_GetTeamByID(SLOT).Get("atk");
+}
+function Char_GetTeamDef(SLOT){
+    return Char_GetTeamByID(SLOT).Get("def");
+}
+function Char_GetTeamWeapon(SLOT){
+    return Char_GetTeamByID(SLOT).Get("weapon");
+}
+function Char_GetTeamArmor1(SLOT){
+    return Char_GetTeamByID(SLOT).Get("armor1");
+}
+function Char_GetTeamArmor2(SLOT){
+    return Char_GetTeamByID(SLOT).Get("armor2");
+}
+function Char_GetTeamElement(SLOT){
+    return Char_GetTeamByID(SLOT).Get("element");
+}

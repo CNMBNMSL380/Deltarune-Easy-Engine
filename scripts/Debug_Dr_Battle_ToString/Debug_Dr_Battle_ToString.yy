@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Debug_Dr_Battle_ToString",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Debug_Dr_Battle_ToString",
+  "parent":{
+    "name":"SCR",
+    "path":"folders/Objects/Battle_Dr/SCR.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

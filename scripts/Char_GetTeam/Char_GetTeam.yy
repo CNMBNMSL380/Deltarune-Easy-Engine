@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Char_GetTeam",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Char_GetTeam",
+  "parent":{
+    "name":"team",
+    "path":"folders/Scripts/Char/team.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

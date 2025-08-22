@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Dr_Battle_GetItem",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Dr_Battle_GetItem",
+  "parent":{
+    "name":"Item",
+    "path":"folders/Objects/Battle_Dr/SCR/Item.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

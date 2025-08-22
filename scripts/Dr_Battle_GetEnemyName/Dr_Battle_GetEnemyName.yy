@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Dr_Battle_GetEnemyName",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Dr_Battle_GetEnemyName",
+  "parent":{
+    "name":"Enemy",
+    "path":"folders/Objects/Battle_Dr/SCR/Enemy.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

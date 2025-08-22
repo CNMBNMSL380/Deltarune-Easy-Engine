@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Flag_CustomPlot",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Flag_CustomPlot",
+  "parent":{
+    "name":"Custom",
+    "path":"folders/Scripts/Flag/Custom.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

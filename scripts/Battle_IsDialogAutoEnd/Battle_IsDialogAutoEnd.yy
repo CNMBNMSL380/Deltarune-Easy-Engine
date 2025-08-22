@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Battle_IsDialogAutoEnd",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Battle_IsDialogAutoEnd",
+  "parent":{
+    "name":"Dialog",
+    "path":"folders/Scripts/Battle/Undertale_Battle/Dialog.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

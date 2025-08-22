@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Dr_Battle_EnemyBase",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Dr_Battle_EnemyBase",
+  "parent":{
+    "name":"Base_结构",
+    "path":"folders/Objects/Battle_Dr/SCR/Base_结构.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Battle_IsSerious",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Battle_IsSerious",
+  "parent":{
+    "name":"Undertale_Battle",
+    "path":"folders/Scripts/Battle/Undertale_Battle.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

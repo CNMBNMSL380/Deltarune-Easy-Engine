@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Battle_FadeFader",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Battle_FadeFader",
+  "parent":{
+    "name":"Undertale_Battle",
+    "path":"folders/Scripts/Battle/Undertale_Battle.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

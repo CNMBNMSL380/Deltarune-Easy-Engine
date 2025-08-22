@@ -1,0 +1,1 @@
+text = "{auto_line_wrap 510}* Go to the Crea&tion Code of me to change the text. * Go to the Creation Code  of me to change the text."

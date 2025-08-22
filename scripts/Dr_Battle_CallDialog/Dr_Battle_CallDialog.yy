@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Dr_Battle_CallDialog",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Dr_Battle_CallDialog",
+  "parent":{
+    "name":"Dialog",
+    "path":"folders/Objects/Battle_Dr/SCR/Dialog.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

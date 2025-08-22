@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Char_GetFriend",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Char_GetFriend",
+  "parent":{
+    "name":"friend",
+    "path":"folders/Scripts/Char/friend.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

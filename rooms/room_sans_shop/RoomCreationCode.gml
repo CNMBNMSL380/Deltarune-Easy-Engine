@@ -1,0 +1,1 @@
+BGM_Play(0,BGM_sans)

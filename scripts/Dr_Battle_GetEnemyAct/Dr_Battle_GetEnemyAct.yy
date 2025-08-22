@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Dr_Battle_GetEnemyAct",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Dr_Battle_GetEnemyAct",
+  "parent":{
+    "name":"ACT",
+    "path":"folders/Objects/Battle_Dr/SCR/Enemy/ACT.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

@@ -1,0 +1,42 @@
+function Macro_Depth() {
+	live_ext
+	enum DEPTH_UI{
+		PANEL=-100,
+		TEXT=-200,
+		ENCOUNTER_ANIM=-300,
+		FADER=-400,
+	};
+	enum DEPTH_DR_BTL{
+		MAIN = -3000,
+		BG = 0,
+		CHAR = -100,
+		UI_BORDER = -200,
+		UI_BORDER_CLASS = -300,
+		BULLET=-500,
+		BOARD=-600,
+		UI_HIGH=-700,
+		BULLET_OUTSIDE_LOW=-800,
+		SOUL=-900,
+		BULLET_OUTSIDE_HIGH=-1000
+	};
+	enum DEPTH_BATTLE{
+		BG=-100,
+		ENEMY=-200,
+		UI=-300,
+		FADER=-400,
+		BULLET=-500,
+		BOARD=-600,
+		UI_HIGH=-700,
+		BULLET_OUTSIDE_LOW=-800,
+		SOUL=-900,
+		BULLET_OUTSIDE_HIGH=-1000
+	};
+
+	enum DEPTH_SHOP{
+		HOST = -100,
+		UI_ITEMDESC = -200,
+		ITEMDESC = -300,
+		UI = -400,
+		DIALOG = -500
+	};
+}

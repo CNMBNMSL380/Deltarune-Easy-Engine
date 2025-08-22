@@ -1,0 +1,3 @@
+function Player_GetLv() {
+	return Flag_Get(FLAG_STATIC,"lv");
+}

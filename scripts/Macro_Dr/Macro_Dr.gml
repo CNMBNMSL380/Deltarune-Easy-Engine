@@ -1,0 +1,62 @@
+// Script assets have changed for v2.3.0 see
+function Macro_Dr(){
+	enum DR_BATTLE_STAGE{		
+		START_BATTLE,
+		PLAYER,
+		ACT,
+		MAGIC,
+		MERCY,
+		ITEM,
+		FIGHT,
+		DIALOG,
+		BEFORE_TURN,
+		DIALOG_TURN,
+		START_TURN,
+		IN_TRUN,
+		END_TURN,
+		RESET,
+		END_BATTLE,
+		BLACK
+	}
+	enum DR_BATTLE_PLAYERMENU{		
+		BUTTON,
+		CHOICE_FRIEND,
+		CHOICE_ENEMY,
+		CHOICE_CLASS,
+		CHOICE_MAGIC,
+		CHOICE_ITEM,
+		DEFEND,
+	}	
+	enum DR_PLAYER_INDEX{
+		GLIDE,
+		INTRO,
+		IDLE,
+		FIGHT,
+		ACT,
+		MAGIC,
+		ITEM,
+		MERCY,
+		DEFEND,
+		WIN,
+		
+	}	
+	enum DR_ENEMY_EVENT{
+		INIT,
+		BATTLE_START,
+		MENU_START,
+		MENU_SWITCH,
+		MENU_CHOICE_FRIEND,
+		MENU_END,
+		HURT_CALL,
+		DIALOG_CALL,
+		CREATE_TURN,
+		END_TURN
+		
+	}
+	enum DR_TURN_EVENT{
+		INIT,
+		DIALOG,
+		START_TURN,
+		END_TURN	
+	}
+}

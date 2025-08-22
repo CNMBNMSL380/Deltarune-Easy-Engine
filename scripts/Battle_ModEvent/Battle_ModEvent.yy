@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Battle_ModEvent",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Battle_ModEvent",
+  "parent":{
+    "name":"Deltarune_Battle",
+    "path":"folders/Scripts/Battle/Deltarune_Battle.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

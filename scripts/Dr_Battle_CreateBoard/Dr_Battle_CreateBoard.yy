@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Dr_Battle_CreateBoard",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Dr_Battle_CreateBoard",
+  "parent":{
+    "name":"SCR",
+    "path":"folders/Objects/Battle_Dr/SCR.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
