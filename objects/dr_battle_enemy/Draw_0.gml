@@ -5,6 +5,7 @@ Dr_Draw(function(){
 
 	draw_self();
 	
-	draw_text(x+50,y,_enemy_id)
-	draw_text(x+50,y + 10,hp)
+	draw_text(x+50,y - 20,_enemy_id);
+	draw_text(x+50,y - 30,hp);
+	//draw_text(x+50,y - 40,dr_battle_main._enemy[_enemy_id].getSlot());
 })

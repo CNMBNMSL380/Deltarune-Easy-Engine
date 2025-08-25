@@ -73,7 +73,7 @@ _player_tp = 0;
 _dialogue_style = "{scale 2}{voice 1}{speed 2}{shadow true}{gui true}";
 //_dialogue = "* Hodwy！我是可爱的野花！你可以叫我Nico！&* Hodwy！我是可爱的野花！你可以叫我Nico！&* Hodwy！我是可爱的野花！你可以叫我Nico！";
 _dialogue = "* 你遇到了塞莉儿的玩偶，记得抚摸哦~";
-_dialogue = "";
+//_dialogue = "";
 _text_list = ["行动1","行动2","行动3","行动4","行动5"]; 
 
 //战斗回合
@@ -91,8 +91,7 @@ _battle_turn_time_speed = 1;
 //其他
 
 game_win = false;
-
-ang = 0;
+ow_obj = [];
 
 _font_debug = Font_Get("FH16")
 _font_dam = font_add_sprite_ext(spr_dr_battle_ui_damage_num,"1234567890-+%",true,1)

@@ -21,11 +21,16 @@ function MyAlarm_Add(ID = "Alarm " + string(random_range(0,100)), EVENT = functi
         time_source_game, TIME, time_source_units_frames,
         myTimeEvent, [ID , EQUAL_ROOM , ROOM_ID, EVENT, LOOP], REPEAT, time_source_expire_after
     );
-	
-	if(START){
-		MyAlarm_Start(ID);
+	if(ds_map_add(global._gmu_alarm,ID,myTimeSource)){	
+		if(START){
+			MyAlarm_Start(ID);
+		}
+		return ID
 	}
-    return ID
+	show_message(ID + ":号闹钟添加失败！") 
+	
+	return "false"
+  
 }
 
 /// 销毁指定ID的闹钟

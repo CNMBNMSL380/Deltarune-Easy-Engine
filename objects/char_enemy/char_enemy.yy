@@ -9,8 +9,8 @@
   "name":"char_enemy",
   "overriddenProperties":[],
   "parent":{
-    "name":"Effect",
-    "path":"folders/Objects/Effect.yy",
+    "name":"Character",
+    "path":"folders/Objects/Character.yy",
   },
   "parentObjectId":{
     "name":"char",

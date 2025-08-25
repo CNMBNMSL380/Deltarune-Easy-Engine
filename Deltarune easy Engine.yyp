@@ -589,6 +589,7 @@
     {"id":{"name":"Dr_Battle_CreateBoard","path":"scripts/Dr_Battle_CreateBoard/Dr_Battle_CreateBoard.yy",},},
     {"id":{"name":"Dr_Battle_CreateClass","path":"scripts/Dr_Battle_CreateClass/Dr_Battle_CreateClass.yy",},},
     {"id":{"name":"Dr_Battle_CreateEnemyData","path":"scripts/Dr_Battle_CreateEnemyData/Dr_Battle_CreateEnemyData.yy",},},
+    {"id":{"name":"Dr_Battle_EndBattle","path":"scripts/Dr_Battle_EndBattle/Dr_Battle_EndBattle.yy",},},
     {"id":{"name":"Dr_Battle_EnemyBase","path":"scripts/Dr_Battle_EnemyBase/Dr_Battle_EnemyBase.yy",},},
     {"id":{"name":"Dr_Battle_GetEnemy","path":"scripts/Dr_Battle_GetEnemy/Dr_Battle_GetEnemy.yy",},},
     {"id":{"name":"Dr_Battle_GetEnemyAct","path":"scripts/Dr_Battle_GetEnemyAct/Dr_Battle_GetEnemyAct.yy",},},

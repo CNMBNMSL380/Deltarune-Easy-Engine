@@ -71,3 +71,6 @@ if(keyboard_check_pressed(vk_f3)){
 		game_set_speed(60,gamespeed_fps);
 	}
 }
+
+
+

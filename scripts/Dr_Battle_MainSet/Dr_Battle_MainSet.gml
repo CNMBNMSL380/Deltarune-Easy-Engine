@@ -7,109 +7,150 @@ function Dr_Battle_SetStage(STAGE){
 	var Main = dr_battle_main;
 	var UI = dr_battle_ui;
 	Main._stage = STAGE;
-	if(array_length(Main._enemy)){
-		if(STAGE == DR_BATTLE_STAGE.PLAYER){
-			Main._player_menu = Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.BUTTON);
-			Main._player_friend_class[_player_friend_num].alarm[0]=1;
-
-			with(dr_battle_char_player){
-				event_user(1)
+	if(STAGE == DR_BATTLE_STAGE.PLAYER){
+		Main._player_menu = Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.BUTTON);
+		Main._player_friend_class[_player_friend_num].alarm[0]=1;			
+	}
+	if(STAGE == DR_BATTLE_STAGE.ACT){
+		Dr_Battle_CallDialog("");
+		//调用敌人事件与玩家事件
+		var goToEvent = Dr_Battle_GetGotoEvent();
+		for(var i = 0; i < array_length(goToEvent) ; i++){
+			if(goToEvent[i].friend_button == 1){
+				var actEvent = goToEvent[i];
+				var actChoice = goToEvent[i].friend_choice_act;
+				var enemyChoice = goToEvent[i].friend_choice_enemy;
+			
+				var enemyStrc = Dr_Battle_GetEnemyAct(enemyChoice,actChoice);
+				var actBeginEvent = enemyStrc.act_begin_event;
+				var actRunEvent = enemyStrc.act_run_event;
+				
+				////show_message(string(actEvent) + " , " + string(actChoice)+ " , "
+				////+ string(enemyChoice)+ " , " + string(enemyStrc)
+			
+				////)
+				//show_message(string(enemyStrc) + " , " + string(actRunEvent))
+				
+				//执行所有“启动前ACT”事件
+				actBeginEvent();
+				array_push(Main._player_act_event,[actRunEvent,enemyChoice,actChoice]);
 			}
 		}
-		if(STAGE == DR_BATTLE_STAGE.ACT){
-			Dr_Battle_CallDialog("");
-			//调用敌人事件与玩家事件
-			var goToEvent = Dr_Battle_GetGotoEvent();
-			for(var i = 0; i < array_length(goToEvent) ; i++){
-				if(goToEvent[i].friend_button == 1){
-					var actEvent = goToEvent[i];
-					var actChoice = goToEvent[i].friend_choice_act;
-					var enemyChoice = goToEvent[i].friend_choice_enemy;
-				
-					var enemyStrc = Dr_Battle_GetEnemyAct(enemyChoice,actChoice);
-					var actBeginEvent = enemyStrc.act_begin_event;
-					var actRunEvent = enemyStrc.act_run_event;
-				
-					////show_message(string(actEvent) + " , " + string(actChoice)+ " , "
-					////+ string(enemyChoice)+ " , " + string(enemyStrc)
-				
-					////)
-					//show_message(string(enemyStrc) + " , " + string(actRunEvent))
-				
-					//执行所有“启动前ACT”事件
-					actBeginEvent();
-					array_push(Main._player_act_event,actRunEvent);
-				}
-			}
 		
-		}
-		if(STAGE == DR_BATTLE_STAGE.ITEM){
-			Dr_Battle_CallDialog("");
-			//调用敌人事件与玩家事件
-			var goToEvent = Dr_Battle_GetGotoEvent();
-			for(var i = 0; i < array_length(goToEvent) ; i++){
-				if(goToEvent[i].friend_button == 1){
-					var itemChoice = goToEvent[i].friend_choice_item;
-					var friendChoice = goToEvent[i].friend_choice_enemy;
-				
-					//执行所有“启动前ACT”事件
-				}
+	}
+	if(STAGE == DR_BATTLE_STAGE.ITEM){
+		Dr_Battle_CallDialog("");
+		//调用敌人事件与玩家事件
+		var goToEvent = Dr_Battle_GetGotoEvent();
+		for(var i = 0; i < array_length(goToEvent) ; i++){
+			if(goToEvent[i].friend_button == 1){
+				var itemChoice = goToEvent[i].friend_choice_item;
+				var friendChoice = goToEvent[i].friend_choice_enemy;
+			
+				//执行所有“启动前ACT”事件
 			}
-		
 		}
-		if(STAGE == DR_BATTLE_STAGE.FIGHT){
-			Dr_Battle_CallDialog("");
-			//调用敌人事件与玩家事件
-			var goToEvent = Dr_Battle_GetGotoEvent();
-			var fightSlot = choose(0,1,2);				
-			var fightNum = 0;
-			var fightMenu = [];
-			for(var i = 0; i< array_length(goToEvent) ; i++){
+	
+	}
+	if(STAGE == DR_BATTLE_STAGE.FIGHT){
+		Dr_Battle_CallDialog("");
+		//调用敌人事件与玩家事件
+		var goToEvent = Dr_Battle_GetGotoEvent();
+		var fightSlot = choose(0,1,2);				
+		var fightNum = 0;
+		var fightMenu = [];
+		var i;
+		for(i = 0; i< array_length(goToEvent) ; i++){
 				if(goToEvent[i].friend_button == 0){
 					var fightChoice = goToEvent[i].friend_choice_enemy;		
-				
+					var enemyInst = Dr_Battle_GetEnemyInstance(fightChoice);
+					//if(enemyInst == noone){
+					//	if(Dr_Battle_GetEnemyInstance(fightChoice -1 ) != noone){
+					//		enemyInst = Dr_Battle_GetEnemyInstance(fightChoice - 1);
+					//	}
+					//	else if (Dr_Battle_GetEnemyInstance(fightChoice +1 ) != noone){
+					//		enemyInst = Dr_Battle_GetEnemyInstance(fightChoice + 1);
+					//	}
+					//	else{
+					//		show_error("警告，战斗类未找到实例变量\n 请检查",0)
+					//	}
+					//}
+			
 					fightMenu[i] = instance_create_depth(0,366 + ( i * 36) + (i * 2),0,dr_battle_menu_fight);
 					fightMenu[i].fight_slot = max(0,i - fightSlot);
 					fightMenu[i].friend_ins= goToEvent[i].friend_ins;
 					fightMenu[i].firend_atk = 10;
 					fightMenu[i].friend_ico = goToEvent[i].friend_ins._char_ico;
 					fightMenu[i].style_color = goToEvent[i].friend_ins._char_style_color;
-					fightMenu[i].enemy_ins = Dr_Battle_GetEnemyInstance(fightChoice);
+					fightMenu[i].enemy_ins = enemyInst
 					fightMenu[i].enemy_def = Dr_Battle_GetEnemyDef(fightChoice);
-				
+					if( i < array_length(goToEvent) -1){
+						fightMenu[fightNum].is_last_ins = true;
+					}
 					fightNum++;
 				}
 			}
-			fightMenu[fightNum-1].is_last_ins = true;
+			if(i == 0){
+				show_message(array_length(fightMenu))
+				show_message(fightNum)
+				//Dr_Battle_SetStageTimeMax(50+( 50 * max(0,fightNum - fightSlot)));
+				Dr_Battle_SetStageTime(1000)
+			}
+			else{
+				Dr_Battle_SetStageTime(0)
+			}
+	
+			
+	}
+	if(STAGE == DR_BATTLE_STAGE.DIALOG){
+		//Dr_Battle_MainDataReset()
+	}
+	if(STAGE == DR_BATTLE_STAGE.BEFORE_TURN){
+		Dr_Battle_CallDialog("")	
+		Dr_Battle_CallEnemyEvent(DR_ENEMY_EVENT.CREATE_TURN);
 		
-			show_message(array_length(fightMenu))
-			show_message(fightNum)
-			//Dr_Battle_SetStageTimeMax(50+( 50 * max(0,fightNum - fightSlot)));
-			Dr_Battle_SetStageTimeMax(1000);
-			Dr_Battle_SetStageTime()
-		}
-		if(STAGE == DR_BATTLE_STAGE.DIALOG){
-			Dr_Battle_MainDataReset()
-		}
-		if(STAGE == DR_BATTLE_STAGE.BEFORE_TURN){
-			Dr_Battle_CallDialog("")
+	}
+	if(STAGE == DR_BATTLE_STAGE.DIALOG_TURN){	
+		Dr_Battle_CallDialog("")
+		Dr_Battle_CallTurnEvent(DR_TURN_EVENT.START_TURN);
+	}
+	if(STAGE == DR_BATTLE_STAGE.START_TURN){
+		Dr_Battle_CallDialog("")
+		//启动框张开动画
+		var Main = dr_battle_main;
+		var BTLborder = dr_battle_board;
+		Main._stage_time = 100;
+	
+		BTLborder.anim_mod = true
+		BTLborder.alarm[0] = 1;
 		
-			Dr_Battle_CallEnemyEvent(DR_ENEMY_EVENT.CREATE_TURN);
-		}
-		if(STAGE == DR_BATTLE_STAGE.DIALOG_TURN){	
-			Dr_Battle_CallDialog("")
-			Dr_Battle_CallTurnEvent(DR_TURN_EVENT.DIALOG);
-		}
-		if(STAGE == DR_BATTLE_STAGE.START_TURN){
-			Dr_Battle_CallDialog("")
-			//启动框张开动画
-			var Main = dr_battle_main;
-			var BTLborder = dr_battle_board;
-			Main._stage_time = 100;
+		//灵魂移动动画
+		var soulInst = dr_battle_soul;
+		var soulX = soulInst.x;
+		var soulY = soulInst.y;
+	
+		var mainChar = Main._player_friend[0];
+		var charX = mainChar.x;
+		var charY = mainChar.y - 40;
+		Anim_Create(soulInst,"x",0,0,charX,dr_battle_board.x-charX,25);
+		Anim_Create(soulInst,"y",0,0,charY,dr_battle_board.y-charY,25);
+		Anim_Create(soulInst,"image_alpha",0,0,0,1-0,10);
 		
-			BTLborder.anim_mod = true
+	}
+	if(STAGE == DR_BATTLE_STAGE.IN_TRUN){
+		Dr_Battle_CallTurnEvent(DR_TURN_EVENT.START_TURN);
+	}
+	if(STAGE == DR_BATTLE_STAGE.END_TURN){
+		Dr_Battle_CallTurnEvent(DR_TURN_EVENT.END_TURN);
+	}
+	if(STAGE == DR_BATTLE_STAGE.RESET){
+		Dr_Battle_CallDialog("")
+		var Main = dr_battle_main;
+		var BTLborder = dr_battle_board;
+		if(instance_exists(dr_battle_turn)){
+			BTLborder.anim_mod = false
 			BTLborder.alarm[0] = 1;
-		
+	
 			//灵魂移动动画
 			var soulInst = dr_battle_soul;
 			var soulX = soulInst.x;
@@ -118,45 +159,27 @@ function Dr_Battle_SetStage(STAGE){
 			var mainChar = Main._player_friend[0];
 			var charX = mainChar.x;
 			var charY = mainChar.y - 40;
-			Anim_Create(soulInst,"x",0,0,charX,dr_battle_board.x-charX,25);
-			Anim_Create(soulInst,"y",0,0,charY,dr_battle_board.y-charY,25);
-			Anim_Create(soulInst,"image_alpha",0,0,0,1-0,10);
+			Anim_Create(soulInst,"x",0,0,soulX,charX-soulX,25);
+			Anim_Create(soulInst,"y",0,0,soulY,charY-soulY,25);
+			Anim_Create(soulInst,"image_alpha",0,0,1,0-1,0,25);
 		
+			instance_destroy(dr_battle_turn);
 		}
-		if(STAGE == DR_BATTLE_STAGE.IN_TRUN){
-			Dr_Battle_CallTurnEvent(DR_TURN_EVENT.START_TURN);
-		}
-		if(STAGE == DR_BATTLE_STAGE.END_TURN){
-			Dr_Battle_CallTurnEvent(DR_TURN_EVENT.END_TURN);
-		}
-		if(STAGE == DR_BATTLE_STAGE.RESET){
-			Dr_Battle_CallDialog("")
-			var Main = dr_battle_main;
-			var BTLborder = dr_battle_board;
-			if(instance_exists(dr_battle_turn)){
-				BTLborder.anim_mod = false
-				BTLborder.alarm[0] = 1;
 		
-				//灵魂移动动画
-				var soulInst = dr_battle_soul;
-				var soulX = soulInst.x;
-				var soulY = soulInst.y;
-		
-				var mainChar = Main._player_friend[0];
-				var charX = mainChar.x;
-				var charY = mainChar.y - 40;
-				Anim_Create(soulInst,"x",0,0,soulX,charX-soulX,25);
-				Anim_Create(soulInst,"y",0,0,soulY,charY-soulY,25);
-				Anim_Create(soulInst,"image_alpha",0,0,1,0-1,0,25);
-			
-				instance_destroy(dr_battle_turn);
-			}
-		
-		}
-		if(STAGE == DR_BATTLE_STAGE.END_BATTLE){
-		
-		}
 	}
+	if(STAGE == DR_BATTLE_STAGE.END_BATTLE){
+		Dr_Battle_CallDialog("你赢了！获得一堆钱钱和经验值",,3);
+		
+		//Dr_Battle_CallEnemyEvent(0);
+		//Dr_Battle_CallFriendEvent(DR_ENEMY_EVENT);
+	}
+	if(STAGE == DR_BATTLE_STAGE.BLACK){		
+		Anim_Create(dr_battle_ui,"pos_y",2,1,0,180,25)	
+		var Main = dr_battle_main;
+		Main.alarm[2] = 1;
+		
+	}
+	
 	return STAGE
 }
 function Dr_Battle_ChoicePlayerMenu(BUTTON,MENU = -1,BACK = false){
@@ -229,16 +252,12 @@ function Dr_Battle_ChoicePlayerMenu(BUTTON,MENU = -1,BACK = false){
 		case 3:
 			switch(MENU){
 				case DR_BATTLE_PLAYERMENU.CHOICE_ENEMY:
-				
+					
 				break;
 			}
 		break;
 		case 4:
-			switch(MENU){
-				case DR_BATTLE_PLAYERMENU.CHOICE_ENEMY:
-				
-				break;
-			}
+			Dr_Battle_NextToFriend(BUTTON,MENU);
 		break;
 		 
 	}

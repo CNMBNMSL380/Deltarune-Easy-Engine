@@ -10,6 +10,9 @@ live;
 _char_id = 0;
 _char_name = "Kris";
 _char_ico = spr_battle_ico_kris;
+_char_ico_index = [0,1,2,3,4,5,6,7];
+
+
 _char_heard = spr_dr_battle_headerName_kris;
 _char_color = c_white;
 _char_style_color = #00FFF6;		//给frriendClass调用

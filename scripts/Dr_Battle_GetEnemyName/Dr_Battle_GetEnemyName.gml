@@ -17,7 +17,9 @@ function Dr_Battle_GetAllEnemyName(){
 		var Main = dr_battle_main._enemy;
 		var Name = [];
 		for(var i =0 ; i < array_length(Main) ; i++){
-			Name[i] = Main[i].getName();	
+			if(Main != -1){
+				array_push(Name,Main[i].getName());
+			}
 		}
 		return Name;
 	}

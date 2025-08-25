@@ -31,6 +31,8 @@ function Debug_StageToString(STRING){
 			return "重置回合";
 		case DR_BATTLE_STAGE.END_BATTLE:
 			return "战斗结束";
+		case DR_BATTLE_STAGE.BLACK:
+			return "返回";
 		default:
 			return "";
 		break

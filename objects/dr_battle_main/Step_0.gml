@@ -159,14 +159,18 @@ if(_stage != DR_BATTLE_STAGE.PLAYER){
 		Dr_Battle_SetStage(DR_BATTLE_STAGE.PLAYER);
 	}
 	else if(_stage == DR_BATTLE_STAGE.END_BATTLE){
+		var UI = dr_battle_ui;
+		if(array_length(UI.text_inst) == 0 or !instance_exists(UI.text_inst[0])){
+			Dr_Battle_SetStage(DR_BATTLE_STAGE.BLACK);
+		}
 		
 	}
 }
-///如果敌人已经清空或者接受了游戏胜利型号==信号
-if(_stage != DR_BATTLE_STAGE.START_BATTLE){
-	if(game_win or array_length(_enemy) < 0){
-		Dr_Battle_SetStage(DR_BATTLE_STAGE.END_BATTLE)
-		game_win = false;
+///如果敌人已经清空或者接受了游戏胜利信号
+if(_stage != DR_BATTLE_STAGE.START_BATTLE and _stage !=DR_BATTLE_STAGE.END_BATTLE and _stage != DR_BATTLE_STAGE.BLACK ){
+	if(game_win = 1 or array_length(_enemy) = 0){
+		Dr_Battle_SetStage(DR_BATTLE_STAGE.END_BATTLE);		
+		game_win = 2;
 	}
 
 }

@@ -48,9 +48,14 @@ function Macro_Dr(){
 		MENU_CHOICE_FRIEND,
 		MENU_END,
 		HURT_CALL,
+		CHAR_DEL,
 		DIALOG_CALL,
 		CREATE_TURN,
 		END_TURN
+		
+	}
+	enum DR_FRIEND_EVENT{
+		INIT,
 		
 	}
 	enum DR_TURN_EVENT{

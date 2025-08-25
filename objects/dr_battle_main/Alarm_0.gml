@@ -24,20 +24,32 @@ for(var i =0 ; i< array_length(_enemy_obj) ; i++){
 	//var enemy_stc = new Dr_Battle_EnemyBase(i,enemy_ins);
 	_enemy[i] = new Dr_Battle_EnemyBase(i);
 	var enemy_ins = Dr_Battle_AddEnemy(i,_enemy_obj[i][0],_enemy_obj[i][1],_enemy_obj[i][2],_enemy_obj[i][3] , true , _enemy_obj[i][4] , _enemy_obj[i][5] , true);
-	_enemy_ow_obj[i] = [_enemy_obj[i][0],_enemy_obj[i][1],_enemy_obj[i][3]];
 }
-show_message(_enemy_ow_obj)
 
 //生成队友
 for(var i = 0 ; i< array_length(_player_friend_obj) ; i++){
 	_player_friend[i] = instance_create_depth(_player_friend_obj[i][0],_player_friend_obj[i][1],_player_friend_obj[i][2],_player_friend_obj[i][3])
 	_player_friend[i]._char_id = i;
-	Dr_Battle_CallFriendEvent(0)
+	//Dr_Battle_CallFriendEvent(i,0)
 	var friendIns = _player_friend[i];
 	//移动队友到指定位置
 	Anim_Create(friendIns,"x",0,0,_player_friend_obj[i][0],(_player_friend_obj[i][4]) - friendIns.x,25)
 	Anim_Create(friendIns,"y",0,0,_player_friend_obj[i][1],(_player_friend_obj[i][5]) - friendIns.y,25)
 }
+
+//隐藏所有NPC
+
+with (all) {
+	var battleMode = variable_instance_get(id,"battle_mod");
+	if(battleMode != undefined){
+		if(battleMode >=-1 ){
+			array_push(dr_battle_main.ow_obj,id);
+			visible = false;
+			//instance_deactivate_object(id);
+		}
+	}  
+}
+show_message(ow_obj)
 //show_message(_player_friend);
 
 // ------- 创建队友类窗口对象

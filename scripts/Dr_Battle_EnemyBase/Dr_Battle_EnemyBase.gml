@@ -18,7 +18,7 @@ function Dr_Battle_EnemyBase(SLOT,INST = noone,OWINS = noone) constructor{
 		}
 	*/
 	function setSlot(SLOT){
-		enemy_slot = INST;
+		enemy_slot = SLOT;
 	}
 	function getSlot(){
 		return enemy_slot;

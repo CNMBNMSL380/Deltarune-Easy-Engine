@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Dr_Battle_EndBattle",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Dr_Battle_EndBattle",
+  "parent":{
+    "name":"Main",
+    "path":"folders/Objects/Battle_Dr/SCR/Main.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}
