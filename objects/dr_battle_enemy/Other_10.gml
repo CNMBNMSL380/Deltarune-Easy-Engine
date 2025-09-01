@@ -19,7 +19,7 @@ function(){ //启动开始
 	
 	Dr_Battle_SetStageTimeMax(10)
 	
-},
+},	
 function(){ //启动前	-- 进入ACT回合后全局调用
 	/*
 		！要注意一点！

@@ -15,6 +15,8 @@ for(var i = 0; i < array_length(friend) ;i++){
 	
 }
 
+//准备激活所有物体
+instance_activate_all();
 
 MyAlarm_Add("MainClose",function(){
 	instance_destroy(battle_soul);
@@ -28,7 +30,8 @@ MyAlarm_Add("MainClose",function(){
 		instance_destroy(_player_friend[i]);
 		instance_destroy(_player_friend_class[i]);
 	}
-	instance_activate_all();
+	
+	char_player.moveable = true;
 	instance_destroy(dr_battle_main);	
 	
 },25)

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Dr_Battle_NextItem",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Dr_Battle_NextItem",
+  "parent":{
+    "name":"Item",
+    "path":"folders/Objects/Battle_Dr/SCR/Enemy/Item.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

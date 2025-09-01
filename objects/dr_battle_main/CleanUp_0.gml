@@ -2,7 +2,7 @@
 live;
 surface_free(_surface_main);
 
-
+//物体可见度开启
 with (all) {
 	var battleMode = variable_instance_get(id,"battle_mod");
 	if(battleMode != undefined){
@@ -12,4 +12,3 @@ with (all) {
 	}  
 }
 
-char_player.moveable = true;

@@ -55,51 +55,7 @@ function Dr_Battle_SetStage(STAGE){
 	if(STAGE == DR_BATTLE_STAGE.FIGHT){
 		Dr_Battle_CallDialog("");
 		//调用敌人事件与玩家事件
-		var goToEvent = Dr_Battle_GetGotoEvent();
-		var fightSlot = choose(0,1,2);				
-		var fightNum = 0;
-		var fightMenu = [];
-		var i;
-		for(i = 0; i< array_length(goToEvent) ; i++){
-				if(goToEvent[i].friend_button == 0){
-					var fightChoice = goToEvent[i].friend_choice_enemy;		
-					var enemyInst = Dr_Battle_GetEnemyInstance(fightChoice);
-					//if(enemyInst == noone){
-					//	if(Dr_Battle_GetEnemyInstance(fightChoice -1 ) != noone){
-					//		enemyInst = Dr_Battle_GetEnemyInstance(fightChoice - 1);
-					//	}
-					//	else if (Dr_Battle_GetEnemyInstance(fightChoice +1 ) != noone){
-					//		enemyInst = Dr_Battle_GetEnemyInstance(fightChoice + 1);
-					//	}
-					//	else{
-					//		show_error("警告，战斗类未找到实例变量\n 请检查",0)
-					//	}
-					//}
-			
-					fightMenu[i] = instance_create_depth(0,366 + ( i * 36) + (i * 2),0,dr_battle_menu_fight);
-					fightMenu[i].fight_slot = max(0,i - fightSlot);
-					fightMenu[i].friend_ins= goToEvent[i].friend_ins;
-					fightMenu[i].firend_atk = 10;
-					fightMenu[i].friend_ico = goToEvent[i].friend_ins._char_ico;
-					fightMenu[i].style_color = goToEvent[i].friend_ins._char_style_color;
-					fightMenu[i].enemy_ins = enemyInst
-					fightMenu[i].enemy_def = Dr_Battle_GetEnemyDef(fightChoice);
-					if( i < array_length(goToEvent) -1){
-						fightMenu[fightNum].is_last_ins = true;
-					}
-					fightNum++;
-				}
-			}
-			if(i == 0){
-				show_message(array_length(fightMenu))
-				show_message(fightNum)
-				//Dr_Battle_SetStageTimeMax(50+( 50 * max(0,fightNum - fightSlot)));
-				Dr_Battle_SetStageTime(1000)
-			}
-			else{
-				Dr_Battle_SetStageTime(0)
-			}
-	
+		Dr_Battle_MainUserFightMenu()
 			
 	}
 	if(STAGE == DR_BATTLE_STAGE.DIALOG){
@@ -187,10 +143,10 @@ function Dr_Battle_ChoicePlayerMenu(BUTTON,MENU = -1,BACK = false){
 	var Main = dr_battle_main;
 	var UI = dr_battle_ui;
 	switch(BUTTON){
-		case -1:
+		case -1://返回选择选项界面
 			return Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.BUTTON);
 		break;
-		case 0:
+		case 0://攻击
 			switch(MENU){
 				case DR_BATTLE_PLAYERMENU.CHOICE_ENEMY:
 					if(BACK){ Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.BUTTON) }
@@ -202,7 +158,7 @@ function Dr_Battle_ChoicePlayerMenu(BUTTON,MENU = -1,BACK = false){
 				break
 			}
 		break;
-		case 1:
+		case 1://行动
 			if(Main._player_friend[Main._player_friend_num]._magic = true){
 				switch(MENU){
 					case DR_BATTLE_PLAYERMENU.CHOICE_MAGIC:
@@ -230,33 +186,56 @@ function Dr_Battle_ChoicePlayerMenu(BUTTON,MENU = -1,BACK = false){
 				}
 			}
 		break;
-		case 2:
+		case 2://药物
 			switch(MENU){
 				case DR_BATTLE_PLAYERMENU.CHOICE_ITEM:
+				
 					if(BACK){ Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.BUTTON) }
+					else{ 			
+						var isUseToEnemy = Item_IsUseToEnemy(Item_Get(Main._player_choice_item));
+						if(isUseToEnemy){
+							Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_ENEMY)
+						}
+						else{
+							Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_FRIEND)
+						}
+					}
+					
+				break;
+				
+				case DR_BATTLE_PLAYERMENU.CHOICE_ENEMY:			
+					if(BACK){ Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_ITEM) }
 					else{ 						
-						Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_FRIEND)
+						Dr_Battle_NextToFriend(BUTTON,MENU,,,Main._player_choice_enemy,,Main._player_choice_item);
 					}
 				break;
-				case DR_BATTLE_PLAYERMENU.CHOICE_ENEMY:
-					
-				break;
+				
 				case DR_BATTLE_PLAYERMENU.CHOICE_FRIEND:
-					
+					if(BACK){ Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_ITEM) }
+					else{ 						
+						Dr_Battle_NextToFriend(BUTTON,MENU,,,Main._player_choice_friend,Main._player_choice_item);
+					}
 				break;
+				
 				default:
 					return Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_ITEM) 
 				break;
 			}
 		break;
-		case 3:
+		case 3://仁慈
 			switch(MENU){
 				case DR_BATTLE_PLAYERMENU.CHOICE_ENEMY:
-					
+					if(BACK){ Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.BUTTON) }
+					else{ 						
+						Dr_Battle_NextToFriend(BUTTON,MENU,,,Main._player_choice_enemy);
+					}
+				break;
+				default:
+					return Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_ENEMY) 
 				break;
 			}
 		break;
-		case 4:
+		case 4://防御
 			Dr_Battle_NextToFriend(BUTTON,MENU);
 		break;
 		 
@@ -296,6 +275,11 @@ function Dr_Battle_SetPlayerMenu(MENU,BUTTON = -1,REFRESH_TEXT = true){
 		}
 		else if(MENU == DR_BATTLE_PLAYERMENU.CHOICE_ITEM){
 			Dr_Battle_CallDialog(Item_GetNameAll(),Main._dialogue_style,2,true);	
+			Main._player_menu = MENU
+			UI.choice_num = _player_choice_item;
+		}
+		else if(MENU == DR_BATTLE_PLAYERMENU.CHOICE_FRIEND){
+			Dr_Battle_CallDialog(Dr_Battle_GetFriendNameAll(),Main._dialogue_style,1,true);	
 			Main._player_menu = MENU
 			UI.choice_num = _player_choice_item;
 		}

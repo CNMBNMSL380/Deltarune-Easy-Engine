@@ -7,11 +7,15 @@ live;
 	如果你要生成一个新的队友对象，就必须继承这个物体，也必须继承
 	那个创建事件
 */ 
+_char_can_set_menu = true // 如果为真，则可以在玩家阶段进行设置，否则跳过 
+
 _char_id = 0;
 _char_name = "Kris";
 _char_ico = spr_battle_ico_kris;
 _char_ico_index = [0,1,2,3,4,5,6,7];
 
+_char_intro_sound = snd_weaponpullfast;
+_char_glide_anim_mod= 1;
 
 _char_heard = spr_dr_battle_headerName_kris;
 _char_color = c_white;

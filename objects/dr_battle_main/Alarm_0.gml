@@ -45,7 +45,7 @@ with (all) {
 		if(battleMode >=-1 ){
 			array_push(dr_battle_main.ow_obj,id);
 			visible = false;
-			//instance_deactivate_object(id);
+			instance_deactivate_object(id);
 		}
 	}  
 }

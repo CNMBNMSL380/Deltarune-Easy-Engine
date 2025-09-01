@@ -8,23 +8,24 @@ function Dr_Battle_NextToFriend(BUTTON, MENU, ACT = -1, MAGIC = -1, ENEMY = -1, 
     var friendNum = Main._player_friend_num;
 
     if ((friendNum + 1) < array_length(friendMain)) {
+		//设置准备在下一个阶段要准备的回合
         Dr_Battle_SetFriendMenuMod(friendNum, Main._player_friend[friendNum], MENU, BUTTON, ACT, MAGIC, ENEMY, FRIEND, ITEM, false);
-
+		
+		//当前的选择界面收缩
         friendClass[friendNum].animSwitch();
-		friendClass[friendNum]._header_ico_index = BUTTON + 1;
+		//选择界面的ICO切换到指定设置贴图
+		//friendClass[friendNum]._header_ico_index = BUTTON + 1;
+		friendClass[friendNum]._header_ico_index = Main._player_friend[friendNum]._char_ico_index[BUTTON + 1];
 		
         friendClass[friendNum + 1].animSwitch();
         
         Main._player_friend_num++;
 
-        var uiClass = Main._player_friend_class[friendNum];
-        uiClass._header_ico_index = BUTTON + 1;
-
         Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.BUTTON);
         return true;
     } else {
         friendClass[friendNum].animSwitch();
-        friendClass[friendNum]._header_ico_index = BUTTON + 1;
+        friendClass[friendNum]._header_ico_index = Main._player_friend[friendNum]._char_ico_index[BUTTON + 1];
 
         Dr_Battle_SetFriendMenuMod(friendNum , Main._player_friend[friendNum ], MENU, BUTTON, ACT, MAGIC, ENEMY, FRIEND, ITEM, false);
         Dr_Battle_MainPlayerMenuEnd();

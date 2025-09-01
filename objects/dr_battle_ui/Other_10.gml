@@ -1,4 +1,5 @@
 /// @description 打字机事件
+//用于打印普通文本和链式文本，还会通过需求打印血条与仁慈度
 live;
 var del_text_ins = function(){
 	for(var i = array_length(text_inst)-1 ; i > -1 ; i--){

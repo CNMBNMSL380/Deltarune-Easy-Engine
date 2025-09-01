@@ -4,9 +4,16 @@ live;
 // Inherit the parent event
 event_inherited();
 
+_char_can_set_menu = false
+
 _char_id = 0;
 _char_name = "Ralsei";
 _char_ico = spr_battle_ico_ralsei;
+_char_ico_index = [0,1,2,4,5,6,7,8];
+
+_char_intro_sound = -1;
+_char_glide_anim_mod= 0;
+
 _char_heard = spr_dr_battle_headerName_ralsei;
 _char_color = c_white;
 _char_style_color = #B5E61D;	

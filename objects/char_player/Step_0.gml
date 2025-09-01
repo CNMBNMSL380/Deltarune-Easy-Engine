@@ -13,10 +13,10 @@ if(can_move){
 		res_move_sprite[DIR.RIGHT]=run_sprite[overworld_mode][3];
 		sprite_index = res_move_sprite[dir];
 	}else{
-		move_speed[DIR.UP]=1.5;
-		move_speed[DIR.DOWN]=1.5;
-		move_speed[DIR.LEFT]=1.5;
-		move_speed[DIR.RIGHT]=1.5;
+		move_speed[DIR.UP]=2;
+		move_speed[DIR.DOWN]=2;
+		move_speed[DIR.LEFT]=2;
+		move_speed[DIR.RIGHT]=2;
 		res_move_sprite[DIR.UP]=move_sprite[overworld_mode][0];
 		res_move_sprite[DIR.DOWN]=move_sprite[overworld_mode][1];
 		res_move_sprite[DIR.LEFT]=move_sprite[overworld_mode][2];
