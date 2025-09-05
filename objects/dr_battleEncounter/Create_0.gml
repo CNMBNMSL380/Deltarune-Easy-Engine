@@ -28,9 +28,11 @@ function Create_Friend(add_frend = []){
 	var friendTeam = [];
 	if(array_length(add_frend) <= 0){
 		for(var i = 1 ; i < Char_GetTeamLenght() +1; i++){		
-			instances[i] = Char_GetTeamByID(i -1).Get("obj");
+			//instances[i] = Char_GetTeamByID(i -1).Get("obj");
+			instances[i] = Char_GetValue(1, i-1 , "obj");
 			//show_message(string(i)+ " : "+ string (instances[i]))
-			btlInstances[i] = Char_GetTeamByID(i -1).Get("btlObj");
+			//btlInstances[i] = Char_GetTeamByID(i -1).Get("btlObj");
+			btlInstances[i] = Char_GetValue(1, i-1 , "btlObj");
 			//show_message(string(i)+ " : "+ string (btlInstances[i]))
 		}	
 		//show_message(btlInstances)

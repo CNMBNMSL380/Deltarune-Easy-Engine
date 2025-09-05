@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Char_GetFriendValue",
   "parent":{
-    "name":"friend",
-    "path":"folders/Scripts/Char/friend.yy",
+    "name":"Friend",
+    "path":"folders/Scripts/Char/Friend.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

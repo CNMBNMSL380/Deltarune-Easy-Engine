@@ -1,14 +1,7 @@
 // Script assets have changed for v2.3.0 see
 function Char_Friend_Base(NAME,CHAR_OBJ,CHAR_BATTLE_OBJ,HP=20,MAXHP=20,ATK=0,DEF=0,MAG=0,
-WEAPON = noone,ARMOR_1 = noone,ARMOR_2 = noone,ELEMENT = [],
-MAGIC = [
-	{
-		magic_name : "",
-		magic_info : "",
-		magic_userTp : 10,
-		magic_inst : noone
-	}
-]) 
+WEAPON = noone,ARMOR_1 = noone,ARMOR_2 = noone,ELEMENT = [],MAGIC = []
+) 
 constructor {
     // friend
     char_name = NAME;									//角色名称
@@ -17,7 +10,8 @@ constructor {
     char_hp = HP;										//角色血量
     char_maxhp = MAXHP;									//角色最高血量
     char_atk = ATK;										//角色攻击
-    char_def = DEF;										//角色防御
+    char_def = DEF;										//角色防御	
+	char_mag = MAG;
     char_weapon = WEAPON;								//角色武器
     char_armor1 = ARMOR_1;								//角色防具1
     char_armor2 = ARMOR_2;								//角色防具2
@@ -58,93 +52,63 @@ constructor {
         }
     }
 
-    function Get(STRING) {
-        switch (STRING) {
-            case "name":
-                return char_name;
-            case "obj":
-                return char_obj;
-            case "btlObj":
-                return char_battle_obj;
-            case "hp":
-                return char_hp;
-            case "maxhp":
-                return char_maxhp;
-            case "atk":
-                return char_atk;
-            case "def":
-                return char_def;
-            case "weapon":
-                return char_weapon;
-            case "armor1":
-                return char_armor1;
-            case "armor2":
-                return char_armor2;
-            case "element":
-                return char_element;
-            default:
-                return false;
-        }
-    }
+    //// Magic Operations
+    //function Add_Magic(magic_struct) {
+    //    array_push(char_magic, magic_struct);
+    //    return true;
+    //}
 
-    // Magic Operations
-    function Add_Magic(magic_struct) {
-        array_push(char_magic, magic_struct);
-        return true;
-    }
+    //function Get_Magic() {
+    //    return char_magic;
+    //}
+    //function Get_Magic_Lenght() {
+    //    return array_length(char_magic);
+    //}
 
-    function Get_Magic() {
-        return char_magic;
-    }
+    //static _CheckIndex = function(slot, array_length, func_name) {
+    //    if (slot < 0 || slot >= array_length) {
+    //        var err_msg = string(char_name) + " : 错误引用 " + func_name;
+    //        show_debug_message(err_msg);
+    //        return false;
+    //    }
+    //    return true;
+    //}
 
-    function Get_Magic_Lenght() {
-        return array_length(char_magic);
-    }
+    //function Get_Magic_Infot(SLOT) {
+    //    if (!_CheckIndex(SLOT, array_length(char_magic), "Get_Magic_Infot")) return "";
+    //    return char_magic[SLOT].infot;
+    //}
 
-    static _CheckIndex = function(slot, array_length, func_name) {
-        if (slot < 0 || slot >= array_length) {
-            var err_msg = string(char_name) + " : 错误引用 " + func_name;
-            show_debug_message(err_msg);
-            return false;
-        }
-        return true;
-    }
+    //function Get_Magic_UseTp(SLOT) {
+    //    if (!_CheckIndex(SLOT, array_length(char_magic), "Get_Magic_UseTp")) return 0;
+    //    return char_magic[SLOT].tp;
+    //}
 
-    function Get_Magic_Infot(SLOT) {
-        if (!_CheckIndex(SLOT, array_length(char_magic), "Get_Magic_Infot")) return "";
-        return char_magic[SLOT].infot;
-    }
+    //function Get_Magic_Function(SLOT) {
+    //    if (!_CheckIndex(SLOT, array_length(char_magic), "Get_Magic_Function")) return undefined;
+    //    return char_magic[SLOT].magic_function;
+    //}
 
-    function Get_Magic_UseTp(SLOT) {
-        if (!_CheckIndex(SLOT, array_length(char_magic), "Get_Magic_UseTp")) return 0;
-        return char_magic[SLOT].tp;
-    }
+    //function Set_Magic_Function(SLOT, FUNCTION) {
+    //    if (!_CheckIndex(SLOT, array_length(char_magic), "Set_Magic_Function")) return false;
+    //    char_magic[SLOT].magic_function = FUNCTION;
+    //    return true;
+    //}
 
-    function Get_Magic_Function(SLOT) {
-        if (!_CheckIndex(SLOT, array_length(char_magic), "Get_Magic_Function")) return undefined;
-        return char_magic[SLOT].magic_function;
-    }
+    //function Set_Magic_Name(SLOT, NAME) {
+    //    if (!_CheckIndex(SLOT, array_length(char_magic), "Set_Magic_Name")) return false;
+    //    char_magic[SLOT].name = NAME;
+    //    return true;
+    //}
 
-    function Set_Magic_Function(SLOT, FUNCTION) {
-        if (!_CheckIndex(SLOT, array_length(char_magic), "Set_Magic_Function")) return false;
-        char_magic[SLOT].magic_function = FUNCTION;
-        return true;
-    }
+    //// 元素相关方法
+    //function Get_Element_Name(SLOT) {
+    //    if (!_CheckIndex(SLOT, array_length(char_element), "Get_Element_Name")) return "";
+    //    return char_element[SLOT][0];
+    //}
 
-    function Set_Magic_Name(SLOT, NAME) {
-        if (!_CheckIndex(SLOT, array_length(char_magic), "Set_Magic_Name")) return false;
-        char_magic[SLOT].name = NAME;
-        return true;
-    }
-
-    // 元素相关方法
-    function Get_Element_Name(SLOT) {
-        if (!_CheckIndex(SLOT, array_length(char_element), "Get_Element_Name")) return "";
-        return char_element[SLOT][0];
-    }
-
-    function Get_Element_Function(SLOT) {
-        if (!_CheckIndex(SLOT, array_length(char_element), "Get_Element_Function")) return undefined;
-        return char_element[SLOT][1];
-    }
+    //function Get_Element_Function(SLOT) {
+    //    if (!_CheckIndex(SLOT, array_length(char_element), "Get_Element_Function")) return undefined;
+    //    return char_element[SLOT][1];
+    //}
 }

@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"Char_GetTeam",
+  "%Name":"Char_GetMagicMod",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Char_GetTeam",
+  "name":"Char_GetMagicMod",
   "parent":{
-    "name":"InTeam",
-    "path":"folders/Scripts/Char/InTeam.yy",
+    "name":"Char",
+    "path":"folders/Scripts/Char/Char.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

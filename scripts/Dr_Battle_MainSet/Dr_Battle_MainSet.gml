@@ -158,11 +158,12 @@ function Dr_Battle_ChoicePlayerMenu(BUTTON,MENU = -1,BACK = false){
 				break
 			}
 		break;
-		case 1://行动
+		case 1://行动 / 魔法
+			//检测
 			if(Main._player_friend[Main._player_friend_num]._magic = true){
 				switch(MENU){
 					case DR_BATTLE_PLAYERMENU.CHOICE_MAGIC:
-					
+						
 					break;
 					default:
 						return Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_MAGIC);
@@ -170,6 +171,7 @@ function Dr_Battle_ChoicePlayerMenu(BUTTON,MENU = -1,BACK = false){
 				}
 			}
 			else{
+				//行动
 				switch(MENU){
 					case DR_BATTLE_PLAYERMENU.CHOICE_ENEMY:
 						if(BACK){ return Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.BUTTON); }
@@ -269,7 +271,8 @@ function Dr_Battle_SetPlayerMenu(MENU,BUTTON = -1,REFRESH_TEXT = true){
 			UI.choice_num = _player_choice_class;
 		}
 		else if(MENU == DR_BATTLE_PLAYERMENU.CHOICE_MAGIC){
-			Dr_Battle_CallDialog(Main.get_EnemyActName(),Main._dialogue_style,2,true);	
+			var firendNum =Main._player_friend_num-1
+			Dr_Battle_CallDialog(Char_GetMagicNameAll(1,firendNum),Main._dialogue_style,2,true);	
 			Main._player_menu = MENU
 			UI.choice_num = _player_choice_magic;
 		}
@@ -281,7 +284,7 @@ function Dr_Battle_SetPlayerMenu(MENU,BUTTON = -1,REFRESH_TEXT = true){
 		else if(MENU == DR_BATTLE_PLAYERMENU.CHOICE_FRIEND){
 			Dr_Battle_CallDialog(Dr_Battle_GetFriendNameAll(),Main._dialogue_style,1,true);	
 			Main._player_menu = MENU
-			UI.choice_num = _player_choice_item;
+			UI.choice_num = _player_choice_friend;
 		}
 		else{
 			Dr_Battle_CallDialog("",,-1,false);		

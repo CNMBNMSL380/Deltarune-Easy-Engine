@@ -27,7 +27,7 @@ function MyAlarm_Add(ID = "Alarm " + string(random_range(0,100)), EVENT = functi
 		}
 		return ID
 	}
-	show_message(ID + ":号闹钟添加失败！") 
+	show_message(ID + " : 闹钟添加失败！") 
 	
 	return "false"
   

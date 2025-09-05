@@ -93,7 +93,8 @@ if(_stage == DR_BATTLE_STAGE.PLAYER){
     }
     // 魔法选择界面（未完善）
     else if(_player_menu == DR_BATTLE_PLAYERMENU.CHOICE_MAGIC){
-        _player_choice_magic = switch_H(_player_choice_magic , -1 , array_length(_player_friend) ,1);
+        _player_choice_magic = switch_H(_player_choice_magic , -1 , array_length(Char_GetMagic(1,_player_friend_num-1)) ,1);
+        _player_choice_magic = switch_V(_player_choice_magic , -1 , array_length(Char_GetMagic(1,_player_friend_num-1)) ,2);
         UI.choice_num = _player_choice_magic;
         if(input_con){
             Dr_Battle_ChoicePlayerMenu(_player_button,DR_BATTLE_PLAYERMENU.CHOICE_MAGIC);

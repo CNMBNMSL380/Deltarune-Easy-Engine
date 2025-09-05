@@ -11,16 +11,22 @@ function Char_GetFriendLenght(){
 }
 // --通过ID获取
 function Char_GetFriendByID(SLOT){
-	return Flag_Get(FLAG_STATIC,"friend")[SLOT];
+	if(SLOT < array_length( Flag_Get(FLAG_STATIC,"friend"))){
+		return Flag_Get(FLAG_STATIC,"friend")[SLOT];
+	}
+	return noone
 }
 // --通过NAME获取
 function Char_GetFriendByName(NAME){
 	for(var i = 0; i < array_length(Char_GetFriend()); i++){
 		var strc = Char_GetFriendByID(i);
-		var strc_name = strc.char_name;
-		if(NAME = strc_name){
-			return strc;
+		if(strc !=noone){
+			var strc_name = strc.char_name;
+				if(NAME = strc_name){
+				return strc;
+			}
 		}
+		
 	}
 	return noone;
 }

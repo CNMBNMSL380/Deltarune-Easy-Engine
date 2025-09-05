@@ -1,7 +1,7 @@
 /// @description 初始化事件
 live;
-//从缓冲区接收数据
 
+Flag_Set(FLAG_STATIC,"overworld_mode",1);
 
 //创建UI界面并启动动画
 instance_create_depth(0,0,0,dr_battle_bg)

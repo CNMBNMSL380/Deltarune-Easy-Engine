@@ -6,7 +6,10 @@
   ],
   "managed":true,
   "name":"dr_battle_char_susie",
-  "overriddenProperties":[],
+  "overriddenProperties":[
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"dr_battle_char_player","path":"objects/dr_battle_char_player/dr_battle_char_player.yy",},"propertyId":{"name":"_magic","path":"objects/dr_battle_char_player/dr_battle_char_player.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"True",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"dr_battle_char_player","path":"objects/dr_battle_char_player/dr_battle_char_player.yy",},"propertyId":{"name":"_char_name","path":"objects/dr_battle_char_player/dr_battle_char_player.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"Susie",},
+  ],
   "parent":{
     "name":"Player",
     "path":"folders/Objects/Battle_Dr/Player.yy",

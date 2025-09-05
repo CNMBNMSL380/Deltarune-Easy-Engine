@@ -4,6 +4,7 @@
 function Dr_Battle_CreateClass(FRIEND_DATA = []){
 	live;
 	var storage_firendClass_inst = [];
+	show_message(FRIEND_DATA)
 	for(var i = 0; i < array_length(FRIEND_DATA); i++) {	
 	    // 直接根据索引计算水平坐标
 	   var centerX = 320; // 舞台中心坐标

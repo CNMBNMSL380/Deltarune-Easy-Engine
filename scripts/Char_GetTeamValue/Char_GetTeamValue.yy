@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Char_GetTeamValue",
   "parent":{
-    "name":"team",
-    "path":"folders/Scripts/Char/team.yy",
+    "name":"InTeam",
+    "path":"folders/Scripts/Char/InTeam.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

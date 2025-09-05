@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Char_Friend_Base",
   "parent":{
-    "name":"Char",
-    "path":"folders/Scripts/Char.yy",
+    "name":"Base",
+    "path":"folders/Scripts/Char/Char/Base.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

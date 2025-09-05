@@ -33,6 +33,8 @@
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"_char_id","filters":[],"listItems":[],"multiselect":false,"name":"_char_id","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"_char_name","filters":[],"listItems":[],"multiselect":false,"name":"_char_name","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"noName","varType":2,},
+    {"$GMObjectProperty":"v1","%Name":"_char_ico","filters":[],"listItems":[],"multiselect":false,"name":"_char_ico","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"spr_battle_ico_kris","path":"sprites/spr_battle_ico_kris/spr_battle_ico_kris.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_battle_ico_kris","varType":5,},
+    {"$GMObjectProperty":"v1","%Name":"_magic","filters":[],"listItems":[],"multiselect":false,"name":"_magic","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
