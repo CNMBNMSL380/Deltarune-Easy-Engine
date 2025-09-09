@@ -2,6 +2,10 @@
 
 
 //这个是用于检测用于哪方，如果magic_mod为真，则对敌，否则用在队友
-function Char_GetMagicMod(CHAR_CLASS = -1,CHAR){
-	
+function Char_GetMagicMod(CHAR_CLASS = -1,CHAR,SLOT){
+	var instMag = Char_GetMagicInstance(CHAR_CLASS,CHAR,SLOT)
+	var inst = instance_create_depth(0,0,0,instMag)
+	var mode = inst.magic_mod
+	instance_destroy(inst);
+	return mode;
 }

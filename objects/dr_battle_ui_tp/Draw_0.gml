@@ -7,7 +7,7 @@ if !surface_exists(mask_surface) {
 }
 
 Dr_Draw(function(){
-	surface_set_target(mask_surface);
+	surface_set_target(mask_surface){
 		draw_clear_alpha(c_black, 0); // 透明背景
 	
 		draw_sprite_ext(spr_dr_battle_tp,1,x,y,1,1,0,c_white,image_alpha);	
@@ -24,10 +24,10 @@ Dr_Draw(function(){
 		
 		draw_set_font(Font_Get("FH16"))
 		draw_set_halign(fa_center)
+		draw_set_alpha(image_alpha)
 		draw_text_transformed(x-15,y+30+37,Dr_Battle_GetTp(),2,2,0);
-		draw_text_transformed(x-15,y+30+40+20,"%",2,2,0);
-		
-		
-	surface_reset_target();
+		draw_text_transformed(x-15,y+30+40+20,"%",2,2,0);		
+		draw_set_alpha(1)
+	}surface_reset_target();
 	draw_surface(mask_surface, 0, 0);
 })

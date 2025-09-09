@@ -84,6 +84,7 @@ if(_stage == DR_BATTLE_STAGE.PLAYER){
         _player_choice_friend = switch_V(_player_choice_friend , -1 , array_length(_player_friend) ,1);
         UI.choice_num = _player_choice_friend;
         if(input_con){
+			audio_play_sound(snd_menu_confirm,0,0);
             Dr_Battle_ChoicePlayerMenu(_player_button,DR_BATTLE_PLAYERMENU.CHOICE_FRIEND);
         }
         if(input_can){
@@ -97,6 +98,7 @@ if(_stage == DR_BATTLE_STAGE.PLAYER){
         _player_choice_magic = switch_V(_player_choice_magic , -1 , array_length(Char_GetMagic(1,_player_friend_num-1)) ,2);
         UI.choice_num = _player_choice_magic;
         if(input_con){
+			audio_play_sound(snd_menu_confirm,0,0);
             Dr_Battle_ChoicePlayerMenu(_player_button,DR_BATTLE_PLAYERMENU.CHOICE_MAGIC);
         }
         if(input_can){
@@ -123,7 +125,7 @@ if(_stage != DR_BATTLE_STAGE.PLAYER){
             else{
                 // 行动结束，进入仁慈阶段
                 if(array_length(UI.text_inst) == 0 or !instance_exists(UI.text_inst[0])){
-                    Dr_Battle_SetStage(DR_BATTLE_STAGE.MERCY);
+                    Dr_Battle_SetStage(DR_BATTLE_STAGE.MAGIC);
                 }
             }		
         }

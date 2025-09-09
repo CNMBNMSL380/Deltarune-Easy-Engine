@@ -21,7 +21,7 @@ function Dr_Battle_MainUserFightMenu(){
 				fightMenu[i].friend_ico = goToEvent[i].friend_ins._char_ico;
 				fightMenu[i].style_color = goToEvent[i].friend_ins._char_style_color;
 				fightMenu[i].enemy_ins = enemyInst
-				fightMenu[i].enemy_def = Dr_Battle_GetEnemyDefByInstance(enemyInst);
+				fightMenu[i].enemy_def = Dr_Battle_GetEnemyDef(goToEvent[i].friend_choice_enemy);
 				if( i < array_length(goToEvent) -1){
 					fightMenu[i].is_last_ins = true;
 				}

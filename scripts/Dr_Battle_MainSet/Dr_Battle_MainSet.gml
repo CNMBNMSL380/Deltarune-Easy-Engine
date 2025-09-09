@@ -16,7 +16,8 @@ function Dr_Battle_SetStage(STAGE){
 		//调用敌人事件与玩家事件
 		var goToEvent = Dr_Battle_GetGotoEvent();
 		for(var i = 0; i < array_length(goToEvent) ; i++){
-			if(goToEvent[i].friend_button == 1){
+			//如果事件按钮是ACT且队友使用的不是魔法
+			if(goToEvent[i].friend_button == 1 and goToEvent[i].friend_ins._magic == false){
 				var actEvent = goToEvent[i];
 				var actChoice = goToEvent[i].friend_choice_act;
 				var enemyChoice = goToEvent[i].friend_choice_enemy;
@@ -37,6 +38,27 @@ function Dr_Battle_SetStage(STAGE){
 			}
 		}
 		
+	}
+	if(STAGE == DR_BATTLE_STAGE.MAGIC){
+		Dr_Battle_CallDialog("");
+		//调用敌人事件与玩家事件
+		var goToEvent = Dr_Battle_GetGotoEvent();
+		for(var i = 0; i < array_length(goToEvent) ; i++){
+			//如果事件按钮是ACT且队友使用的不是魔法
+			if(goToEvent[i].friend_button == 1 and goToEvent[i].friend_ins._magic){
+				var magicEvent = goToEvent[i];
+				var magicChoice = goToEvent[i].friend_choice_magic;
+				var enemyChoice = goToEvent[i].friend_choice_enemy;			
+				var friendChoice = goToEvent[i].friend_choice_friend;			
+				
+				var magicEvent = {
+					slot : magicEvent.friend_slot,
+					magic : goToEvent[i].friend_choice_magic,
+					choice : [enemyChoice,friendChoice]
+				}
+				//Char_UseMagic(1,magicEvent.friend_slot,magicChoice,[enemyChoice,friendChoice]);
+			}
+		}
 	}
 	if(STAGE == DR_BATTLE_STAGE.ITEM){
 		Dr_Battle_CallDialog("");
@@ -163,7 +185,23 @@ function Dr_Battle_ChoicePlayerMenu(BUTTON,MENU = -1,BACK = false){
 			if(Main._player_friend[Main._player_friend_num]._magic = true){
 				switch(MENU){
 					case DR_BATTLE_PLAYERMENU.CHOICE_MAGIC:
-						
+						if(BACK){ return Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.BUTTON); }
+						else{ 
+							if(!Char_GetMagicMod(1,Main._player_friend_num,Main._player_choice_magic)){
+								Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_ENEMY); 
+							}
+							else{
+								Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_FRIEND); 
+							}
+						}
+					break;
+					case DR_BATTLE_PLAYERMENU.CHOICE_ENEMY:
+						if(BACK){ return Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_MAGIC); }
+						else{ Dr_Battle_NextToFriend(BUTTON,MENU,,Main._player_choice_magic,Main._player_choice_enemy)}
+					break;
+					case DR_BATTLE_PLAYERMENU.CHOICE_FRIEND:
+						if(BACK){ return Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_MAGIC); }
+						else{ Dr_Battle_NextToFriend(BUTTON,MENU,,Main._player_choice_magic,,Main._player_choice_friend)}
 					break;
 					default:
 						return Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_MAGIC);
@@ -310,4 +348,11 @@ function Dr_Battle_SetStageTime(TIME = -2){
 	}
 	return true;
 	
+}
+function Dr_Battle_SetTp(TP){
+	live_ext;
+	var Main = dr_battle_main
+	Main._player_tp = TP;
+	
+	return true;
 }

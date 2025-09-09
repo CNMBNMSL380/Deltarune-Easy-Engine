@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Char_UseMagic",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Char_UseMagic",
+  "parent":{
+    "name":"Char",
+    "path":"folders/Scripts/Char/Char.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

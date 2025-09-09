@@ -24,7 +24,7 @@
   ],
   "name":"spr_dr_battle_tp_value",
   "nineSlice":null,
-  "origin":0,
+  "origin":6,
   "parent":{
     "name":"TP",
     "path":"folders/Sprite/Battle/TP.yy",
@@ -82,7 +82,7 @@
     "visibleRange":null,
     "volume":1.0,
     "xorigin":0,
-    "yorigin":0,
+    "yorigin":196,
   },
   "swatchColours":null,
   "swfPrecision":0.5,

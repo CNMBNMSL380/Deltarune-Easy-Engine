@@ -60,13 +60,16 @@ _player_GoToEvent = [];						//储存用于玩家回合结束接下来要触发�
 _player_act_event = [];						//在ACT阶段要触发的事件
 _player_act_num = 0;
 
+_player_magic_event = [];
+_player_magic_event = 0;
+
 
 //每个阶段读秒结束后进入下一个阶段，下面是储存用于读秒变量
 _stage_time = 0;
 _stage_timeMax = 100;
 _stage_timeSpeed = 1;
 //TP
-_player_tp = 0;
+_player_tp = 100;
 
 
 //基础对话

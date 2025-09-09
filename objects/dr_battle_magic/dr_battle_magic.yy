@@ -3,6 +3,7 @@
   "%Name":"dr_battle_magic",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":10,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
   "name":"dr_battle_magic",
@@ -27,8 +28,11 @@
   "physicsStartAwake":true,
   "properties":[
     {"$GMObjectProperty":"v1","%Name":"mag","filters":[],"listItems":[],"multiselect":false,"name":"mag","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"use_tp","filters":[],"listItems":[],"multiselect":false,"name":"use_tp","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"magic_mod","filters":[],"listItems":[],"multiselect":false,"name":"magic_mod","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
+    {"$GMObjectProperty":"v1","%Name":"magic_choice_enemy","filters":[],"listItems":[],"multiselect":false,"name":"magic_choice_enemy","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"magic_choice_friend1","filters":[],"listItems":[],"multiselect":false,"name":"magic_choice_friend1","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"use_tp","filters":[],"listItems":[],"multiselect":false,"name":"use_tp","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"name","filters":[],"listItems":[],"multiselect":false,"name":"name","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":2,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

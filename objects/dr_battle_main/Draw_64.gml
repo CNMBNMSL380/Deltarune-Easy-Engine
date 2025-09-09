@@ -1,6 +1,6 @@
 /// @description debug事件
 live;
-
+/*
 var stage_str = Debug_StageToString(_stage);
 var playerMenu = Debug_PlayerMenuToString(_player_menu)
 var button = string(_player_button)

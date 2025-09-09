@@ -29,7 +29,6 @@ function Flag_CustomStatic(){
 		
 		// 朋友列表，你可以储存队友信息，不过不会展示在队伍，也不会被修改信息
 		Set("friend", [
-			new Char_Friend_Base("Susic",char_susic,dr_battle_char_susie,150,100),
 			//new Char_Friend_Structer("Ralsei",char_ralsei,dr_battle_char_kris),
 		] );	
 		
@@ -37,7 +36,7 @@ function Flag_CustomStatic(){
 		//一般它可以同时设置多个队友，不过最好只有2个
 		Set("team",[		
 			Char_Friend_SusieBase(),
-			new Char_Friend_Base("Ralsei",char_ralsei,dr_battle_char_ralsei,80,80)
+			Char_Friend_RalseiBase()
 		]);	
 	}
 	Item_SetWeapon(item_bandage);

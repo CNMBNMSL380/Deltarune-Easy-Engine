@@ -38,8 +38,6 @@ Lang_LoadFont(0);
 
 Flag_Init();	
 
-show_message( Char_GetMagicNameAll(1,0))
-
 Encounter_Init();
 
 BGM_Init();

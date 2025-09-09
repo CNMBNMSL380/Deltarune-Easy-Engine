@@ -47,7 +47,7 @@ function Dr_Battle_EnemyBase(SLOT,INST = noone,OWINS = noone) constructor{
 	function getDef(){
 		return enemy_Def;
 	}
-	function addAct(SLOT,ACTNAME,INFO,EVENT = function(){},BEGIN_EVENT = function(){} , END_EVENT = function(){} , CAN_DO_CHAR = []){
+	function addAct(SLOT,ACTNAME,INFO,EVENT = function(){},BEGIN_EVENT = function(){} , END_EVENT = function(){} , CAN_DO_CHAR = [] , USETP = 0){
 		var act_strc = 
 		{
 			act_slot : SLOT,
@@ -56,7 +56,8 @@ function Dr_Battle_EnemyBase(SLOT,INST = noone,OWINS = noone) constructor{
 			act_run_event : EVENT ,				//轮到行动回合后执行
 			act_begin_event : BEGIN_EVENT ,		//选择到敌人后做出反应
 			act_end_event : END_EVENT ,			//行动回合之后执行
-			act_canDoChar : CAN_DO_CHAR			//哪个角色可以使用这个
+			act_canDoChar : CAN_DO_CHAR,		//哪个角色可以使用这个
+			act_useTp : USETP					//要使用多少TP
 		}
 		array_push(enemy_act,act_strc);
 		

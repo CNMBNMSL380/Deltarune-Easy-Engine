@@ -26,5 +26,6 @@ function Dr_Battle_SetFriendMenuMod(SLOT,INST,MENU,BUTTON,
 			
 	}
 	array_push(Main._player_GoToEvent,FriendStrc);
+	show_debug_message(FriendStrc)
 	return Main._player_GoToEvent[SLOT];
 }

@@ -16,13 +16,5 @@ constructor{
 	_magic_inst = INST;
 	_magic_event = FUNCTION;	
 
-	function Use_Magic(){
-		var inst = instance_create_depth(0,0,0,dr_battle_magic)
-		inst.mag = Char_GetValue(1,"",);
-		with(inst){
-			event_user(0);
-		}
-		instance_destroy(magic_inst);
-		return true;
-	}
+	
 }

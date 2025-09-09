@@ -40,7 +40,7 @@ function(){ //执行之后
 	*/
 },
 [] // 哪个能动的角色
-);
+,0);
 
 Dr_Battle_AddEnemyAct(_enemy_id,"抚摸",,
 function(){ //启动开始
@@ -54,7 +54,7 @@ function(){ //执行之后
 	
 },
 [] // 哪个能动的角色
-);
+,0);
 
 Dr_Battle_AddEnemyAct(_enemy_id,"击杀",,
 function(){ //启动开始
@@ -68,4 +68,18 @@ function(){ //启动开始
 	
 },,,
 [] // 哪个能动的角色
-);
+,50);
+
+Dr_Battle_AddEnemyAct(_enemy_id,"设置TP",,
+function(){ //启动开始
+	show_debug_message("ACT启动3");
+	Dr_Battle_SetStageTimeMax(1)
+	//不要填_enemy_id！！
+	//因为再创建之后这个值不会随_enemy_id改变，这导致可能你删除第一个敌人
+	//，然后再删除第二个后第二个还在但第三个消失了
+	//！亲身经历！
+	Dr_Battle_killEnemy(_enemy_id);
+	
+},,,
+[] // 哪个能动的角色
+,50);

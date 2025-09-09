@@ -1,13 +1,13 @@
 {
   "$GMObject":"",
-  "%Name":"dr_battle_magic_pacify",
+  "%Name":"dr_battle_magic_rudebuster",
   "eventList":[
     {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
   ],
   "managed":true,
-  "name":"dr_battle_magic_pacify",
+  "name":"dr_battle_magic_rudebuster",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"dr_battle_magic","path":"objects/dr_battle_magic/dr_battle_magic.yy",},"propertyId":{"name":"use_tp","path":"objects/dr_battle_magic/dr_battle_magic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"25",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"dr_battle_magic","path":"objects/dr_battle_magic/dr_battle_magic.yy",},"propertyId":{"name":"use_tp","path":"objects/dr_battle_magic/dr_battle_magic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"75",},
   ],
   "parent":{
     "name":"Magic",
