@@ -12,7 +12,7 @@ function Dr_Battle_GetEnemyAct(SLOT,ACT_SLOT){
 	}
 	return false
 }
-function Dr_Battle_GetAllEnemyAct(SLOT){
+function Dr_Battle_GetEnemyActAll(SLOT){
 	if(instance_exists(dr_battle_main)){
 		var Main = dr_battle_main;
 		var enemyAct =Main._enemy[SLOT].getActAll();

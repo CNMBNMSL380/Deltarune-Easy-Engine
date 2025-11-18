@@ -27,6 +27,9 @@ _enemy_btl_obj = [];		// --------用于储存敌人的物体，以便在动画�
 _enemy_ow_obj = [];			// --------用于ow的敌人，战斗结束后如果可以就选择
 _enemy_name = [		];
 
+//存储敌人事件
+_enemy_event = ds_list_create();
+
 //基本控制变量
 
 _stage = DR_BATTLE_STAGE.START_BATTLE;					//阶段
@@ -41,7 +44,7 @@ _player_friend_num = 0;									//选中队友编号
 
 _player_choice_friend = 0;								//选中队友
 _player_choice_enemy = 0;								//选择敌人					
-_player_choice_class = 0;								//ACT类，选择要执行的类
+_player_choice_act = 0;								//ACT类，选择要执行的类
 _player_choice_magic = 0;								//魔法类，选择要执行的魔法
 _player_choice_item = 0;								//物品类，选择要使用的物品
 _player_item_choice_item = 0;
@@ -53,15 +56,26 @@ _player_soul_start_x = 320;
 _player_soul_start_y = 320;
 
 //Fight储存
-_player_fight_slot = 0;
+
 
 //储存准备对敌人进行进攻或行动的事件
 _player_GoToEvent = [];						//储存用于玩家回合结束接下来要触发的事件
+
 _player_act_event = [];						//在ACT阶段要触发的事件
-_player_act_num = 0;
+_player_act_slot = 0;
 
 _player_magic_event = [];
-_player_magic_event = 0;
+_player_magic_slot = 0;
+
+_player_mercy_event = [];
+_player_mercy_slot = 0;
+
+
+_player_item_event = [];
+_player_item_slot = 0;
+_player_item_is_use = [];
+
+_player_fight_slot = 0;
 
 
 //每个阶段读秒结束后进入下一个阶段，下面是储存用于读秒变量
@@ -69,7 +83,7 @@ _stage_time = 0;
 _stage_timeMax = 100;
 _stage_timeSpeed = 1;
 //TP
-_player_tp = 100;
+_player_tp = 50;
 
 
 //基础对话
@@ -117,11 +131,9 @@ sf_height = spr_height + 2*border_size_y;
 sf = surface_create(sf_width, sf_height);
 
 
-function switch_H(NUM,MIN,MAX,PUSH,SFX=true){
+function switch_H(NUM,MIN,MAX,PUSH,SFX=true ,AUTO_RANGE = false , AUTO_NUM = 0){
 	live;
-	if(Input_IsPressed(INPUT.RIGHT) or Input_IsPressed(INPUT.LEFT)){
-		if(SFX){ audio_play_sound(snd_menu_switch,0,0); }
-	}
+	var UI = dr_battle_ui	
 	if(Input_IsPressed(INPUT.RIGHT)){
 		if((NUM + PUSH) < MAX){
 			NUM += PUSH;		
@@ -131,14 +143,30 @@ function switch_H(NUM,MIN,MAX,PUSH,SFX=true){
 		if((NUM - PUSH) > MIN){
 			NUM -= PUSH;			
 		}
+		
+	}
+	if(Input_IsPressed(INPUT.RIGHT) or Input_IsPressed(INPUT.LEFT)){
+		if(SFX){ audio_play_sound(snd_menu_switch,0,0); }
+		if(AUTO_RANGE){
+			if(NUM)
+				with(UI){
+					event_user(0)
+				}
+		}
 	}
 	return NUM;
 }
 
-function switch_V(NUM,MIN,MAX,PUSH,SFX=true){
+function switch_V(NUM,MIN,MAX,PUSH,SFX=true , AUTO_RANGE = false){
 	live;
+	var UI = dr_battle_ui
 	if(Input_IsPressed(INPUT.DOWN) or Input_IsPressed(INPUT.UP)){
 		if(SFX){ audio_play_sound(snd_menu_switch,0,0); }
+		if(AUTO_RANGE){
+			with(UI){
+				event_user(0)
+			}
+		}
 	}
 	if(Input_IsPressed(INPUT.DOWN)){
 		if((NUM + PUSH) < MAX){

@@ -17,8 +17,8 @@
   "name":"dr_battle_main",
   "overriddenProperties":[],
   "parent":{
-    "name":"Battle_Dr",
-    "path":"folders/Objects/Battle_Dr.yy",
+    "name":"Main",
+    "path":"folders/Objects/Battle_Dr/Main.yy",
   },
   "parentObjectId":null,
   "persistent":false,

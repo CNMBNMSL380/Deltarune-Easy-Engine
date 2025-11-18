@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_battleChar_susie_magicWind",
   "bboxMode":0,
   "bbox_bottom":57,
@@ -12,10 +12,10 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"0c374389-6aa6-41c0-908c-bb5b8323a7d4","name":"0c374389-6aa6-41c0-908c-bb5b8323a7d4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"2ec8e11e-9817-4f4b-9da1-11844204a892","name":"2ec8e11e-9817-4f4b-9da1-11844204a892","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"8920d664-1cff-43af-921f-489d0ecfce41","name":"8920d664-1cff-43af-921f-489d0ecfce41","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"0537ddff-dc8b-4152-b935-b447eea405d1","name":"0537ddff-dc8b-4152-b935-b447eea405d1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"0c374389-6aa6-41c0-908c-bb5b8323a7d4","name":"0c374389-6aa6-41c0-908c-bb5b8323a7d4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"2ec8e11e-9817-4f4b-9da1-11844204a892","name":"2ec8e11e-9817-4f4b-9da1-11844204a892","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"8920d664-1cff-43af-921f-489d0ecfce41","name":"8920d664-1cff-43af-921f-489d0ecfce41","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"0537ddff-dc8b-4152-b935-b447eea405d1","name":"0537ddff-dc8b-4152-b935-b447eea405d1","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -73,18 +73,10 @@
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0c374389-6aa6-41c0-908c-bb5b8323a7d4","path":"sprites/spr_battleChar_susie_magicWind/spr_battleChar_susie_magicWind.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"0c692552-97a9-40fe-9d6f-3b00aa8f714b","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"2ec8e11e-9817-4f4b-9da1-11844204a892","path":"sprites/spr_battleChar_susie_magicWind/spr_battleChar_susie_magicWind.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"f3ab2b95-204b-4834-ac61-14d385101af2","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8920d664-1cff-43af-921f-489d0ecfce41","path":"sprites/spr_battleChar_susie_magicWind/spr_battleChar_susie_magicWind.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"7d59ae9d-c336-4391-a0af-2dc371769a72","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"0537ddff-dc8b-4152-b935-b447eea405d1","path":"sprites/spr_battleChar_susie_magicWind/spr_battleChar_susie_magicWind.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"68685905-3a4e-410c-b02c-b346a3fe7d92","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"0c374389-6aa6-41c0-908c-bb5b8323a7d4","path":"sprites/spr_battleChar_susie_magicWind/spr_battleChar_susie_magicWind.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"0c692552-97a9-40fe-9d6f-3b00aa8f714b","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"2ec8e11e-9817-4f4b-9da1-11844204a892","path":"sprites/spr_battleChar_susie_magicWind/spr_battleChar_susie_magicWind.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"f3ab2b95-204b-4834-ac61-14d385101af2","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"8920d664-1cff-43af-921f-489d0ecfce41","path":"sprites/spr_battleChar_susie_magicWind/spr_battleChar_susie_magicWind.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"7d59ae9d-c336-4391-a0af-2dc371769a72","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"0537ddff-dc8b-4152-b935-b447eea405d1","path":"sprites/spr_battleChar_susie_magicWind/spr_battleChar_susie_magicWind.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"68685905-3a4e-410c-b02c-b346a3fe7d92","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

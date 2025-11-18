@@ -1,5 +1,5 @@
 // Script assets have changed for v2.3.0 see
-function Dr_Battle_CallDialog(TEXT,TEXTSTYLE = -1,LAYOUT = 0,CHOICE = false){
+function Dr_Battle_CallDialog(TEXT,TEXTSTYLE = -1,LAYOUT = 0,CHOICE = false,CANUSE = []){
 	var Main = dr_battle_main;
 	var UI = dr_battle_ui;
 	if(TEXTSTYLE == -1){
@@ -11,6 +11,7 @@ function Dr_Battle_CallDialog(TEXT,TEXTSTYLE = -1,LAYOUT = 0,CHOICE = false){
 		UI.text_style = TEXTSTYLE;
 		UI.text_layout = LAYOUT;
 		UI.choice_select = CHOICE;
+		UI.text_can_use_list = CANUSE
 		with(UI){	
 			event_user(0)
 		}	
@@ -23,6 +24,7 @@ function Dr_Battle_CallDialog(TEXT,TEXTSTYLE = -1,LAYOUT = 0,CHOICE = false){
 		UI.text_style = TEXTSTYLE;
 		UI.text_layout = LAYOUT;
 		UI.choice_select = CHOICE;
+		UI.text_can_use_list = CANUSE
 		with(UI){	
 			event_user(0)
 		}	

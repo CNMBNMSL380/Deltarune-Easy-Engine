@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_hint_border",
+    "path":"sprites/spr_hint_border/spr_hint_border.yy",
+  },
   "spriteMaskId":null,
   "visible":false,
 }

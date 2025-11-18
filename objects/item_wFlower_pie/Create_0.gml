@@ -4,4 +4,4 @@ live;
 // Inherit the parent event
 event_inherited();
 
-_name=" 野花派";
+_name="野花派";

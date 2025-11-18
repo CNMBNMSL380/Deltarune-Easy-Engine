@@ -29,7 +29,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_hint_landmark",
+    "path":"sprites/spr_hint_landmark/spr_hint_landmark.yy",
+  },
   "spriteMaskId":null,
   "visible":false,
 }

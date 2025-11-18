@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Dr_Battle_MainSet",
   "parent":{
-    "name":"Main",
-    "path":"folders/Objects/Battle_Dr/SCR/Main.yy",
+    "name":"Set",
+    "path":"folders/Objects/Battle_Dr/SCR/Main/Set.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

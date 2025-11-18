@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_battleChar_susie_act_2",
   "bboxMode":0,
   "bbox_bottom":67,
@@ -12,9 +12,9 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"164e2a00-558f-48c6-811b-b922227afe9e","name":"164e2a00-558f-48c6-811b-b922227afe9e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"079bb64e-09b1-4273-8605-87cca074fc3e","name":"079bb64e-09b1-4273-8605-87cca074fc3e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"fc7f61bd-db7e-408e-a7ad-12514e0b24a9","name":"fc7f61bd-db7e-408e-a7ad-12514e0b24a9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"164e2a00-558f-48c6-811b-b922227afe9e","name":"164e2a00-558f-48c6-811b-b922227afe9e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"079bb64e-09b1-4273-8605-87cca074fc3e","name":"079bb64e-09b1-4273-8605-87cca074fc3e","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"fc7f61bd-db7e-408e-a7ad-12514e0b24a9","name":"fc7f61bd-db7e-408e-a7ad-12514e0b24a9","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -72,15 +72,9 @@
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"164e2a00-558f-48c6-811b-b922227afe9e","path":"sprites/spr_battleChar_susie_act_2/spr_battleChar_susie_act_2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"cb68297d-3cc6-446e-bd8f-99749179ef2d","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"079bb64e-09b1-4273-8605-87cca074fc3e","path":"sprites/spr_battleChar_susie_act_2/spr_battleChar_susie_act_2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"0aef51c9-cfc3-46e3-8413-3f8c8517b3ba","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"fc7f61bd-db7e-408e-a7ad-12514e0b24a9","path":"sprites/spr_battleChar_susie_act_2/spr_battleChar_susie_act_2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"343e2c9c-3748-4a8a-9987-a8a10fa07ec8","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"164e2a00-558f-48c6-811b-b922227afe9e","path":"sprites/spr_battleChar_susie_act_2/spr_battleChar_susie_act_2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"cb68297d-3cc6-446e-bd8f-99749179ef2d","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"079bb64e-09b1-4273-8605-87cca074fc3e","path":"sprites/spr_battleChar_susie_act_2/spr_battleChar_susie_act_2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"0aef51c9-cfc3-46e3-8413-3f8c8517b3ba","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"fc7f61bd-db7e-408e-a7ad-12514e0b24a9","path":"sprites/spr_battleChar_susie_act_2/spr_battleChar_susie_act_2.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"343e2c9c-3748-4a8a-9987-a8a10fa07ec8","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

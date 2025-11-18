@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_battleChar_susie_fight",
   "bboxMode":0,
   "bbox_bottom":70,
@@ -12,11 +12,11 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"bb29d269-a16a-4e85-a8ee-e1c1f159f539","name":"bb29d269-a16a-4e85-a8ee-e1c1f159f539","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"bfc05ccb-a398-43b8-b6f1-991775965d69","name":"bfc05ccb-a398-43b8-b6f1-991775965d69","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"b390d18b-4a83-437b-ae07-1e417ae881da","name":"b390d18b-4a83-437b-ae07-1e417ae881da","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"6a10b870-45c7-4422-81c3-44f5c234fde4","name":"6a10b870-45c7-4422-81c3-44f5c234fde4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"373c5d1e-788f-4ef2-acc9-a320024a5a53","name":"373c5d1e-788f-4ef2-acc9-a320024a5a53","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"bb29d269-a16a-4e85-a8ee-e1c1f159f539","name":"bb29d269-a16a-4e85-a8ee-e1c1f159f539","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"bfc05ccb-a398-43b8-b6f1-991775965d69","name":"bfc05ccb-a398-43b8-b6f1-991775965d69","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b390d18b-4a83-437b-ae07-1e417ae881da","name":"b390d18b-4a83-437b-ae07-1e417ae881da","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"6a10b870-45c7-4422-81c3-44f5c234fde4","name":"6a10b870-45c7-4422-81c3-44f5c234fde4","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"373c5d1e-788f-4ef2-acc9-a320024a5a53","name":"373c5d1e-788f-4ef2-acc9-a320024a5a53","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -74,21 +74,11 @@
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"bb29d269-a16a-4e85-a8ee-e1c1f159f539","path":"sprites/spr_battleChar_susie_fight/spr_battleChar_susie_fight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"3f70ef34-8f80-406c-b1b9-436e6243303a","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"bfc05ccb-a398-43b8-b6f1-991775965d69","path":"sprites/spr_battleChar_susie_fight/spr_battleChar_susie_fight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"b4a00170-5a73-42e2-8d4d-f00718d67e81","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b390d18b-4a83-437b-ae07-1e417ae881da","path":"sprites/spr_battleChar_susie_fight/spr_battleChar_susie_fight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"78df126d-3f2c-4f6d-8a97-cc5a595ec756","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"6a10b870-45c7-4422-81c3-44f5c234fde4","path":"sprites/spr_battleChar_susie_fight/spr_battleChar_susie_fight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"42c6a835-114b-4dde-801d-9ca4533b985e","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"373c5d1e-788f-4ef2-acc9-a320024a5a53","path":"sprites/spr_battleChar_susie_fight/spr_battleChar_susie_fight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"ee7b007b-4ca7-4a72-8ed5-e3b0a716f039","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"bb29d269-a16a-4e85-a8ee-e1c1f159f539","path":"sprites/spr_battleChar_susie_fight/spr_battleChar_susie_fight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"3f70ef34-8f80-406c-b1b9-436e6243303a","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"bfc05ccb-a398-43b8-b6f1-991775965d69","path":"sprites/spr_battleChar_susie_fight/spr_battleChar_susie_fight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"b4a00170-5a73-42e2-8d4d-f00718d67e81","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"b390d18b-4a83-437b-ae07-1e417ae881da","path":"sprites/spr_battleChar_susie_fight/spr_battleChar_susie_fight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"78df126d-3f2c-4f6d-8a97-cc5a595ec756","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"6a10b870-45c7-4422-81c3-44f5c234fde4","path":"sprites/spr_battleChar_susie_fight/spr_battleChar_susie_fight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"42c6a835-114b-4dde-801d-9ca4533b985e","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"373c5d1e-788f-4ef2-acc9-a320024a5a53","path":"sprites/spr_battleChar_susie_fight/spr_battleChar_susie_fight.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"ee7b007b-4ca7-4a72-8ed5-e3b0a716f039","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

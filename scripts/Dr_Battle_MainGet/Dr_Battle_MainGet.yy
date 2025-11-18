@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Dr_Battle_MainGet",
   "parent":{
-    "name":"Main",
-    "path":"folders/Objects/Battle_Dr/SCR/Main.yy",
+    "name":"Get",
+    "path":"folders/Objects/Battle_Dr/SCR/Main/Get.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

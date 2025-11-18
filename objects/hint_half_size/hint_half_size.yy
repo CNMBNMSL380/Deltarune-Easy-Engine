@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_hint_half_size",
+    "path":"sprites/spr_hint_half_size/spr_hint_half_size.yy",
+  },
   "spriteMaskId":null,
   "visible":false,
 }

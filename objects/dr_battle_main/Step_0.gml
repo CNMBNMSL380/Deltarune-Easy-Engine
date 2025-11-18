@@ -5,7 +5,6 @@ live;
 input_con = Input_IsPressed(INPUT.CONFIRM);
 input_can = Input_IsPressed(INPUT.CANCEL);
 var UI = dr_battle_ui;
-
 // 玩家回合主流程
 if(_stage == DR_BATTLE_STAGE.PLAYER){
     if(_player_menu == DR_BATTLE_PLAYERMENU.BUTTON){
@@ -35,7 +34,7 @@ if(_stage == DR_BATTLE_STAGE.PLAYER){
     else if(_player_menu == DR_BATTLE_PLAYERMENU.CHOICE_ENEMY){
         // 上下切换敌人
         _player_choice_enemy = switch_V(_player_choice_enemy , -1 , array_length(Dr_Battle_GetAllEnemyName()) ,1);
-        UI.choice_num = _player_choice_enemy;
+        UI.text_choice_num = _player_choice_enemy;
         if(input_con){
             audio_play_sound(snd_menu_confirm,0,0);
             // 确认选择敌人，进入下一步菜单
@@ -49,13 +48,16 @@ if(_stage == DR_BATTLE_STAGE.PLAYER){
     // 行动类别选择界面
     else if(_player_menu == DR_BATTLE_PLAYERMENU.CHOICE_CLASS){
         // 上下左右切换行动类别
-        _player_choice_class = switch_V(_player_choice_class , -1 , array_length(Dr_Battle_GetAllEnemyAct(_player_choice_enemy)) ,2);
-        _player_choice_class = switch_H(_player_choice_class , -1 , array_length(Dr_Battle_GetAllEnemyAct(_player_choice_enemy)) ,1);
-        UI.choice_num = _player_choice_class;
+        _player_choice_act = switch_V(_player_choice_act , -1 , array_length(Dr_Battle_GetEnemyActAll(_player_choice_enemy)) ,2);
+        _player_choice_act = switch_H(_player_choice_act , -1 , array_length(Dr_Battle_GetEnemyActAll(_player_choice_enemy)) ,1);
+        UI.text_choice_num = _player_choice_act;
         if(input_con){
-            audio_play_sound(snd_menu_confirm,0,0);
-            // 确认选择行动类别
-            Dr_Battle_ChoicePlayerMenu(_player_button,DR_BATTLE_PLAYERMENU.CHOICE_CLASS);			
+			var needTp = Dr_Battle_GetEnemyActUseTp(_player_choice_enemy,_player_choice_act);
+			if(needTp <= Dr_Battle_GetTp() or needTp <= 0){
+	            audio_play_sound(snd_menu_confirm,0,0);
+	            // 确认选择行动类别
+	            Dr_Battle_ChoicePlayerMenu(_player_button,DR_BATTLE_PLAYERMENU.CHOICE_CLASS);	
+			}
         }
         if(input_can){
             // 取消选择，返回上一级菜单
@@ -65,9 +67,11 @@ if(_stage == DR_BATTLE_STAGE.PLAYER){
     // 道具选择界面
     else if(_player_menu == DR_BATTLE_PLAYERMENU.CHOICE_ITEM){
         // 上下左右切换道具
-        _player_choice_item = switch_V(_player_choice_item , -1 , Item_GetNumber() ,2);
-        _player_choice_item = switch_H(_player_choice_item , -1 , Item_GetNumber() ,1);
-        UI.choice_num = _player_choice_item;
+        _player_choice_item = switch_V(_player_choice_item , -1 , Item_GetNumber() - array_length(_player_item_is_use) ,2,,true);
+        _player_choice_item = switch_H(_player_choice_item , -1 , Item_GetNumber() - array_length(_player_item_is_use) ,1,,true);
+        UI.text_choice_num = _player_choice_item;
+		//show_message(floor(20 / 6))
+		
         if(input_con){
             audio_play_sound(snd_menu_confirm,0,0);
             // 确认选择道具
@@ -82,7 +86,7 @@ if(_stage == DR_BATTLE_STAGE.PLAYER){
     else if(_player_menu == DR_BATTLE_PLAYERMENU.CHOICE_FRIEND){
         // 左右切换友军
         _player_choice_friend = switch_V(_player_choice_friend , -1 , array_length(_player_friend) ,1);
-        UI.choice_num = _player_choice_friend;
+        UI.text_choice_num = _player_choice_friend;
         if(input_con){
 			audio_play_sound(snd_menu_confirm,0,0);
             Dr_Battle_ChoicePlayerMenu(_player_button,DR_BATTLE_PLAYERMENU.CHOICE_FRIEND);
@@ -92,14 +96,17 @@ if(_stage == DR_BATTLE_STAGE.PLAYER){
         
         }
     }
-    // 魔法选择界面（未完善）
+    // 魔法选择界面
     else if(_player_menu == DR_BATTLE_PLAYERMENU.CHOICE_MAGIC){
         _player_choice_magic = switch_H(_player_choice_magic , -1 , array_length(Char_GetMagic(1,_player_friend_num-1)) ,1);
         _player_choice_magic = switch_V(_player_choice_magic , -1 , array_length(Char_GetMagic(1,_player_friend_num-1)) ,2);
-        UI.choice_num = _player_choice_magic;
+        UI.text_choice_num = _player_choice_magic;
         if(input_con){
-			audio_play_sound(snd_menu_confirm,0,0);
-            Dr_Battle_ChoicePlayerMenu(_player_button,DR_BATTLE_PLAYERMENU.CHOICE_MAGIC);
+			var needTp = Char_GetMagicTp(1,_player_friend_num - 1,_player_choice_magic);
+			if(needTp <= Dr_Battle_GetTp() or needTp <= 0){
+				audio_play_sound(snd_menu_confirm,0,0);
+	            Dr_Battle_ChoicePlayerMenu(_player_button,DR_BATTLE_PLAYERMENU.CHOICE_MAGIC);
+			}
         }
         if(input_can){
             Dr_Battle_ChoicePlayerMenu(_player_button,DR_BATTLE_PLAYERMENU.CHOICE_MAGIC,true);	
@@ -114,48 +121,99 @@ if(_stage != DR_BATTLE_STAGE.PLAYER){
         _stage_time -= _stage_timeSpeed;
         var UI = dr_battle_ui;
         if(_stage_time < 0){
-            if(_player_act_num < array_length(_player_act_event)){		
+            if(_player_act_slot < array_length(_player_act_event)){		
                 // 依次执行玩家行动事件
                 if(array_length(UI.text_inst) == 0 or !instance_exists(UI.text_inst[0])){
                     Dr_Battle_NextEnemyAct()
-                    _player_act_num+=1
+                    _player_act_slot+=1
                     Dr_Battle_SetStageTime()
                 }
             }
             else{
-                // 行动结束，进入仁慈阶段
+                // 行动结束，进入魔法阶段
                 if(array_length(UI.text_inst) == 0 or !instance_exists(UI.text_inst[0])){
+					show_debug_message("准备跳转魔法")
                     Dr_Battle_SetStage(DR_BATTLE_STAGE.MAGIC);
                 }
             }		
         }
     }
 	else if(_stage == DR_BATTLE_STAGE.MAGIC){
-		 Dr_Battle_SetStage(DR_BATTLE_STAGE.MERCY);
-	}
-    else if(_stage == DR_BATTLE_STAGE.MERCY){
-        // 仁慈阶段，自动进入道具阶段
-        Dr_Battle_SetStage(DR_BATTLE_STAGE.ITEM);
-    }
-    else if(_stage == DR_BATTLE_STAGE.ITEM){
-        // 道具阶段（未完善）
+		// 魔法阶段倒计时
         _stage_time -= _stage_timeSpeed;
-        var UI = dr_battle_ui;
-        if(_stage_time < 0){
-            if(_player_act_num < array_length(_player_act_event)){		
+        var UI = dr_battle_ui;		
+		 if(_stage_time < 0){
+            if(_player_magic_slot < array_length(_player_magic_event)){		
+                // 依次执行玩家行动事件
                 if(array_length(UI.text_inst) == 0 or !instance_exists(UI.text_inst[0])){
-                    Dr_Battle_NextEnemyAct()
-                    _player_act_num+=1
+                    //Dr_Battle_NextEnemyAct()
+					var magEvent = _player_magic_event[_player_magic_slot]					
+					Char_UseMagic(1,magEvent.slot-1,magEvent.magic,[magEvent.choice[0],magEvent.choice[1]],magEvent.char_name);
+                    _player_magic_slot += 1;
                     Dr_Battle_SetStageTime()
                 }
             }
             else{
-                // 道具阶段结束，进入战斗阶段
+                // 行动结束，进入魔法阶段
                 if(array_length(UI.text_inst) == 0 or !instance_exists(UI.text_inst[0])){
-                    Dr_Battle_SetStage(DR_BATTLE_STAGE.FIGHT);
+					show_debug_message("准备跳转物品")
+                    Dr_Battle_SetStage(DR_BATTLE_STAGE.MERCY);
                 }
             }		
         }
+	}
+    else if(_stage == DR_BATTLE_STAGE.MERCY){
+        // 仁慈阶段，自动进入道具阶段
+		if(_stage_time < 0){
+            if(_player_mercy_slot < array_length(_player_mercy_event)){		
+                // 依次执行玩家行动事件
+                if(array_length(UI.text_inst) == 0 or !instance_exists(UI.text_inst[0])){
+					var mcyEvent = _player_mercy_event[_player_mercy_slot];
+					var ins =  Dr_Battle_GetEnemyInstance(mcyEvent.enemy)
+					var val= Dr_Battle_SpareEnemy(ins);
+					var name = Dr_Battle_GetEnemyName(mcyEvent.enemy);
+					Dr_Battle_CallDialog("饶恕了" + name+ (val ? "" : "&{sleep 30}但他的名字不是黄色的") , ,3);
+					//char_name饶恕了enemy_name
+					//但他的名字还不是黄色的
+					
+					_player_mercy_slot+=1
+                }
+            }
+            else{
+                // 行动结束，进入魔法阶段
+                if(array_length(UI.text_inst) == 0 or !instance_exists(UI.text_inst[0])){
+                     Dr_Battle_SetStage(DR_BATTLE_STAGE.ITEM);
+                }
+            }		
+        }		
+    }
+    else if(_stage == DR_BATTLE_STAGE.ITEM){
+        // 道具阶段（未完善）
+        _stage_time -= _stage_timeSpeed;
+        var UI = dr_battle_ui;		
+		if(_stage_time < 0){
+            if(_player_item_slot < array_length(_player_item_event)){		
+                // 依次执行玩家行动事件
+                if(array_length(UI.text_inst) == 0 or !instance_exists(UI.text_inst[0])){
+					var itemEvent = _player_item_event[_player_item_slot];
+					Item_CallEvent(itemEvent._item,ITEM_EVENT.USE)
+					_player_item_slot += 1;
+					Dr_Battle_SetStageTime();
+                }
+            }
+            else{
+                // 行动结束，进入魔法阶段
+                if(array_length(UI.text_inst) == 0 or !instance_exists(UI.text_inst[0])){
+					//清除药品
+					for(var i = array_length(_player_item_event) -1; i > -1; i--){
+						var itemEvent = _player_item_event[i];
+						Item_Remove(itemEvent._item_slot);
+					}
+					
+                    Dr_Battle_SetStage(DR_BATTLE_STAGE.FIGHT);
+                }
+            }		
+        }		
     }
     else if(_stage == DR_BATTLE_STAGE.FIGHT){
         // 战斗阶段倒计时
@@ -173,6 +231,9 @@ if(_stage != DR_BATTLE_STAGE.PLAYER){
             dr_battle_main._player_fight_slot ++;
         }
     }
+	// ----------------  进入敌人战斗回合
+	
+	
     else if(_stage == DR_BATTLE_STAGE.DIALOG){
         // 对话阶段，等待回合对象生成
         if!(instance_exists(dr_battle_turn)){
@@ -203,6 +264,7 @@ if(_stage != DR_BATTLE_STAGE.PLAYER){
         if!(BTL_board.in_anim){
             Dr_Battle_SetStage(DR_BATTLE_STAGE.IN_TRUN);
         }
+		
     }
     else if(_stage == DR_BATTLE_STAGE.IN_TRUN){
         // 回合进行中，倒计时
@@ -222,12 +284,13 @@ if(_stage != DR_BATTLE_STAGE.PLAYER){
     }
     else if(_stage == DR_BATTLE_STAGE.END_BATTLE){
         // 战斗胜利，等待文本播放完毕后进入黑屏
-        var UI = dr_battle_ui;
-        if(array_length(UI.text_inst) == 0 or !instance_exists(UI.text_inst[0])){
-            Dr_Battle_SetStage(DR_BATTLE_STAGE.BLACK);
-        }
-    }
+	    var UI = dr_battle_ui;
+		if(array_length(UI.text_inst) == 0 or !instance_exists(UI.text_inst[0])){
+			Dr_Battle_SetStage(DR_BATTLE_STAGE.BLACK);
+		}
+	}
 }
+
 
 // 检查是否胜利（敌人全部消灭或收到胜利信号）
 if(_stage != DR_BATTLE_STAGE.START_BATTLE and _stage !=DR_BATTLE_STAGE.END_BATTLE and _stage != DR_BATTLE_STAGE.BLACK ){

@@ -15,7 +15,7 @@ function Dr_Battle_GetEnemyActName(SLOT,ACT_SLOT){
 	return false
 }
 
-function Dr_Battle_GetAllEnemyActName(SLOT){
+function Dr_Battle_GetEnemyActAllName(SLOT){
 	if(instance_exists(dr_battle_main)){
 		var Main = dr_battle_main._enemy[SLOT]	
 		var Name = [];

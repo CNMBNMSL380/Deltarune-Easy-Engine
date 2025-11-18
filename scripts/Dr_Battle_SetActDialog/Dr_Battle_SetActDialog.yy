@@ -6,7 +6,7 @@
   "name":"Dr_Battle_SetActDialog",
   "parent":{
     "name":"Dialog",
-    "path":"folders/Objects/Battle_Dr/SCR/Dialog.yy",
+    "path":"folders/Objects/Battle_Dr/SCR/UI/Dialog.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

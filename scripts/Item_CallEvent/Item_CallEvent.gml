@@ -5,8 +5,12 @@ function Item_CallEvent() {
 	var ITEM=argument[0];
 	var EVENT=argument[1];
 	var SLOT=-1;
+	var CHOICE = [];
 	if(argument_count>=3){
 		SLOT=argument[2];
+	}
+	if(argument_count>=4){
+		CHOICE=argument[3];
 	}
 
 	if(Item_IsValid(ITEM)&&(Item_IsSlotValid(SLOT)||SLOT==-1)){

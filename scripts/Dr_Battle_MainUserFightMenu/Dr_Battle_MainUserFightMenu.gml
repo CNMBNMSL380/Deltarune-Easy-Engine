@@ -26,7 +26,7 @@ function Dr_Battle_MainUserFightMenu(){
 					fightMenu[i].is_last_ins = true;
 				}
 				is_empty = false
-				
+					
 			}
 	}
 	if(!is_empty){

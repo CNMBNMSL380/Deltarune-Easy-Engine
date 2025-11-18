@@ -24,6 +24,7 @@ for(var i =0 ; i< array_length(_enemy_obj) ; i++){
 	//var enemy_stc = new Dr_Battle_EnemyBase(i,enemy_ins);
 	_enemy[i] = new Dr_Battle_EnemyBase(i);
 	var enemy_ins = Dr_Battle_AddEnemy(i,_enemy_obj[i][0],_enemy_obj[i][1],_enemy_obj[i][2],_enemy_obj[i][3] , true , _enemy_obj[i][4] , _enemy_obj[i][5] , true);
+	
 }
 
 //生成队友
@@ -49,7 +50,6 @@ with (all) {
 		}
 	}  
 }
-show_message(ow_obj)
 //show_message(_player_friend);
 
 // ------- 创建队友类窗口对象
@@ -66,8 +66,6 @@ var startX = _player_soul_start_x;
 var startY = _player_soul_start_y;
 _player_soul_inst = instance_create_depth(startX,startY,0,dr_battle_soul_red);
 _player_soul_inst.image_alpha = 0;
-
-
 
 
 show_debug_message("主要" + string(_enemy_obj));

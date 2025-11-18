@@ -9,8 +9,8 @@
   "name":"event",
   "overriddenProperties":[],
   "parent":{
-    "name":"event",
-    "path":"folders/Objects/event.yy",
+    "name":"Event",
+    "path":"folders/Objects/Event.yy",
   },
   "parentObjectId":null,
   "persistent":false,

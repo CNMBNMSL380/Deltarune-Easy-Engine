@@ -18,7 +18,7 @@ _char_heard = spr_dr_battle_headerName_ralsei;
 _char_color = c_white;
 _char_style_color = #B5E61D;	
 
-//_magic = true;
+_magic = true;
 
 _char_mode = DR_PLAYER_INDEX.GLIDE;
 _char_img[DR_PLAYER_INDEX.GLIDE] = spr_char_ralsei_right;

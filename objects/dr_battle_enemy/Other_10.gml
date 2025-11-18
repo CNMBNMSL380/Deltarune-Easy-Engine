@@ -7,6 +7,10 @@ live;
 
 Dr_Battle_SetEnemyName(_enemy_id,"敌人"+string(_enemy_id));
 
+Dr_Battle_Enemy_AddEvent(_enemy_id,"create",function(){
+	show_message("");	
+})
+
 Dr_Battle_AddEnemyAct(_enemy_id,"查看","检查敌人的身体（？",
 function(){ //启动开始
 	/*
@@ -73,6 +77,7 @@ function(){ //启动开始
 Dr_Battle_AddEnemyAct(_enemy_id,"设置TP",,
 function(){ //启动开始
 	show_debug_message("ACT启动3");
+	Dr_Battle_AddTp(50);
 	Dr_Battle_SetStageTimeMax(1)
 	//不要填_enemy_id！！
 	//因为再创建之后这个值不会随_enemy_id改变，这导致可能你删除第一个敌人
@@ -82,4 +87,6 @@ function(){ //启动开始
 	
 },,,
 [] // 哪个能动的角色
-,50);
+,0);
+
+//show_message(Dr_Battle_GetEnemyActUseTp(_enemy_id,2s))

@@ -25,13 +25,13 @@ Dr_Draw(function(){
 	var offX = 0 , offY = 0;
 	if(choice_select){
 		if(text_layout == 1){		
-			offY = 32*floor(choice_num);
+			offY = 32*floor(text_choice_num);
 			draw_sprite(spr_battle_soul_red,0,posX + offX,posY + offY);
 		}
 		if(text_layout == 2){
-			offX = (choice_num % 2 == 0 ? 0 : 200)
-			offY = 32*floor(choice_num/2)
-			draw_sprite(spr_battle_soul_red,0,posX + offX,posY + offY);
+			offX = (text_choice_num % 2 == 0 ? 0 : 200)
+			offY = 32*floor(text_choice_num/2)
+			draw_sprite(spr_battle_soul_red,0,posX + offX - 20,posY + offY);
 		}
 	}
 	

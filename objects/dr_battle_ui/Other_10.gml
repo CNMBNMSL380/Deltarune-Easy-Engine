@@ -1,6 +1,8 @@
 /// @description 打字机事件
 //用于打印普通文本和链式文本，还会通过需求打印血条与仁慈度
 live;
+
+//// -----------调用事件后，首先清空数组里面的打字机
 var del_text_ins = function(){
 	for(var i = array_length(text_inst)-1 ; i > -1 ; i--){
 		if(instance_exists(text_inst[i])){
@@ -31,22 +33,33 @@ if(text != "" or text_list != []){
 	//垂直队列文本
 	else if(text_layout == 1){
 		var off_x = 0 , off_y = 0;
+		
+		
 		for(var i = 0 ; i < array_length(text_list) ; i++){
 			off_x = 25
 			off_y = 32*i;
+			var canU = is_use(i);
+			
 			text_inst[i] = instance_create_depth(pos_x + off_x,pos_y + off_y,-100,text_typer);
-			text_inst[i].text = "{instant true}" + text_style + text_list[i];
+			text_inst[i].text = "{instant true}" + text_style + canU + text_list[i];
 		}
 	}
 	//两列垂直队列文本
+	//只能打印6个文本实例
 	else if(text_layout == 2){
 		var off_x = 0 , off_y = 0;
 	
 		for(var i = 0 ; i < array_length(text_list) ; i++){
-			off_x = (i % 2 == 0 ? 0 : 200)
-			off_y = 32*floor(i/2);
-			text_inst[i] = instance_create_depth(pos_x + off_x,pos_y + off_y,-100,text_typer);
-			text_inst[i].text = "{instant true}" + text_style + text_list[i];
+			if(i < 6){
+				off_x = (i % 2 == 0 ? 0 : 200)
+				off_y = 32*floor(i/2);
+				var canU = is_use(i);		
+				text_inst[i] = instance_create_depth(pos_x + off_x,pos_y + off_y,-100,text_typer);
+				text_inst[i].text = "{instant true}" + text_style + canU + text_list[i];
+			}
+			else{
+				break;
+			}
 			
 		}
 	}
@@ -66,8 +79,11 @@ if(text != "" or text_list != []){
 	}
 }
 else{
+	//如果文本为空，则清空数组来保证不会内存泄露
 	text_inst = []
 }
+
+text_can_use_list = [];
 
 ///生成ACT 介绍
 

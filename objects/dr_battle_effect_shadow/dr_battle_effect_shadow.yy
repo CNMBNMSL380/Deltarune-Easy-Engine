@@ -10,8 +10,8 @@
   "name":"dr_battle_effect_shadow",
   "overriddenProperties":[],
   "parent":{
-    "name":"Battle_Dr",
-    "path":"folders/Objects/Battle_Dr.yy",
+    "name":"Other",
+    "path":"folders/Objects/Battle_Dr/Other.yy",
   },
   "parentObjectId":null,
   "persistent":false,

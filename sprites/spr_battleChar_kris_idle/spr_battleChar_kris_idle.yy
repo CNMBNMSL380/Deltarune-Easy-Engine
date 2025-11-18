@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_battleChar_kris_idle",
   "bboxMode":0,
   "bbox_bottom":37,
@@ -12,12 +12,12 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"ac678f61-4d54-4cbe-85a1-23d4d771c4bf","name":"ac678f61-4d54-4cbe-85a1-23d4d771c4bf","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"8e90e4ef-aa8c-4a78-bb99-7e9790c60881","name":"8e90e4ef-aa8c-4a78-bb99-7e9790c60881","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"b60f6bf4-3774-4d64-90f1-8a9ad62dec39","name":"b60f6bf4-3774-4d64-90f1-8a9ad62dec39","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"d0f4199e-8a39-48df-9cad-370b2b7e3abe","name":"d0f4199e-8a39-48df-9cad-370b2b7e3abe","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"96a5491d-5aad-40f1-898e-f64dea3877ae","name":"96a5491d-5aad-40f1-898e-f64dea3877ae","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"797cb88e-2320-4515-ade0-cb504a87f11c","name":"797cb88e-2320-4515-ade0-cb504a87f11c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"ac678f61-4d54-4cbe-85a1-23d4d771c4bf","name":"ac678f61-4d54-4cbe-85a1-23d4d771c4bf","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"8e90e4ef-aa8c-4a78-bb99-7e9790c60881","name":"8e90e4ef-aa8c-4a78-bb99-7e9790c60881","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"b60f6bf4-3774-4d64-90f1-8a9ad62dec39","name":"b60f6bf4-3774-4d64-90f1-8a9ad62dec39","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"d0f4199e-8a39-48df-9cad-370b2b7e3abe","name":"d0f4199e-8a39-48df-9cad-370b2b7e3abe","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"96a5491d-5aad-40f1-898e-f64dea3877ae","name":"96a5491d-5aad-40f1-898e-f64dea3877ae","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"797cb88e-2320-4515-ade0-cb504a87f11c","name":"797cb88e-2320-4515-ade0-cb504a87f11c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -75,24 +75,12 @@
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ac678f61-4d54-4cbe-85a1-23d4d771c4bf","path":"sprites/spr_battleChar_kris_idle/spr_battleChar_kris_idle.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"2ed3f412-5fd9-45f5-aea5-d88eafd4932a","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"8e90e4ef-aa8c-4a78-bb99-7e9790c60881","path":"sprites/spr_battleChar_kris_idle/spr_battleChar_kris_idle.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"41868936-af70-405e-8728-64bba2bf78c9","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"b60f6bf4-3774-4d64-90f1-8a9ad62dec39","path":"sprites/spr_battleChar_kris_idle/spr_battleChar_kris_idle.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"b944829e-b9a9-470e-89fb-6f77cd69f1b8","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"d0f4199e-8a39-48df-9cad-370b2b7e3abe","path":"sprites/spr_battleChar_kris_idle/spr_battleChar_kris_idle.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"0d6b35ba-74e3-410f-96d6-12c5ea33eb6d","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"96a5491d-5aad-40f1-898e-f64dea3877ae","path":"sprites/spr_battleChar_kris_idle/spr_battleChar_kris_idle.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"0b80249c-3ab7-4a81-a1b9-7895deb18cf6","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"797cb88e-2320-4515-ade0-cb504a87f11c","path":"sprites/spr_battleChar_kris_idle/spr_battleChar_kris_idle.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"c301e7d3-d721-403e-a75b-851d4ec51242","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"ac678f61-4d54-4cbe-85a1-23d4d771c4bf","path":"sprites/spr_battleChar_kris_idle/spr_battleChar_kris_idle.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"2ed3f412-5fd9-45f5-aea5-d88eafd4932a","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"8e90e4ef-aa8c-4a78-bb99-7e9790c60881","path":"sprites/spr_battleChar_kris_idle/spr_battleChar_kris_idle.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"41868936-af70-405e-8728-64bba2bf78c9","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"b60f6bf4-3774-4d64-90f1-8a9ad62dec39","path":"sprites/spr_battleChar_kris_idle/spr_battleChar_kris_idle.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"b944829e-b9a9-470e-89fb-6f77cd69f1b8","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"d0f4199e-8a39-48df-9cad-370b2b7e3abe","path":"sprites/spr_battleChar_kris_idle/spr_battleChar_kris_idle.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"0d6b35ba-74e3-410f-96d6-12c5ea33eb6d","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"96a5491d-5aad-40f1-898e-f64dea3877ae","path":"sprites/spr_battleChar_kris_idle/spr_battleChar_kris_idle.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"0b80249c-3ab7-4a81-a1b9-7895deb18cf6","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"797cb88e-2320-4515-ade0-cb504a87f11c","path":"sprites/spr_battleChar_kris_idle/spr_battleChar_kris_idle.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"c301e7d3-d721-403e-a75b-851d4ec51242","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

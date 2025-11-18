@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Dr_BAttle_CallInfoDialog",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Dr_BAttle_CallInfoDialog",
+  "parent":{
+    "name":"UI",
+    "path":"folders/Objects/Battle_Dr/SCR/UI.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

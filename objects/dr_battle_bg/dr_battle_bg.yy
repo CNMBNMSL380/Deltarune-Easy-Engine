@@ -9,8 +9,8 @@
   "name":"dr_battle_bg",
   "overriddenProperties":[],
   "parent":{
-    "name":"Battle_Dr",
-    "path":"folders/Objects/Battle_Dr.yy",
+    "name":"Other",
+    "path":"folders/Objects/Battle_Dr/Other.yy",
   },
   "parentObjectId":null,
   "persistent":false,

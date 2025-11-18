@@ -1,5 +1,5 @@
 {
-  "$GMSprite":"",
+  "$GMSprite":"v2",
   "%Name":"spr_battleChar_susie_magic",
   "bboxMode":0,
   "bbox_bottom":72,
@@ -12,15 +12,15 @@
   "edgeFiltering":false,
   "For3D":false,
   "frames":[
-    {"$GMSpriteFrame":"","%Name":"5d80f061-31f7-4fdd-948e-edfbfaf0d13f","name":"5d80f061-31f7-4fdd-948e-edfbfaf0d13f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"c44fee85-b459-4294-9d4a-ff548710d927","name":"c44fee85-b459-4294-9d4a-ff548710d927","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"c84e5f3c-e93e-4d55-81c3-17c03c27904c","name":"c84e5f3c-e93e-4d55-81c3-17c03c27904c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"3cb40f90-ccd0-43bd-accb-2b999a3755fd","name":"3cb40f90-ccd0-43bd-accb-2b999a3755fd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"cc9f610c-575b-40b1-b653-7d2b1234ed79","name":"cc9f610c-575b-40b1-b653-7d2b1234ed79","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"555968cf-e74e-4802-89ea-837ba3ddbc12","name":"555968cf-e74e-4802-89ea-837ba3ddbc12","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"7891b8f0-5d6f-4beb-a57b-1b66a354fd60","name":"7891b8f0-5d6f-4beb-a57b-1b66a354fd60","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"a951851f-b4c8-4a28-ac9a-1707ea83850f","name":"a951851f-b4c8-4a28-ac9a-1707ea83850f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
-    {"$GMSpriteFrame":"","%Name":"cbd0f938-2847-47dc-b8b3-dc30f43d4866","name":"cbd0f938-2847-47dc-b8b3-dc30f43d4866","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"5d80f061-31f7-4fdd-948e-edfbfaf0d13f","name":"5d80f061-31f7-4fdd-948e-edfbfaf0d13f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c44fee85-b459-4294-9d4a-ff548710d927","name":"c44fee85-b459-4294-9d4a-ff548710d927","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"c84e5f3c-e93e-4d55-81c3-17c03c27904c","name":"c84e5f3c-e93e-4d55-81c3-17c03c27904c","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"3cb40f90-ccd0-43bd-accb-2b999a3755fd","name":"3cb40f90-ccd0-43bd-accb-2b999a3755fd","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"cc9f610c-575b-40b1-b653-7d2b1234ed79","name":"cc9f610c-575b-40b1-b653-7d2b1234ed79","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"555968cf-e74e-4802-89ea-837ba3ddbc12","name":"555968cf-e74e-4802-89ea-837ba3ddbc12","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"7891b8f0-5d6f-4beb-a57b-1b66a354fd60","name":"7891b8f0-5d6f-4beb-a57b-1b66a354fd60","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"a951851f-b4c8-4a28-ac9a-1707ea83850f","name":"a951851f-b4c8-4a28-ac9a-1707ea83850f","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
+    {"$GMSpriteFrame":"v1","%Name":"cbd0f938-2847-47dc-b8b3-dc30f43d4866","name":"cbd0f938-2847-47dc-b8b3-dc30f43d4866","resourceType":"GMSpriteFrame","resourceVersion":"2.0",},
   ],
   "gridX":0,
   "gridY":0,
@@ -78,33 +78,15 @@
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"5d80f061-31f7-4fdd-948e-edfbfaf0d13f","path":"sprites/spr_battleChar_susie_magic/spr_battleChar_susie_magic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"b633fea4-f02b-4370-a7f8-d968d30cd55a","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c44fee85-b459-4294-9d4a-ff548710d927","path":"sprites/spr_battleChar_susie_magic/spr_battleChar_susie_magic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"41b2ecd6-53cb-4721-8bad-76d3c2ff0328","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"c84e5f3c-e93e-4d55-81c3-17c03c27904c","path":"sprites/spr_battleChar_susie_magic/spr_battleChar_susie_magic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"24e5011d-f0a9-4a23-a435-76bd6c145691","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"3cb40f90-ccd0-43bd-accb-2b999a3755fd","path":"sprites/spr_battleChar_susie_magic/spr_battleChar_susie_magic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"579d0bb5-aff9-4326-ad47-87db31bd22f4","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cc9f610c-575b-40b1-b653-7d2b1234ed79","path":"sprites/spr_battleChar_susie_magic/spr_battleChar_susie_magic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"eebe1ad1-cfd5-41ca-b077-cd0f95fde7f1","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"555968cf-e74e-4802-89ea-837ba3ddbc12","path":"sprites/spr_battleChar_susie_magic/spr_battleChar_susie_magic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"aa83076d-e0ea-4025-9a03-b5924ad786ee","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"7891b8f0-5d6f-4beb-a57b-1b66a354fd60","path":"sprites/spr_battleChar_susie_magic/spr_battleChar_susie_magic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"dd3797ac-8485-4f05-bd10-dcb927ff17ec","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"a951851f-b4c8-4a28-ac9a-1707ea83850f","path":"sprites/spr_battleChar_susie_magic/spr_battleChar_susie_magic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"7875bd9c-e600-4218-84a5-fa4ce15c904c","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
-                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"cbd0f938-2847-47dc-b8b3-dc30f43d4866","path":"sprites/spr_battleChar_susie_magic/spr_battleChar_susie_magic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
-              },"Disabled":false,"id":"10e20dd4-78eb-4cd6-abfb-d6380442ce17","IsCreationKey":false,"Key":8.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"5d80f061-31f7-4fdd-948e-edfbfaf0d13f","path":"sprites/spr_battleChar_susie_magic/spr_battleChar_susie_magic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"b633fea4-f02b-4370-a7f8-d968d30cd55a","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"c44fee85-b459-4294-9d4a-ff548710d927","path":"sprites/spr_battleChar_susie_magic/spr_battleChar_susie_magic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"41b2ecd6-53cb-4721-8bad-76d3c2ff0328","IsCreationKey":false,"Key":1.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"c84e5f3c-e93e-4d55-81c3-17c03c27904c","path":"sprites/spr_battleChar_susie_magic/spr_battleChar_susie_magic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"24e5011d-f0a9-4a23-a435-76bd6c145691","IsCreationKey":false,"Key":2.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"3cb40f90-ccd0-43bd-accb-2b999a3755fd","path":"sprites/spr_battleChar_susie_magic/spr_battleChar_susie_magic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"579d0bb5-aff9-4326-ad47-87db31bd22f4","IsCreationKey":false,"Key":3.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"cc9f610c-575b-40b1-b653-7d2b1234ed79","path":"sprites/spr_battleChar_susie_magic/spr_battleChar_susie_magic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"eebe1ad1-cfd5-41ca-b077-cd0f95fde7f1","IsCreationKey":false,"Key":4.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"555968cf-e74e-4802-89ea-837ba3ddbc12","path":"sprites/spr_battleChar_susie_magic/spr_battleChar_susie_magic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"aa83076d-e0ea-4025-9a03-b5924ad786ee","IsCreationKey":false,"Key":5.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"7891b8f0-5d6f-4beb-a57b-1b66a354fd60","path":"sprites/spr_battleChar_susie_magic/spr_battleChar_susie_magic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"dd3797ac-8485-4f05-bd10-dcb927ff17ec","IsCreationKey":false,"Key":6.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"a951851f-b4c8-4a28-ac9a-1707ea83850f","path":"sprites/spr_battleChar_susie_magic/spr_battleChar_susie_magic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"7875bd9c-e600-4218-84a5-fa4ce15c904c","IsCreationKey":false,"Key":7.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"cbd0f938-2847-47dc-b8b3-dc30f43d4866","path":"sprites/spr_battleChar_susie_magic/spr_battleChar_susie_magic.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"10e20dd4-78eb-4cd6-abfb-d6380442ce17","IsCreationKey":false,"Key":8.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

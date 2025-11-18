@@ -40,7 +40,7 @@ function Macro_Dr(){
 		WIN,
 		
 	}	
-	enum DR_ENEMY_EVENT{
+	enum DR_BATTLE_ENEMY{
 		INIT,
 		BATTLE_START,
 		MENU_START,
@@ -53,6 +53,9 @@ function Macro_Dr(){
 		CREATE_TURN,
 		END_TURN
 		
+	}
+	enum DR_ENEMY_EVENT{
+	
 	}
 	enum DR_FRIEND_EVENT{
 		INIT,

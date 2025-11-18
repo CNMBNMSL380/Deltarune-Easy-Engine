@@ -3,7 +3,12 @@
 // ---------获取队伍列表中的角色的属性（全部通过Char_GetValue方法）
 
 function Char_GetTeamName(SLOT){
-    return Char_GetValue(1, SLOT, "name");
+	if(SLOT != 0){
+		return Char_GetValue(1, SLOT - 1, "name");
+	}
+	else{
+		return Player_GetName();
+	}
 }
 function Char_GetTeamObj(SLOT){
     return Char_GetValue(1, SLOT, "obj");

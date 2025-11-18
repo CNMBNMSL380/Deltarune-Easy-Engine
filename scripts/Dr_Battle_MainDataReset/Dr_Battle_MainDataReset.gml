@@ -4,6 +4,7 @@ function Dr_Battle_MainDataReset(){
 	var friendMain = Main._player_friend;
     var friendClass = Main._player_friend_class;
     var friendNum = Main._player_friend_num;
+	
 	for(var i =0; i< array_length(friendClass) ; i++){
 		friendClass[i]._header_ico_index = 0;
 	}

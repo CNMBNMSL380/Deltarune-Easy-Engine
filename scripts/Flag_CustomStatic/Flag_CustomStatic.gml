@@ -22,7 +22,7 @@ function Flag_CustomStatic(){
 		Set("fun",0);
 		
 		Set("item",new Flag_Inventory(8));
-		Set("item_dark",new Flag_Inventory(8));
+		Set("item_dark",new Flag_Inventory(12));
 		Set("box0",new Flag_Inventory(10));
 		Set("box1",new Flag_Inventory(10));
 		Set("phone",new Flag_Inventory(10));

@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_hint_bgm",
+    "path":"sprites/spr_hint_bgm/spr_hint_bgm.yy",
+  },
   "spriteMaskId":null,
   "visible":false,
 }

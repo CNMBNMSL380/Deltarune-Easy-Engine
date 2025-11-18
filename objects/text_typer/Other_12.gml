@@ -68,6 +68,16 @@ switch(cmd[|0]){
 					_color_shadow[2]=make_color_rgb(0,0,0);
 					_color_shadow[3]=make_color_rgb(0,0,0);
 					break;
+				case c_gray:
+					_color_text[0]=#8F8F8F;
+					_color_text[1]=#8F8F8F;
+					_color_text[2]=#8F8F8F;
+					_color_text[3]=#8F8F8F;
+					_color_shadow[0]=#101010;
+					_color_shadow[1]=#101010;
+					_color_shadow[2]=#101010;
+					_color_shadow[3]=#101010;
+				break;
 			}
 		}
 		break;

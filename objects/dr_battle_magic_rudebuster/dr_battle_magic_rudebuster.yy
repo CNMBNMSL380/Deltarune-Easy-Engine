@@ -7,7 +7,8 @@
   "managed":true,
   "name":"dr_battle_magic_rudebuster",
   "overriddenProperties":[
-    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"dr_battle_magic","path":"objects/dr_battle_magic/dr_battle_magic.yy",},"propertyId":{"name":"use_tp","path":"objects/dr_battle_magic/dr_battle_magic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"75",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"dr_battle_magic","path":"objects/dr_battle_magic/dr_battle_magic.yy",},"propertyId":{"name":"magic_tp","path":"objects/dr_battle_magic/dr_battle_magic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"75",},
+    {"$GMOverriddenProperty":"v1","%Name":"","name":"","objectId":{"name":"dr_battle_magic","path":"objects/dr_battle_magic/dr_battle_magic.yy",},"propertyId":{"name":"magic_mod","path":"objects/dr_battle_magic/dr_battle_magic.yy",},"resourceType":"GMOverriddenProperty","resourceVersion":"2.0","value":"False",},
   ],
   "parent":{
     "name":"Magic",

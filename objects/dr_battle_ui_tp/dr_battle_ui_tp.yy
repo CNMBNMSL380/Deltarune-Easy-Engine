@@ -10,8 +10,8 @@
   "name":"dr_battle_ui_tp",
   "overriddenProperties":[],
   "parent":{
-    "name":"UI",
-    "path":"folders/Objects/Battle_Dr/UI.yy",
+    "name":"Main_UI",
+    "path":"folders/Objects/Battle_Dr/Main/Main_UI.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -44,34 +44,60 @@ function Dr_Battle_SetStage(STAGE){
 		//调用敌人事件与玩家事件
 		var goToEvent = Dr_Battle_GetGotoEvent();
 		for(var i = 0; i < array_length(goToEvent) ; i++){
-			//如果事件按钮是ACT且队友使用的不是魔法
+			//如果事件按钮是ACT且队友使用的是魔法
 			if(goToEvent[i].friend_button == 1 and goToEvent[i].friend_ins._magic){
-				var magicEvent = goToEvent[i];
 				var magicChoice = goToEvent[i].friend_choice_magic;
 				var enemyChoice = goToEvent[i].friend_choice_enemy;			
 				var friendChoice = goToEvent[i].friend_choice_friend;			
 				
 				var magicEvent = {
-					slot : magicEvent.friend_slot,
+					slot : goToEvent[i].friend_slot,
 					magic : goToEvent[i].friend_choice_magic,
+					char_name : Dr_Battle_GetFriendName(goToEvent[i].friend_slot),
 					choice : [enemyChoice,friendChoice]
 				}
+								
+				array_push(Main._player_magic_event,magicEvent);
 				//Char_UseMagic(1,magicEvent.friend_slot,magicChoice,[enemyChoice,friendChoice]);
 			}
 		}
+	}
+	if(STAGE == DR_BATTLE_STAGE.MERCY){
+		Dr_Battle_CallDialog("");
+		//调用敌人事件与玩家事件
+		var goToEvent = Dr_Battle_GetGotoEvent();
+		for(var i = 0; i < array_length(goToEvent) ; i++){
+			if(goToEvent[i].friend_button == 3){
+				var mercyEvent = {
+					slot: goToEvent[i].friend_slot,
+					enemy : goToEvent[i].friend_choice_enemy
+				}
+				array_push(Main._player_mercy_event,mercyEvent);
+			}
+		}
+		
 	}
 	if(STAGE == DR_BATTLE_STAGE.ITEM){
 		Dr_Battle_CallDialog("");
 		//调用敌人事件与玩家事件
 		var goToEvent = Dr_Battle_GetGotoEvent();
 		for(var i = 0; i < array_length(goToEvent) ; i++){
-			if(goToEvent[i].friend_button == 1){
+			if(goToEvent[i].friend_button == 2){				
 				var itemChoice = goToEvent[i].friend_choice_item;
-				var friendChoice = goToEvent[i].friend_choice_enemy;
-			
-				//执行所有“启动前ACT”事件
+				var enemyChoice = goToEvent[i].friend_choice_enemy;			
+				var friendChoice = goToEvent[i].friend_choice_friend;		
+				
+				var itemEvent = {
+					slot : goToEvent[i].friend_slot,
+					_item_slot : itemChoice,
+					_item : Item_Get(itemChoice),
+					choice : [enemyChoice,friendChoice]
+				}
+				array_push(Main._player_item_event,itemEvent);		
+				
 			}
 		}
+		Dr_Battle_SetStageTimeMax(15);
 	
 	}
 	if(STAGE == DR_BATTLE_STAGE.FIGHT){
@@ -85,7 +111,7 @@ function Dr_Battle_SetStage(STAGE){
 	}
 	if(STAGE == DR_BATTLE_STAGE.BEFORE_TURN){
 		Dr_Battle_CallDialog("")	
-		Dr_Battle_CallEnemyEvent(DR_ENEMY_EVENT.CREATE_TURN);
+		Dr_Battle_CallEnemyEvent(DR_BATTLE_ENEMY.CREATE_TURN);
 		
 	}
 	if(STAGE == DR_BATTLE_STAGE.DIALOG_TURN){	
@@ -134,7 +160,7 @@ function Dr_Battle_SetStage(STAGE){
 			var soulX = soulInst.x;
 			var soulY = soulInst.y;
 		
-			var mainChar = Main._player_friend[0];
+			var mainChar = Main._player_friend[0]; 
 			var charX = mainChar.x;
 			var charY = mainChar.y - 40;
 			Anim_Create(soulInst,"x",0,0,soulX,charX-soulX,25);
@@ -149,7 +175,7 @@ function Dr_Battle_SetStage(STAGE){
 		Dr_Battle_CallDialog("你赢了！获得一堆钱钱和经验值",,3);
 		
 		//Dr_Battle_CallEnemyEvent(0);
-		//Dr_Battle_CallFriendEvent(DR_ENEMY_EVENT);
+		//Dr_Battle_CallFriendEvent(DR_BATTLE_ENEMY);
 	}
 	if(STAGE == DR_BATTLE_STAGE.BLACK){		
 		Anim_Create(dr_battle_ui,"pos_y",2,1,0,180,25)	
@@ -187,7 +213,7 @@ function Dr_Battle_ChoicePlayerMenu(BUTTON,MENU = -1,BACK = false){
 					case DR_BATTLE_PLAYERMENU.CHOICE_MAGIC:
 						if(BACK){ return Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.BUTTON); }
 						else{ 
-							if(!Char_GetMagicMod(1,Main._player_friend_num,Main._player_choice_magic)){
+							if(!Char_GetMagicMod(1,Main._player_friend_num -1 ,Main._player_choice_magic)){
 								Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_ENEMY); 
 							}
 							else{
@@ -197,11 +223,14 @@ function Dr_Battle_ChoicePlayerMenu(BUTTON,MENU = -1,BACK = false){
 					break;
 					case DR_BATTLE_PLAYERMENU.CHOICE_ENEMY:
 						if(BACK){ return Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_MAGIC); }
-						else{ Dr_Battle_NextToFriend(BUTTON,MENU,,Main._player_choice_magic,Main._player_choice_enemy)}
+						else{ Dr_Battle_NextToFriend(BUTTON,MENU,		
+							,Main._player_choice_magic,Main._player_choice_enemy,,,Char_GetMagicTp(1,Main._player_friend_num-1,Main._player_choice_magic))}
 					break;
 					case DR_BATTLE_PLAYERMENU.CHOICE_FRIEND:
 						if(BACK){ return Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_MAGIC); }
-						else{ Dr_Battle_NextToFriend(BUTTON,MENU,,Main._player_choice_magic,,Main._player_choice_friend)}
+						else{ Dr_Battle_NextToFriend(BUTTON,MENU,
+							,Main._player_choice_magic,,Main._player_choice_friend,,Char_GetMagicTp(1,Main._player_friend_num-1,Main._player_choice_magic))
+						}
 					break;
 					default:
 						return Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_MAGIC);
@@ -217,7 +246,9 @@ function Dr_Battle_ChoicePlayerMenu(BUTTON,MENU = -1,BACK = false){
 					break;
 					case DR_BATTLE_PLAYERMENU.CHOICE_CLASS:
 						if(BACK){ Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_ENEMY); }
-						else{ Dr_Battle_NextToFriend(BUTTON,MENU,Main._player_choice_class,,Main._player_choice_enemy); }
+						else{ Dr_Battle_NextToFriend(BUTTON,MENU,Main._player_choice_act,,Main._player_choice_enemy
+							,,,Dr_Battle_GetEnemyActUseTp(Main._player_choice_enemy,Main._player_choice_act)); 
+						}
 							
 					break;
 					default:
@@ -252,8 +283,18 @@ function Dr_Battle_ChoicePlayerMenu(BUTTON,MENU = -1,BACK = false){
 				
 				case DR_BATTLE_PLAYERMENU.CHOICE_FRIEND:
 					if(BACK){ Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_ITEM) }
-					else{ 						
-						Dr_Battle_NextToFriend(BUTTON,MENU,,,Main._player_choice_friend,Main._player_choice_item);
+					else{ 
+						//通过添加已选择的物品来确定要隐藏的药品					
+						var is_choice = 0;
+						for (var i = 0; i < array_length(Main._player_item_is_use); ++i) {
+						    if(Main._player_choice_item + is_choice >= Main._player_item_is_use[i]){
+								is_choice +=1
+							}
+						}
+						
+						array_push(Main._player_item_is_use,Main._player_choice_item + is_choice);
+						//show_message(Main._player_item_is_use)
+						Dr_Battle_NextToFriend(BUTTON,MENU,,,,Main._player_choice_friend,Main._player_choice_item + is_choice);					
 					}
 				break;
 				
@@ -276,7 +317,11 @@ function Dr_Battle_ChoicePlayerMenu(BUTTON,MENU = -1,BACK = false){
 			}
 		break;
 		case 4://防御
-			Dr_Battle_NextToFriend(BUTTON,MENU);
+			//Dr_Battle_AddTp(25)
+			var tpNum = Dr_Battle_GetTp();
+			var num = clamp(tpNum + 25,0,100);
+			//show_message(num)
+			Dr_Battle_NextToFriend(BUTTON,MENU,,,,,,-(num - tpNum));
 		break;
 		 
 	}
@@ -297,32 +342,66 @@ function Dr_Battle_SetPlayerMenu(MENU,BUTTON = -1,REFRESH_TEXT = true){
 		}
 		else if(MENU == DR_BATTLE_PLAYERMENU.CHOICE_ENEMY){
 			// ---------选择敌人
-			Dr_Battle_CallDialog(Dr_Battle_GetAllEnemyName(),Main._dialogue_style,1,true);	
+			Dr_Battle_CallDialog(Dr_Battle_GetAllEnemyName(true),Main._dialogue_style,1,true);	
 			Main._player_menu = MENU
-			UI.choice_num = _player_choice_enemy;
+			UI.text_choice_num = _player_choice_enemy;
 			
 		}
 		else if(MENU == DR_BATTLE_PLAYERMENU.CHOICE_CLASS){
-			// ---------行动
-			Dr_Battle_CallDialog(Dr_Battle_GetAllEnemyActName(Main._player_choice_enemy),Main._dialogue_style,2,true);	
+			// ---------行动			
+			var canUse = [];
+			var enemy = Dr_Battle_GetEnemyActAll(Main._player_choice_enemy);
+			for(var i = 0; i < array_length(enemy); i++){
+				//var needTp = Char_GetMagicTp(1,_player_friend_num - 1,i);
+				var needTp = Dr_Battle_GetEnemyActUseTp(Main._player_choice_enemy,i);
+				if(needTp <= Dr_Battle_GetTp() or needTp <= 0 ){
+					array_push(canUse,true);
+				}
+				else{
+					array_push(canUse,false);
+				}
+			}
+			
+			Dr_Battle_CallDialog(Dr_Battle_GetEnemyActAllName(Main._player_choice_enemy),Main._dialogue_style,2,true,canUse);	
 			Main._player_menu = MENU
-			UI.choice_num = _player_choice_class;
+			UI.text_choice_num = _player_choice_act;
 		}
 		else if(MENU == DR_BATTLE_PLAYERMENU.CHOICE_MAGIC){
+			var canUse = [];
+			for(var i = 0; i < array_length(Char_GetMagic(1,Main._player_friend_num - 1)); i++){
+				var needTp = Char_GetMagicTp(1,_player_friend_num - 1,i);
+				if(needTp <= Dr_Battle_GetTp() or needTp <= 0 ){
+					array_push(canUse,true);
+				}
+				else{
+					array_push(canUse,false);
+				}
+			}
 			var firendNum =Main._player_friend_num-1
-			Dr_Battle_CallDialog(Char_GetMagicNameAll(1,firendNum),Main._dialogue_style,2,true);	
+			Dr_Battle_CallDialog(Char_GetMagicNameAll(1,firendNum),Main._dialogue_style,2,true,canUse);	
 			Main._player_menu = MENU
-			UI.choice_num = _player_choice_magic;
+			UI.text_choice_num = _player_choice_magic;
 		}
 		else if(MENU == DR_BATTLE_PLAYERMENU.CHOICE_ITEM){
-			Dr_Battle_CallDialog(Item_GetNameAll(),Main._dialogue_style,2,true);	
+			var itmName = Item_GetNameAll();		
+			function Filter_Name(ELM,IND){
+				var Main = dr_battle_main._player_item_is_use;
+				for(var i = 0; i < array_length(Main); i++){
+					if(IND == Main[i]){
+						return false
+					}
+				}
+				return true;
+			}		
+			var allName = array_filter(itmName,Filter_Name);
+			Dr_Battle_CallDialog(allName,Main._dialogue_style,2,true);	
 			Main._player_menu = MENU
-			UI.choice_num = _player_choice_item;
+			UI.text_choice_num = _player_choice_item;
 		}
 		else if(MENU == DR_BATTLE_PLAYERMENU.CHOICE_FRIEND){
 			Dr_Battle_CallDialog(Dr_Battle_GetFriendNameAll(),Main._dialogue_style,1,true);	
 			Main._player_menu = MENU
-			UI.choice_num = _player_choice_friend;
+			UI.text_choice_num = _player_choice_friend;
 		}
 		else{
 			Dr_Battle_CallDialog("",,-1,false);		

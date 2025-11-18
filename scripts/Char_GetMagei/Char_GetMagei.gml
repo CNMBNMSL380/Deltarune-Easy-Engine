@@ -37,4 +37,15 @@ function Char_GetMagicInstance(CHAR_CLASS,CHAR,SLOT){
 		
 	}
 	return noone;
+}	
+function Char_GetMagicTp(CHAR_CLASS,CHAR,SLOT){
+	var magic = Char_GetMagic(CHAR_CLASS,CHAR);
+	if(magic != undefined or magic != false){
+		if(SLOT < array_length(magic)){
+			var tp = magic[SLOT]._magic_use_tp;
+			return tp;
+		}
+		
+	}
+	return 0;
 }
