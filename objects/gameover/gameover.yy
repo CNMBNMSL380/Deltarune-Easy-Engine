@@ -32,7 +32,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_battle_soul_break",
+    "path":"sprites/spr_battle_soul_break/spr_battle_soul_break.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

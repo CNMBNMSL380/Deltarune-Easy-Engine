@@ -22,15 +22,18 @@ instance_create_depth(0,0,0,battle_misc);
 for(var i =0 ; i< array_length(_enemy_obj) ; i++){
 	//var enemy_ins = Dr_Battle_AddEnemy(i,_enemy_obj[i][0],_enemy_obj[i][1],_enemy_obj[i][2],_enemy_obj[i][3] , true , _enemy_obj[i][4] , _enemy_obj[i][5]);
 	//var enemy_stc = new Dr_Battle_EnemyBase(i,enemy_ins);
-	_enemy[i] = new Dr_Battle_EnemyBase(i);
-	var enemy_ins = Dr_Battle_AddEnemy(i,_enemy_obj[i][0],_enemy_obj[i][1],_enemy_obj[i][2],_enemy_obj[i][3] , true , _enemy_obj[i][4] , _enemy_obj[i][5] , true);
-	
+	//_enemy[i] = Dr_Battle_AddEnemy(i,_enemy_obj[i][0],_enemy_obj[i][1],_enemy_obj[i][2],_enemy_obj[i][3] , true , _enemy_obj[i][4] , _enemy_obj[i][5]);
+	Dr_Battle_AddEnemy(i,_enemy_obj[i][0],_enemy_obj[i][1],_enemy_obj[i][2],_enemy_obj[i][3] , true , _enemy_obj[i][4] , _enemy_obj[i][5]);
 }
 
 //生成队友
 for(var i = 0 ; i< array_length(_player_friend_obj) ; i++){
 	_player_friend[i] = instance_create_depth(_player_friend_obj[i][0],_player_friend_obj[i][1],_player_friend_obj[i][2],_player_friend_obj[i][3])
 	_player_friend[i]._char_id = i;
+	with(_player_friend[i]){
+		event_user(0)
+
+	}
 	//Dr_Battle_CallFriendEvent(i,0)
 	var friendIns = _player_friend[i];
 	//移动队友到指定位置

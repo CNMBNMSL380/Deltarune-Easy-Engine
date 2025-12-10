@@ -11,13 +11,14 @@ Dr_Draw(function(){
 	
 	draw_sprite_ext(spr_pixel,0,0,329+pos_y - 5 ,640,320,0,bg_color,1)
 	draw_sprite_ext(spr_pixel,0,0,327+pos_y - 5,640,2,0,border_color,1)
-	
+	with(dr_battle_ui_friendClass){
+		event_user(0);	
+	}
 	draw_sprite_ext(spr_pixel,0,0,366+pos_y - 5,640,320,0,bg_color,1)
 	draw_sprite_ext(spr_pixel,0,0,366+pos_y - 5,640,3,0,border_color,1)
 
 	//绘制队友类表面，	
-	draw_surface_part(_surface_friendClass,1,0,641,80,0,286+pos_y-5);
-	
+	//draw_surface_part(_surface_friendClass,1,0,641,80,0,286+pos_y-5);
 	//如果choice为true , 则绘制灵魂
 	//draw_sprite_ext(_____2025_08_03_023908,0,0,0,0.5,0.5,0,c_white,0.5)
 	var posX = 52;

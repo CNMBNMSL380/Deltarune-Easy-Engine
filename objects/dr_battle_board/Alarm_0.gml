@@ -32,6 +32,10 @@ else if(!anim_mod){
 	//Anim_Create(dr_battle_board,"alpha_bg",0,0,1,-1,animTime);
 	Anim_Create(dr_battle_board,"angle",0,0,0,270,animTime);	
 	Anim_Create(dr_battle_board,"in_anim",0,0,in_anim,false - in_anim , 1,animTime)
+	
+	MyAlarm_Add("border_live",function(){
+		instance_deactivate_object ( dr_battle_board);	
+	},floor(animTime * 2.5)) ;
 	anim_mod = true;
 	
 	alarm[1]=1

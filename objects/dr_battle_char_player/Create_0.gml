@@ -22,15 +22,19 @@ _char_color = c_white;
 _char_style_color = #00FFF6;		//给frriendClass调用
 
 _char_mode = DR_PLAYER_INDEX.GLIDE;
-_char_img[DR_PLAYER_INDEX.GLIDE] = spr_battleChar_kris_glide;
-_char_img[DR_PLAYER_INDEX.INTRO] = spr_battleChar_kris_intro;
-_char_img[DR_PLAYER_INDEX.IDLE] = spr_battleChar_kris_idle;
-_char_img[DR_PLAYER_INDEX.FIGHT] = spr_battleChar_kris_fight;
-_char_img[DR_PLAYER_INDEX.ACT] = spr_battleChar_kris_glide;
-_char_img[DR_PLAYER_INDEX.MAGIC] = spr_battleChar_kris_glide;
-_char_img[DR_PLAYER_INDEX.ITEM] = spr_battleChar_kris_glide;
-_char_img[DR_PLAYER_INDEX.DEFEND] = spr_battleChar_kris_glide;
-_char_img[DR_PLAYER_INDEX.WIN] = spr_battleChar_kris_glide;
+//_char_img[DR_PLAYER_INDEX.GLIDE] = spr_battleChar_kris_glide;
+//_char_img[DR_PLAYER_INDEX.INTRO] = spr_battleChar_kris_intro;
+//_char_img[DR_PLAYER_INDEX.IDLE] = spr_battleChar_kris_idle;
+//_char_img[DR_PLAYER_INDEX.FIGHT] = spr_battleChar_kris_fight;
+//_char_img[DR_PLAYER_INDEX.FIGHT_IDLE] = spr_battleChar_kris_fight_b;
+//_char_img[DR_PLAYER_INDEX.ACT] = spr_battleChar_kris_act_1;
+//_char_img[DR_PLAYER_INDEX.B_ACT] = spr_battleChar_kris_act_0;
+//_char_img[DR_PLAYER_INDEX.E_ACT] = spr_battleChar_kris_act_2;
+//_char_img[DR_PLAYER_INDEX.MAGIC] = spr_battleChar_kris_glide;
+//_char_img[DR_PLAYER_INDEX.ITEM] = spr_battleChar_kris_item;
+//_char_img[DR_PLAYER_INDEX.DEFEND] = spr_battleChar_kris_defend;
+//_char_img[DR_PLAYER_INDEX.DEFEATE] = spr_battleChar_kris_defeated;
+//_char_img[DR_PLAYER_INDEX.WIN] = spr_battleChar_kris_victory;
 
 _char_button[0] = spr_dr_battle_button_fight
 _char_button[1] = spr_dr_battle_button_act
@@ -38,10 +42,17 @@ _char_button[2] = spr_dr_battle_button_item
 _char_button[3] = spr_dr_battle_button_mercy
 _char_button[4] = spr_dr_battle_button_defend
 
-_char_index = [0,0,0,0,0,0,0,0,0,0];
+_char_index = [0,0,0,0,0,0,0,0,0,0,0,0,0];
 
-_magic = false;
 _magic_strc = [];
 
+// ------ 初始化动画
+var st = MyAlarm_Add(,function(){
+	//Dr_Battle_FriendAnimMode(_char_id,DR_PLAYER_INDEX.INTRO,true,false)
+	Dr_Battle_PlaySpriteAnimOnce(_char_spr,DR_PLAYER_INDEX.INTRO,0,true)
+	audio_play_sound(_char_intro_sound,0,0)
+},25)
+MyAlarm_Start(st)
 
-event_user(0)
+
+_char_spr = -1

@@ -3,12 +3,12 @@ live;
 Anim_Step();
 BGM_Step();
 
-if(_time>=60){
-	Flag_Set(FLAG_STATIC,"time",Flag_Get(FLAG_STATIC,"time")+1);
-	_time=0;
-}else{
-	_time+=1;
-}
+//if(_time>=60){
+//	Flag_Set(FLAG_STATIC,"time",Flag_Get(FLAG_STATIC,"time")+1);
+//	_time=0;
+//}else{
+//	_time+=1;
+//}
 
 if(instance_exists(_CRT_ins)){
 	if(_room !=room){
@@ -17,21 +17,21 @@ if(instance_exists(_CRT_ins)){
 	}
 }
 
-if(Game_GetFrameSkip()>0){
-	if(_frame_skip>=Game_GetFrameSkip()){
-		draw_enable_drawevent(true);
-		_frame_skip=0;
-	}else{
-		_frame_skip+=1;
-		draw_enable_drawevent(false);
-	}
-}else{
-	draw_enable_drawevent(true);
-}
+//if(Game_GetFrameSkip()>0){
+//	if(_frame_skip>=Game_GetFrameSkip()){
+//		draw_enable_drawevent(true);
+//		_frame_skip=0;
+//	}else{
+//		_frame_skip+=1;
+//		draw_enable_drawevent(false);
+//	}
+//}else{
+//	draw_enable_drawevent(true);
+//}
 
 if(keyboard_check_pressed(vk_f2)){
 	game_restart();
-	resize()
+	//resize()
 }
 
 if(keyboard_check_pressed(ord("1"))){

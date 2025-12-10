@@ -30,7 +30,10 @@ function Dr_Battle_NextToFriend(BUTTON, MENU, ACT = -1, MAGIC = -1, ENEMY = -1, 
     } else {
         friendClass[friendNum].animSwitch();
         friendClass[friendNum]._header_ico_index = Main._player_friend[friendNum]._char_ico_index[BUTTON + 1];
-
+		if(USETP != 0){
+			Dr_Battle_AddTp(-USETP);
+			
+		}	
         Dr_Battle_SetFriendMenuMod(friendNum , Main._player_friend[friendNum ], MENU, BUTTON, ACT, MAGIC, ENEMY, FRIEND, ITEM, false , USETP);
         Dr_Battle_MainPlayerMenuEnd();
         return true;

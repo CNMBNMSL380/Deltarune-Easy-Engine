@@ -32,11 +32,16 @@ function Macro_Dr(){
 		INTRO,
 		IDLE,
 		FIGHT,
+		FIGHT_IDLE,
+		B_ACT,
 		ACT,
+		E_ACT,
 		MAGIC,
 		ITEM,
+		ITEM_IDLE,
 		MERCY,
 		DEFEND,
+		DEFEATE, 
 		WIN,
 		
 	}	
@@ -45,17 +50,15 @@ function Macro_Dr(){
 		BATTLE_START,
 		MENU_START,
 		MENU_SWITCH,
-		MENU_CHOICE_FRIEND,
+		MENU_CHOICE_SWITCH,
+		MENU_NEXT_FRIEND,
 		MENU_END,
-		HURT_CALL,
-		CHAR_DEL,
+		HURT,
+		DELETE,
 		DIALOG_CALL,
 		CREATE_TURN,
 		END_TURN
 		
-	}
-	enum DR_ENEMY_EVENT{
-	
 	}
 	enum DR_FRIEND_EVENT{
 		INIT,

@@ -1,4 +1,4 @@
-Flag_Set(FLAG_STATIC,"room",room);
+//Flag_Set(FLAG_STATIC,"room",room);
 
 room_persistent=false;
 	

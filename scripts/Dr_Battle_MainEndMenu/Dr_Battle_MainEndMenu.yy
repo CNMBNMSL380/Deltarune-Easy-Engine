@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Dr_Battle_MainEndMenu",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Dr_Battle_MainEndMenu",
+  "parent":{
+    "name":"Main",
+    "path":"folders/Objects/Battle_Dr/SCR/Main.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

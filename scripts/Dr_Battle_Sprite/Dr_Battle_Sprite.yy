@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Dr_Battle_Sprite",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Dr_Battle_Sprite",
+  "parent":{
+    "name":"Anim_spr",
+    "path":"folders/Objects/Battle_Dr/SCR/Anim_spr.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

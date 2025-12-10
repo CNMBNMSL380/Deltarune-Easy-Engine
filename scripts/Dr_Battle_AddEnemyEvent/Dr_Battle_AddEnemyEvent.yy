@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Dr_Battle_AddEnemyEvent",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Dr_Battle_AddEnemyEvent",
+  "parent":{
+    "name":"Event",
+    "path":"folders/Objects/Battle_Dr/SCR/Enemy/Event.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

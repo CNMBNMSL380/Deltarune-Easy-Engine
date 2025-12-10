@@ -2,6 +2,8 @@
 live;
 Dr_Battle_SetEnemyName(_enemy_id,"赛利尔的人偶");
 
+
+
 Dr_Battle_AddEnemyAct(_enemy_id,"行动1",,
 function(){ //启动开始
 	Dr_Battle_CallDialog("* 玩偶  14ATK 14DEF &  是一个可爱的玩偶")

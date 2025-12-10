@@ -6,6 +6,8 @@ Lang_Uninit();
 Input_Uninit();
 //Console_Uninit();
 Demo_Uninit();
+Font_UnInit();
 MyAlarm_Uninit();
 
-external_call(global.input_fix_restore);
+instance_destroy();
+//external_call(global.input_fix_restore);

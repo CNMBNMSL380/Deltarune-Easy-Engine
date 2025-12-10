@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_block_corner",
+    "path":"sprites/spr_block_corner/spr_block_corner.yy",
+  },
   "spriteMaskId":null,
   "visible":false,
 }

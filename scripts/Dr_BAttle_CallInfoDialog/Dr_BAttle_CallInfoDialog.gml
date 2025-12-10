@@ -1,4 +1,4 @@
 // Script assets have changed for v2.3.0 see
-function Dr_BAttle_CallInfoDialog(){
+function Dr_Battle_CallInfoDialog(){
 
 }

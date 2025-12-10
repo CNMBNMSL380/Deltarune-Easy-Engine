@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Main_Set",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Main_Set",
+  "parent":{
+    "name":"Set",
+    "path":"folders/Objects/Battle_Dr/SCR/Main/Set.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

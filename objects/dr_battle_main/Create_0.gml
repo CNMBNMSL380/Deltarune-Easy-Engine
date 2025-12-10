@@ -18,6 +18,9 @@ live;
 
 */
 
+show_debug_overlay(true)
+
+
 //主要表面
 _surface_main = -1;
 
@@ -27,11 +30,12 @@ _enemy_btl_obj = [];		// --------用于储存敌人的物体，以便在动画�
 _enemy_ow_obj = [];			// --------用于ow的敌人，战斗结束后如果可以就选择
 _enemy_name = [		];
 
-//存储敌人事件
+//存储DS
 _enemy_event = ds_list_create();
+_sprite_list = ds_list_create();
+_sprite_index_list_step = ds_list_create();
 
 //基本控制变量
-
 _stage = DR_BATTLE_STAGE.START_BATTLE;					//阶段
 //存储友军
 _player_friend = [];									// 
@@ -134,25 +138,30 @@ sf = surface_create(sf_width, sf_height);
 function switch_H(NUM,MIN,MAX,PUSH,SFX=true ,AUTO_RANGE = false , AUTO_NUM = 0){
 	live;
 	var UI = dr_battle_ui	
+	var click_event = function(SFX,AUTO_RANGE,NUM){
+		var UI = dr_battle_ui	
+		if(SFX){ audio_play_sound(snd_menu_switch,0,0); }
+		if(AUTO_RANGE){
+			if(NUM){
+				with(UI){
+					event_user(0);
+				}
+			}
+		}
+		Dr_Battle_EnemyFunc(,DR_BATTLE_ENEMY.MENU_SWITCH);
+	}
 	if(Input_IsPressed(INPUT.RIGHT)){
 		if((NUM + PUSH) < MAX){
 			NUM += PUSH;		
+			click_event(SFX,AUTO_RANGE,NUM);
 		}
 	}
 	if(Input_IsPressed(INPUT.LEFT)){
 		if((NUM - PUSH) > MIN){
-			NUM -= PUSH;			
+			NUM -= PUSH;		
+			click_event(SFX,AUTO_RANGE,NUM);
 		}
 		
-	}
-	if(Input_IsPressed(INPUT.RIGHT) or Input_IsPressed(INPUT.LEFT)){
-		if(SFX){ audio_play_sound(snd_menu_switch,0,0); }
-		if(AUTO_RANGE){
-			if(NUM)
-				with(UI){
-					event_user(0)
-				}
-		}
 	}
 	return NUM;
 }
@@ -160,34 +169,30 @@ function switch_H(NUM,MIN,MAX,PUSH,SFX=true ,AUTO_RANGE = false , AUTO_NUM = 0){
 function switch_V(NUM,MIN,MAX,PUSH,SFX=true , AUTO_RANGE = false){
 	live;
 	var UI = dr_battle_ui
-	if(Input_IsPressed(INPUT.DOWN) or Input_IsPressed(INPUT.UP)){
+	var click_event = function(SFX,AUTO_RANGE,NUM){
+		var UI = dr_battle_ui	
 		if(SFX){ audio_play_sound(snd_menu_switch,0,0); }
 		if(AUTO_RANGE){
-			with(UI){
-				event_user(0)
+			if(NUM){
+				with(UI){
+					event_user(0);
+				}
 			}
 		}
+		Dr_Battle_EnemyFunc(,DR_BATTLE_ENEMY.MENU_SWITCH);
 	}
 	if(Input_IsPressed(INPUT.DOWN)){
 		if((NUM + PUSH) < MAX){
 			NUM += PUSH;
+			click_event(SFX,AUTO_RANGE,NUM);
 		}
 	}
 	if(Input_IsPressed(INPUT.UP)){
 		if((NUM - PUSH) > MIN){
 			NUM -= PUSH;
+			click_event(SFX,AUTO_RANGE,NUM);
 		}
 	}
-	//if(Input_IsPressed(INPUT.DOWN)){
-	//	if(NUM < MAX){
-	//		NUM += PUSH;
-	//	}
-	//}
-	//if(Input_IsPressed(INPUT.UP)){
-	//	if(NUM > MIN){
-	//		NUM -= PUSH;
-	//	}
-	//}
 	return NUM;
 }
 function add_Enemy(ST_X , ST_Y , DEPTH , ENEMY , ANIM , EN_X = 640-60 , EN_Y){
