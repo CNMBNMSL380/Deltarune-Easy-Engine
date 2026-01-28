@@ -109,8 +109,11 @@ function Dr_Battle_SetStage(STAGE){
 	}
 	if(STAGE == DR_BATTLE_STAGE.DIALOG){
 		Dr_Battle_CallDialog("");
-		Dr_Battle_SetSpriteMode(,DR_PLAYER_INDEX.IDLE)
 		Dr_Battle_EnemyFunc(,DR_BATTLE_ENEMY.DIALOG_CALL);
+		
+		//for(var i=0; i< array_length(Main._player_friend); i++){
+			Dr_Battle_SetFriendSpriteMode(,DR_PLAYER_INDEX.IDLE);
+		//}
 	}
 	if(STAGE == DR_BATTLE_STAGE.BEFORE_TURN){
 		Dr_Battle_CallDialog("")	
@@ -207,7 +210,7 @@ function Dr_Battle_ChoicePlayerMenu(BUTTON,MENU = -1,BACK = false){
 				case DR_BATTLE_PLAYERMENU.CHOICE_ENEMY:
 					if(BACK){ Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.BUTTON) }
 					else{ 
-						Dr_Battle_SetSpriteMode(Main._player_friend[Main._player_friend_num],DR_PLAYER_INDEX.FIGHT_IDLE);
+						Dr_Battle_SetFriendSpriteMode(Main._player_friend[Main._player_friend_num],DR_PLAYER_INDEX.FIGHT_IDLE);
 						Dr_Battle_NextToFriend(BUTTON,MENU,,,Main._player_choice_enemy); 					
 					}
 					
@@ -235,7 +238,7 @@ function Dr_Battle_ChoicePlayerMenu(BUTTON,MENU = -1,BACK = false){
 					case DR_BATTLE_PLAYERMENU.CHOICE_ENEMY:
 						if(BACK){ return Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_MAGIC); }
 						else{ 
-							Dr_Battle_SetSpriteMode(Main._player_friend[Main._player_friend_num],DR_PLAYER_INDEX.MAGIC);
+							Dr_Battle_SetFriendSpriteMode(Main._player_friend[Main._player_friend_num],DR_PLAYER_INDEX.MAGIC);
 							Dr_Battle_NextToFriend(BUTTON,MENU,		
 							,Main._player_choice_magic,Main._player_choice_enemy,,,Char_GetMagicTp(1,Main._player_friend_num-1,Main._player_choice_magic))
 						}
@@ -243,7 +246,7 @@ function Dr_Battle_ChoicePlayerMenu(BUTTON,MENU = -1,BACK = false){
 					case DR_BATTLE_PLAYERMENU.CHOICE_FRIEND:
 						if(BACK){ return Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_MAGIC); }
 						else{
-							Dr_Battle_SetSpriteMode(Main._player_friend[Main._player_friend_num],DR_PLAYER_INDEX.MAGIC);
+							Dr_Battle_SetFriendSpriteMode(Main._player_friend[Main._player_friend_num],DR_PLAYER_INDEX.MAGIC);
 							Dr_Battle_NextToFriend(BUTTON,MENU,
 							,Main._player_choice_magic,,Main._player_choice_friend,,Char_GetMagicTp(1,Main._player_friend_num-1,Main._player_choice_magic))
 						}
@@ -265,7 +268,7 @@ function Dr_Battle_ChoicePlayerMenu(BUTTON,MENU = -1,BACK = false){
 					case DR_BATTLE_PLAYERMENU.CHOICE_CLASS:
 						if(BACK){ Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_ENEMY); }
 						else{ 						
-							Dr_Battle_SetSpriteMode(Main._player_friend[Main._player_friend_num],DR_PLAYER_INDEX.B_ACT);
+							Dr_Battle_SetFriendSpriteMode(Main._player_friend[Main._player_friend_num],DR_PLAYER_INDEX.B_ACT);
 							Dr_Battle_NextToFriend(BUTTON,MENU,Main._player_choice_act,,Main._player_choice_enemy
 							,,,Dr_Battle_GetEnemyActUseTp(Main._player_choice_enemy,Main._player_choice_act)); 
 						}
@@ -297,7 +300,7 @@ function Dr_Battle_ChoicePlayerMenu(BUTTON,MENU = -1,BACK = false){
 				case DR_BATTLE_PLAYERMENU.CHOICE_ENEMY:			
 					if(BACK){ Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.CHOICE_ITEM) }
 					else{ 					
-						Dr_Battle_SetSpriteMode(Main._player_friend[Main._player_friend_num],DR_PLAYER_INDEX.ITEM);
+						Dr_Battle_SetFriendSpriteMode(Main._player_friend[Main._player_friend_num],DR_PLAYER_INDEX.ITEM);
 						Dr_Battle_NextToFriend(BUTTON,MENU,,,Main._player_choice_enemy,,Main._player_choice_item);
 					}
 				break;

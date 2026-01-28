@@ -4,12 +4,12 @@
 
 // --获取所有
 function Char_GetTeam(){
-	return Flag_Get(FLAG_STATIC,"team");
+	return Flag_Get(FLAG_PLAYER_TEAM,"team");
 }
 // --通过ID获取
 function Char_GetTeamByID(SLOT){
 	if(SLOT < Char_GetTeamLenght()){
-		return Flag_Get(FLAG_STATIC,"team")[SLOT];
+		return Flag_Get(FLAG_PLAYER_TEAM,"team")[SLOT];
 	}
 }
 function Char_GetTeamLenght(){
@@ -33,7 +33,7 @@ function Char_GetTeamObjToArray(){
 	for(var i =0 ; i< Char_GetTeamLenght() ; i++){
 		var strc = Char_GetTeamByID(i);
 		var obj = strc.char_obj;
-		arr[i] = obj
+		array_push(arr , obj);
 	}
 	return arr;
 }

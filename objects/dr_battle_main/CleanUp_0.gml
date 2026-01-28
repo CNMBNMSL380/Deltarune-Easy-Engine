@@ -15,4 +15,5 @@ for(var i = 0; i < ds_list_size(_enemy_event); i++){
 	ds_map_destroy(ds_list_find_value(_enemy_event,i));
 }
 ds_list_destroy(_enemy_event);
+
 Dr_Battle_SpriteUninit();

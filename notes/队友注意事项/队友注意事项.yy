@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"v1",
+  "%Name":"队友注意事项",
+  "name":"队友注意事项",
+  "parent":{
+    "name":"friend",
+    "path":"folders/Objects/Character/friend.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}

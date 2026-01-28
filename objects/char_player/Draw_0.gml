@@ -1,3 +1,4 @@
+live;
 draw_self();
 /*
 {
@@ -28,7 +29,9 @@ draw_self();
 //	}
 //}
 
-//draw_set_color(c_yellow);
+draw_set_color(c_yellow);
+draw_set_font(Font_Get("FH16"))
+draw_text_transformed(x -150,y-50, follower,0.5,0.5,0)
 //draw_text(300,0,x!=xprevious)
 //draw_text(300,20,y!=yprevious)
-//draw_set_color(-1);
+draw_set_color(-1);

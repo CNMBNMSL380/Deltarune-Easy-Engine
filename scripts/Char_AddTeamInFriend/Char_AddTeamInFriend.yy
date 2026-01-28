@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Char_AddTeamInFriend",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Char_AddTeamInFriend",
+  "parent":{
+    "name":"InTeam",
+    "path":"folders/Scripts/Char/InTeam.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

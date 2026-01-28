@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Char_GetValueType",
   "parent":{
-    "name":"Char",
-    "path":"folders/Scripts/Char/Char.yy",
+    "name":"Value",
+    "path":"folders/Scripts/Char/Char/Value.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

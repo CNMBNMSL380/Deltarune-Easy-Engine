@@ -17,6 +17,12 @@ function Char_GetFriendHp(SLOT){
 function Char_GetFriendMaxHp(SLOT){
     return Char_GetValue(0, SLOT, "maxhp");
 }
+function Char_GetFriendLv(SLOT){
+    return Char_GetValue(0, SLOT, "lv");
+}
+function Char_GetFriendExp(SLOT){
+    return Char_GetValue(0, SLOT, "exp");
+}
 function Char_GetFriendAtk(SLOT){
     return Char_GetValue(0, SLOT, "atk");
 }

@@ -1,0 +1,84 @@
+SequenceRoot {
+    events[]                 // 事件列表（按顺序执行）
+    current_index             // 当前执行事件索引
+    loop                      // true = 最后事件完成后返回第一个事件
+    destroy_on_finish         // true = 最后事件完成后销毁序列
+    active                    // 序列是否正在运行
+}
+
+EventNode {
+    pre_event                  // 进入事件时执行一次
+    main_event                 // 条件满足后或直接执行的主事件
+    post_event                 // 主事件执行后执行
+
+    condition_event            // 判定事件，可为 null
+    timeout                    // 超时等待时间（单位可为帧或秒）
+                               // -1 = 永远不等待 timeout
+    trigger_times              // 主事件需要触发次数，-1 = 无限触发
+    max_condition_checks       // 判定次数上限，-1 = 无限判定
+    return_to_check_after_main // true = main_event 后返回 timeout+condition 重新判定
+                               // false = main_event 后直接完成或连续触发 main_event
+
+    internal_state: {
+        checks_done            // 已判定次数
+        triggers_done          // 已触发主事件次数
+    }
+}
+
+进入事件
+    ↓
+执行 pre_event
+初始化状态：checks_done=0, triggers_done=0
+
+【Timeout 阶段】
+    ├─ 如果 timeout >= 0 → 等待 timeout 时间
+    └─ 如果 timeout = -1 → 跳过
+
+【判定阶段】
+    ├─ 如果 condition_event 存在 → 执行判定
+    │       result = condition_event()
+    │       ├─ true → 进入 main_event
+    │       └─ false → checks_done += 1
+    │             ├─ 如果 max_condition_checks != -1 且 checks_done >= max_condition_checks → 取消事件 → 下一事件
+    │             └─ 否则 → 回到 timeout 阶段继续等待再判定
+    └─ 如果 condition_event = null → 直接进入 main_event
+
+【主事件阶段】
+执行 main_event()
+执行 post_event()
+triggers_done += 1
+
+【判定是否返回 timeout + condition 阶段】
+    ├─ 如果 return_to_check_after_main == true:
+    │       ├─ 如果 triggers_done < trigger_times 或 trigger_times = -1 → 回到 timeout + 判定阶段
+    │       └─ 否则 → 事件完成 → 下一事件
+    └─ 如果 return_to_check_after_main == false:
+            ├─ 如果 triggers_done < trigger_times → 立即执行下一次 main_event（不经过 timeout + 判定）
+            └─ 否则 → 事件完成 → 下一事件
+			
+sequence_create()
+    ↓
+if active == false → return
+
+执行当前事件：events[current_index].start()
+    ↓
+if 当前事件完成 → sequence_next_event()
+
+sequence_next_event():
+    current_index += 1
+    ├─ 如果 current_index < events.length → 执行下一事件
+    ├─ 如果 current_index >= events.length:
+    │       ├─ 如果 loop == true → current_index = 0 → 执行第一事件
+    │       ├─ 否则 if destroy_on_finish == true → 销毁序列
+    │       └─ 否则 → active = false → 序列停止
+	
+	
+SequenceRoot
+└─ EventNode[0]
+    ├─ pre_event
+    ├─ timeout → condition → main_event → post_event
+    └─ return_to_check_after_main? 回到 timeout+condition 或完成事件
+└─ EventNode[1]
+    ...
+└─ EventNode[N-1]
+    └─ 最后事件完成后 → loop 或 destroy_on_finish 或停止

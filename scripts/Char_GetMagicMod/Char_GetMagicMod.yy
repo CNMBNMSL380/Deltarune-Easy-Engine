@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Char_GetMagicMod",
   "parent":{
-    "name":"Char",
-    "path":"folders/Scripts/Char/Char.yy",
+    "name":"Magic",
+    "path":"folders/Scripts/Char/Char/Magic.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

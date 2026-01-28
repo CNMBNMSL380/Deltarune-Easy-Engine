@@ -1,7 +1,7 @@
 /// @description 战斗结束
 live;
 
-var objData = _player_friend_obj;
+var objData = _player_friend_ow_obj;
 var friend = _player_friend;
 
 for(var i = 0; i < array_length(friend) ;i++){

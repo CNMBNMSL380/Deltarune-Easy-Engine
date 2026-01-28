@@ -4,15 +4,15 @@
 
 // --获取所有
 function Char_GetFriend(){
-	return Flag_Get(FLAG_STATIC,"friend");
+	return Flag_Get(FLAG_PLAYER_TEAM,"friend");
 }
 function Char_GetFriendLenght(){
 	return array_length(Char_GetFriend());
 }
 // --通过ID获取
 function Char_GetFriendByID(SLOT){
-	if(SLOT < array_length( Flag_Get(FLAG_STATIC,"friend"))){
-		return Flag_Get(FLAG_STATIC,"friend")[SLOT];
+	if(SLOT < array_length( Flag_Get(FLAG_PLAYER_TEAM,"friend"))){
+		return Flag_Get(FLAG_PLAYER_TEAM,"friend")[SLOT];
 	}
 	return noone
 }
@@ -26,7 +26,6 @@ function Char_GetFriendByName(NAME){
 				return strc;
 			}
 		}
-		
 	}
 	return noone;
 }

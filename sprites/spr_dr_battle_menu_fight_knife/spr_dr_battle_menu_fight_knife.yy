@@ -26,7 +26,7 @@
   "origin":4,
   "parent":{
     "name":"Dr_Fighr_Menu",
-    "path":"folders/Sprite/Battle/Dr_Fighr_Menu.yy",
+    "path":"folders/Sprite/Battle/Deltarune_Battle/Dr_Fighr_Menu.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",
@@ -70,7 +70,9 @@
     "timeUnits":1,
     "tracks":[
       {"$GMSpriteFramesTrack":"","builtinName":0,"events":[],"inheritsTrackColour":true,"interpolation":1,"isCreationTrack":false,"keyframes":{"$KeyframeStore<SpriteFrameKeyframe>":"","Keyframes":[
-            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{"0":{"$SpriteFrameKeyframe":"","Id":{"name":"ab71dcc6-64a9-4f67-ae42-b3f57e3205aa","path":"sprites/spr_dr_battle_menu_fight_knife/spr_dr_battle_menu_fight_knife.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},},"Disabled":false,"id":"d99a1fae-ce00-46bc-8af6-b94f01132672","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
+            {"$Keyframe<SpriteFrameKeyframe>":"","Channels":{
+                "0":{"$SpriteFrameKeyframe":"","Id":{"name":"ab71dcc6-64a9-4f67-ae42-b3f57e3205aa","path":"sprites/spr_dr_battle_menu_fight_knife/spr_dr_battle_menu_fight_knife.yy",},"resourceType":"SpriteFrameKeyframe","resourceVersion":"2.0",},
+              },"Disabled":false,"id":"d99a1fae-ce00-46bc-8af6-b94f01132672","IsCreationKey":false,"Key":0.0,"Length":1.0,"resourceType":"Keyframe<SpriteFrameKeyframe>","resourceVersion":"2.0","Stretch":false,},
           ],"resourceType":"KeyframeStore<SpriteFrameKeyframe>","resourceVersion":"2.0",},"modifiers":[],"name":"frames","resourceType":"GMSpriteFramesTrack","resourceVersion":"2.0","spriteId":null,"trackColour":0,"tracks":[],"traits":0,},
     ],
     "visibleRange":null,

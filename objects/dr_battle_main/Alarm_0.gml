@@ -27,8 +27,8 @@ for(var i =0 ; i< array_length(_enemy_obj) ; i++){
 }
 
 //生成队友
-for(var i = 0 ; i< array_length(_player_friend_obj) ; i++){
-	_player_friend[i] = instance_create_depth(_player_friend_obj[i][0],_player_friend_obj[i][1],_player_friend_obj[i][2],_player_friend_obj[i][3])
+for(var i = 0 ; i< array_length(_player_friend_ow_obj) ; i++){
+	_player_friend[i] = instance_create_depth(_player_friend_ow_obj[i][0],_player_friend_ow_obj[i][1],_player_friend_ow_obj[i][2],_player_friend_ow_obj[i][3])
 	_player_friend[i]._char_id = i;
 	with(_player_friend[i]){
 		event_user(0)
@@ -37,8 +37,8 @@ for(var i = 0 ; i< array_length(_player_friend_obj) ; i++){
 	//Dr_Battle_CallFriendEvent(i,0)
 	var friendIns = _player_friend[i];
 	//移动队友到指定位置
-	Anim_Create(friendIns,"x",0,0,_player_friend_obj[i][0],(_player_friend_obj[i][4]) - friendIns.x,25)
-	Anim_Create(friendIns,"y",0,0,_player_friend_obj[i][1],(_player_friend_obj[i][5]) - friendIns.y,25)
+	Anim_Create(friendIns,"x",0,0,_player_friend_ow_obj[i][0],(_player_friend_ow_obj[i][4]) - friendIns.x,25)
+	Anim_Create(friendIns,"y",0,0,_player_friend_ow_obj[i][1],(_player_friend_ow_obj[i][5]) - friendIns.y,25)
 }
 
 //隐藏所有NPC
@@ -62,8 +62,9 @@ _player_friend_class = Dr_Battle_CreateClass(_player_friend);
 _battle_board_inst = Dr_Battle_CreateBoard();
 
 // ------- 初始化决心
-_player_soul_start_x= _player_friend_obj[0][4];
-_player_soul_start_y = _player_friend_obj[0][5] - 40;
+show_message(_player_friend_ow_obj)
+_player_soul_start_x= _player_friend_ow_obj[0][4];
+_player_soul_start_y = _player_friend_ow_obj[0][5] - 40;
 
 var startX = _player_soul_start_x;
 var startY = _player_soul_start_y;

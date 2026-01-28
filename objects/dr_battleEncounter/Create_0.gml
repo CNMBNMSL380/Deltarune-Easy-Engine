@@ -23,27 +23,28 @@ event_user(0)
 alarm[0]=1;
 
 function Create_Friend(add_frend = []){
-	var instances = [char_player];
-	var btlInstances = create_team;
+	var instances = [];
+	var btlInstances = [];
 	var friendTeam = [];
 	if(array_length(add_frend) <= 0){
-		for(var i = 1 ; i < Char_GetTeamLenght() +1; i++){		
-			//instances[i] = Char_GetTeamByID(i -1).Get("obj");
-			instances[i] = Char_GetValue(1, i-1 , "obj");
+		for(var i = 0 ; i < Char_GetTeamLenght(); i++){		
+			////instances[i] = Char_GetTeamByID(i -1).Get("obj");
+			instances[i] = (i == 0 ? char_player : Char_GetTeamObj(i))
 			//show_message(string(i)+ " : "+ string (instances[i]))
 			//btlInstances[i] = Char_GetTeamByID(i -1).Get("btlObj");
-			btlInstances[i] = Char_GetValue(1, i-1 , "btlObj");
+			btlInstances[i] = Char_GetTeamBattleObj(i)
 			//show_message(string(i)+ " : "+ string (btlInstances[i]))
 		}	
 		//show_message(btlInstances)
 		//show_message(instances)
-		for(var i = 0; i < array_length(btlInstances) ; i++){
+		for(var i = 0; i < array_length(instances) ; i++){
 			//获取坐标，并设置好准备生成对象的数值
-			//show_message(instances[i])
+			show_message(instances[i])
 			var insX = ((instances[i].x) *camera.scale_x) - ((camera.x) * camera.scale_x );
 			var insY = ((instances[i].y) *camera.scale_y) - ((camera.y) * camera.scale_y );
 			var arr = [insX,insY]
-			//show_message(arr)
+			show_message(arr)
+			//准备打包数据，并传给_player_friend_ow_obj
 			friendTeam[i] = [insX,insY,DEPTH_DR_BTL.CHAR - (2*i) , btlInstances[i] , team_x[i] , team_y[i]]; 
 			
 		}
@@ -55,7 +56,16 @@ function Create_Friend(add_frend = []){
 			var insY = ((instances[i].y) *camera.scale_y) - ((camera.y) * camera.scale_y );
 			var arr = [insX,insY]
 			//show_message(arr)
-			friendTeam[i] = [insX,insY,DEPTH_DR_BTL.CHAR - (2*i) , btlInstances[i] , team_x[i] , team_y[i]]; 
+			
+			/// ----------- 上传数据
+			friendTeam[i] = [
+				insX,								// --------- 实列X
+				insY,								// --------- 实列Y
+				DEPTH_DR_BTL.CHAR - (2*i),			// --------- 深度
+				btlInstances[i],					// --------- 战斗实例
+				team_x[i],							// --------- 记录位置X
+				team_y[i]							// --------- 记录位置Y
+			]; 
 			
 		}
 	}

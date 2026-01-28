@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Char_CreatePlayer",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Char_CreatePlayer",
+  "parent":{
+    "name":"InTeam",
+    "path":"folders/Scripts/Char/InTeam.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

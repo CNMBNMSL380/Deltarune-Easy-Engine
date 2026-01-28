@@ -118,7 +118,7 @@ Dr_Battle_AddEnemyEvent(_enemy_id,DR_BATTLE_ENEMY.INIT,function(){
 	})}
 	// --------- 设置敌人事件
 	{Dr_Battle_AddEnemyEvent(_enemy_id,DR_BATTLE_ENEMY.HURT,function(SLOT){
-		show_message("敌人受伤："+ string(SLOT));
+		//show_message("敌人受伤："+ string(SLOT));
 	})}
 	// --------- 设置敌人摧毁事件
 	{Dr_Battle_AddEnemyEvent(_enemy_id,DR_BATTLE_ENEMY.DELETE,function(SLOT){

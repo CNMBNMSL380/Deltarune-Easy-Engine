@@ -1,46 +1,39 @@
 live;
 event_inherited();
 
-char_id=0;
 
 battle_mod = 1
-char_friend_id = 1;
-
-battle_obj = dr_battle_char_player
+char_id=0;
+char_friend_id = 0;
 
 overworld_mode = 0;
 
+_base = Char_CreatePlayer();
+battle_obj = _base.battle_obj;
+idle_sprite = _base.spr_idle;
+move_sprite = _base.spr_move;
+run_sprite = _base.spr_run;
 
-idle_sprite = [
-	[spr_char_kris_light_up,spr_char_kris_light_down,spr_char_kris_light_left,spr_char_kris_light_right],
-	[spr_char_kris_dark_up,spr_char_kris_dark_down,spr_char_kris_dark_left,spr_char_kris_dark_right]
-]
-	
-move_sprite = [
-	[spr_char_kris_light_up,spr_char_kris_light_down,spr_char_kris_light_left,spr_char_kris_light_right],
-	[spr_char_kris_dark_up,spr_char_kris_dark_down,spr_char_kris_dark_left,spr_char_kris_dark_right]
-]
-run_sprite = move_sprite
+move_speed[DIR.UP]=_base.move_speed_up;
+move_speed[DIR.DOWN]=_base.move_speed_down;
+move_speed[DIR.LEFT]=_base.move_speed_left;
+move_speed[DIR.RIGHT]=_base.move_speed_right;
 
 
-res_idle_sprite[DIR.UP]=idle_sprite[overworld_mode][0];
-res_idle_sprite[DIR.DOWN]=idle_sprite[overworld_mode][1];
-res_idle_sprite[DIR.LEFT]=idle_sprite[overworld_mode][2];
+res_idle_sprite[DIR.UP]=idle_sprite[0];
+res_idle_sprite[DIR.DOWN]=idle_sprite[1];
+res_idle_sprite[DIR.LEFT]=idle_sprite[2];
 res_idle_flip_x[DIR.LEFT]=false;
-res_idle_sprite[DIR.RIGHT]=idle_sprite[overworld_mode][3];
+res_idle_sprite[DIR.RIGHT]=idle_sprite[3];
 
-res_move_sprite[DIR.UP]=move_sprite[overworld_mode][0];
-res_move_sprite[DIR.DOWN]=move_sprite[overworld_mode][1];
-res_move_sprite[DIR.LEFT]=move_sprite[overworld_mode][2];
+res_move_sprite[DIR.UP]=move_sprite[0];
+res_move_sprite[DIR.DOWN]=move_sprite[1];
+res_move_sprite[DIR.LEFT]=move_sprite[2];
 res_move_flip_x[DIR.LEFT]=false;
-res_move_sprite[DIR.RIGHT]=move_sprite[overworld_mode][3];
+res_move_sprite[DIR.RIGHT]=move_sprite[3];
 
 
 
-move_speed[DIR.UP]=1.5;
-move_speed[DIR.DOWN]=1.5;
-move_speed[DIR.LEFT]=1.5;
-move_speed[DIR.RIGHT]=1.5;
 
 //res_idle_flip_x[DIR.LEFT] = false;
 //res_move_flip_x[DIR.LEFT] = false;
@@ -54,8 +47,13 @@ _moveable_encounter=true;
 _moveable_box=true;
 
 follow_delay = 15
-follower = Char_GetTeamObjToArray(); //warning:reverse
-//follower = [char_friend,char_kris]
+// ------------ follower 跟随团队
+/*
+获取Char的Team来添加所有队友
+
+*/
+follower = Char_CreateCharTeam();
+// ----------------------
 inst_follower = [noone,noone,noone]
 if(array_length(follower) > 0){
 	moves = ds_list_create()

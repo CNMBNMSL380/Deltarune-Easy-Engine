@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Char_SetValueType",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Char_SetValueType",
+  "parent":{
+    "name":"Value",
+    "path":"folders/Scripts/Char/Char/Value.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

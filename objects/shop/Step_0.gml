@@ -162,7 +162,7 @@ if(shop_state = SHOP_STATE.MENU){
 					Shop_SetBuyResult(0);
 					Shop_CallHostEvent(SHOP_HOST_EVENT.MENU_CONFIRM);
 					Shop_SetMenu(SHOP_MENU.BUY);
-					Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE,-1);
+					Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.text_typer_CHOICE,-1);
 				}
 				else{
 					if!(Item_GetNumber() < 8){
@@ -174,14 +174,14 @@ if(shop_state = SHOP_STATE.MENU){
 						Shop_CallHostEvent(SHOP_HOST_EVENT.MENU_CONFIRM);
 					}
 					Shop_SetMenu(SHOP_MENU.BUY);
-					Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE,-1);
+					Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.text_typer_CHOICE,-1);
 				}
 			}
 			else if(Player_GetTextTyperChoice() = 1){
 				Shop_SetBuyResult(1);
 				Shop_CallHostEvent(SHOP_HOST_EVENT.MENU_CONFIRM);
 				Shop_SetMenu(SHOP_MENU.BUY);
-				Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE,-1);
+				Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.text_typer_CHOICE,-1);
 				
 			}*/
 			//if(Input_IsPressed(INPUT.CONFIRM)){
@@ -194,14 +194,14 @@ if(shop_state = SHOP_STATE.MENU){
 					Shop_CallHostEvent(SHOP_HOST_EVENT.MENU_CONFIRM);
 					Shop_SetMenu(SHOP_MENU.BUY);
 					Shop_SetMenuBuy(0,_page_buy);
-					Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE,-1);
+					Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.text_typer_CHOICE,-1);
 				}
 				if(Player_GetTextTyperChoice() = 1){
 					Shop_SetBuyResult(SHOP_BUY_RESULT.NO);
 					Shop_CallHostEvent(SHOP_HOST_EVENT.MENU_CONFIRM);
 					Shop_SetMenu(SHOP_MENU.BUY);
 					Shop_SetMenuBuy(0,_page_buy);
-					Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE,-1);
+					Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.text_typer_CHOICE,-1);
 				}
 			//}
 			if(Input_IsPressed(INPUT.CANCEL)){
@@ -209,7 +209,7 @@ if(shop_state = SHOP_STATE.MENU){
 				Shop_CallHostEvent(SHOP_HOST_EVENT.MENU_CONFIRM);
 				Shop_SetMenu(SHOP_MENU.BUY);
 				Shop_SetMenuBuy(0,_page_buy);
-				//Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE,-1);
+				//Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.text_typer_CHOICE,-1);
 			}
 		}
 	}
@@ -282,7 +282,7 @@ if(shop_state = SHOP_STATE.MENU){
 				Shop_CallHostEvent(SHOP_HOST_EVENT.MENU_CONFIRM);
 				//Shop_SetMenu(SHOP_MENU.SELL);
 				//Shop_SetMenuSell(0);
-				Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE,-1);
+				Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.text_typer_CHOICE,-1);
 				
 				Shop_SetNextMenu(SHOP_MENU.SELL);
 				Shop_CallHostEvent(SHOP_HOST_EVENT.MENU_SWITCH);
@@ -304,7 +304,7 @@ if(shop_state = SHOP_STATE.MENU){
 				Shop_CallHostEvent(SHOP_HOST_EVENT.MENU_CONFIRM);
 				Shop_SetMenu(SHOP_MENU.SELL);
 				Shop_SetMenuSell(0);
-				Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.TEXT_TYPER_CHOICE,-1);
+				Flag_Set(FLAG_TYPE.TEMP,FLAG_TEMP.text_typer_CHOICE,-1);
 			}
 			if(Input_IsPressed(INPUT.CANCEL)){
 				Shop_SetSellResult(SHOP_SELL_RESULT.NO);

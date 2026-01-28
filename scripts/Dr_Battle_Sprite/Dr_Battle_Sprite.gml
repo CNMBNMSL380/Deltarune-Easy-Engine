@@ -82,15 +82,17 @@ function Dr_Battle_SetSpriteImage(BASE,MODE,SPRITE){
 	var base = Dr_Battle_GetSpriteListBase(BASE);	
 	ds_map_replace(base,MODE,SPRITE);
 }
-function Dr_Battle_SetSpriteMode(BASE = "",MODE){
-	if(BASE != ""){
+function Dr_Battle_SetFriendSpriteMode(BASE = undefined,MODE){
+	var Main = dr_battle_main;
+	if(BASE != undefined){
 		var base = Dr_Battle_GetSpriteListBase(BASE);
 		base._mode = MODE;
 	}
 	else{
-		var Main = dr_battle_main;
-		for(var i = 0; i < ds_list_size(Main._sprite_list) ; i++){
-			
+		for(var i = 0; i < array_length(Main._player_friend) ; i++){
+			var base = Dr_Battle_GetSpriteListBase(Main._player_friend[i] );
+			base._mode = MODE;
+			show_message(base)
 		}
 	}
 	return true;
@@ -99,7 +101,7 @@ function Dr_Battle_PlaySpriteAnimOnce(BASE,MODE,EXTIME = 0,IS_SETMODE = true,DEL
 	// 用于播放动画，但只能播放一次
 	var base = Dr_Battle_GetSprite(BASE,MODE);
 	if(base !=undefined){
-		if(IS_SETMODE){ Dr_Battle_SetSpriteMode(BASE,MODE); }
+		if(IS_SETMODE){ Dr_Battle_SetFriendSpriteMode(BASE,MODE); }
 		
 		var sprite = base.sprite;
 		var indMax = sprite_get_number(sprite) - MAX - 1;
@@ -107,7 +109,7 @@ function Dr_Battle_PlaySpriteAnimOnce(BASE,MODE,EXTIME = 0,IS_SETMODE = true,DEL
 		var game_fps = room_speed;
 
 		// 计算完整播放一次动画所需的总帧数
-		var totalFrames = (indMax * game_fps) / fixedSpeed;
+		var totalFrames = round((indMax * game_fps) / fixedSpeed);
 		
 		Anim_Create(base,"spr_index",0,0,MIN,indMax-0,totalFrames+EXTIME,DELAY);	
 		return true
@@ -156,6 +158,7 @@ function Dr_Battle_SpriteUninit(){
 	
 	return true;
 }
+
 
 
 

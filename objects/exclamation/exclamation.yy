@@ -30,7 +30,10 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":null,
+  "spriteId":{
+    "name":"spr_exclamation",
+    "path":"sprites/spr_exclamation/spr_exclamation.yy",
+  },
   "spriteMaskId":null,
   "visible":true,
 }

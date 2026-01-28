@@ -3,6 +3,7 @@ live;
 
 // 贴图动画进步器启动
 Dr_Battle_SpriteAnimStep();
+show_debug_message(Char_GetTeamHp(0))
 // 检查玩家输入（确认/取消）
 input_con = Input_IsPressed(INPUT.CONFIRM);
 input_can = Input_IsPressed(INPUT.CANCEL);
@@ -238,13 +239,13 @@ if(_stage != DR_BATTLE_STAGE.PLAYER){
             instance_destroy(dr_battle_menu_fight)
             Dr_Battle_SetStage(DR_BATTLE_STAGE.DIALOG);					
         }
-        if(input_con){
-            // 玩家主动触发攻击
-            with(dr_battle_menu_fight){
-                event_user(0)
-            }
-            dr_battle_main._player_fight_slot ++;
-        }
+        //if(input_con){
+        //    // 玩家主动触发攻击
+        //    with(dr_battle_menu_fight){
+        //        event_user(0)
+        //    }
+        //    dr_battle_main._player_fight_slot ++;
+        //}
     }
 	// ----------------  进入敌人战斗回合
 	

@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Event_AddSEQ",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Event_AddSEQ",
+  "parent":{
+    "name":"Event",
+    "path":"folders/Scripts/Event.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

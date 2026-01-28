@@ -1,4 +1,4 @@
-function Flag_CustomStatic(){
+ function Flag_CustomStatic(){
 	with(Flag_GetStorage(FLAG_STATIC)){
 		Set("overworld_mode",0);
 		Set("name","Nico");
@@ -27,17 +27,7 @@ function Flag_CustomStatic(){
 		Set("box1",new Flag_Inventory(10));
 		Set("phone",new Flag_Inventory(10));
 		
-		// 朋友列表，你可以储存队友信息，不过不会展示在队伍，也不会被修改信息
-		Set("friend", [
-			//new Char_Friend_Structer("Ralsei",char_ralsei,dr_battle_char_kris),
-		] );	
-		
-		//团队，储存要跟着你的队友，这种会跟着队伍里且可以在UI里修改信息
-		//一般它可以同时设置多个队友，不过最好只有2个
-		Set("team",[		
-			Char_Friend_SusieBase(),
-			Char_Friend_RalseiBase()
-		]);	
+			
 	}
 	Item_SetWeapon(item_bandage);
 	Item_SetArmor(item_stick);

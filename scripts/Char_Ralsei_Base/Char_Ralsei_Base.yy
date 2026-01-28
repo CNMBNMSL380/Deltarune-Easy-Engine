@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Char_Ralsei_Base",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Char_Ralsei_Base",
+  "parent":{
+    "name":"Char_Base",
+    "path":"folders/Scripts/Char/Char/Char_Base.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

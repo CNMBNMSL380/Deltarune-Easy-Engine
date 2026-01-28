@@ -7,20 +7,20 @@ if(can_move){
 		move_speed[DIR.DOWN]=3;
 		move_speed[DIR.LEFT]=3;
 		move_speed[DIR.RIGHT]=3;
-		res_move_sprite[DIR.UP]=run_sprite[overworld_mode][0];
-		res_move_sprite[DIR.DOWN]=run_sprite[overworld_mode][1];
-		res_move_sprite[DIR.LEFT]=run_sprite[overworld_mode][2];
-		res_move_sprite[DIR.RIGHT]=run_sprite[overworld_mode][3];
+		res_move_sprite[DIR.UP]=run_sprite[0];
+		res_move_sprite[DIR.DOWN]=run_sprite[1];
+		res_move_sprite[DIR.LEFT]=run_sprite[2];
+		res_move_sprite[DIR.RIGHT]=run_sprite[3];
 		sprite_index = res_move_sprite[dir];
 	}else{
 		move_speed[DIR.UP]=2;
 		move_speed[DIR.DOWN]=2;
 		move_speed[DIR.LEFT]=2;
 		move_speed[DIR.RIGHT]=2;
-		res_move_sprite[DIR.UP]=move_sprite[overworld_mode][0];
-		res_move_sprite[DIR.DOWN]=move_sprite[overworld_mode][1];
-		res_move_sprite[DIR.LEFT]=move_sprite[overworld_mode][2];
-		res_move_sprite[DIR.RIGHT]=move_sprite[overworld_mode][3];
+		res_move_sprite[DIR.UP]=move_sprite[0];
+		res_move_sprite[DIR.DOWN]=move_sprite[1];
+		res_move_sprite[DIR.LEFT]=move_sprite[2];
+		res_move_sprite[DIR.RIGHT]=move_sprite[3];
 		sprite_index = res_move_sprite[dir];
 	}
 	if(Input_IsHeld(INPUT.UP)){

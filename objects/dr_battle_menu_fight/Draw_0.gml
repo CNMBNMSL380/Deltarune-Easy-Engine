@@ -1,4 +1,4 @@
-/// @description 事件
+/// @description 绘制UI
 live;
 depth = DEPTH_DR_BTL.UI_HIGH;
 Dr_Draw(function(){

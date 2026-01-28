@@ -1,5 +1,5 @@
 // Script assets have changed for v2.3.0 see
-function Dr_Battle_MainUserFightMenu(){
+ function Dr_Battle_MainUserFightMenu(){
 	var goToEvent = Dr_Battle_GetGotoEvent();
 	var fightSlot = choose(0,1,2);				
 	var fightMenu = [];

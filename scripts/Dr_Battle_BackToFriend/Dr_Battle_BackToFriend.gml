@@ -21,7 +21,7 @@ function Dr_Battle_BackToFriend(REFRESH_TEXT =false){
 	FriendClass[FriendNum-1].animSwitch();
 	
 	Main._player_friend_num --;
-	Dr_Battle_SetSpriteMode(Main._player_friend[Main._player_friend_num],DR_PLAYER_INDEX.IDLE);
+	Dr_Battle_SetFriendSpriteMode(Main._player_friend[Main._player_friend_num],DR_PLAYER_INDEX.IDLE);
 	
 	Dr_Battle_SetPlayerMenu(DR_BATTLE_PLAYERMENU.BUTTON,,REFRESH_TEXT);
 }

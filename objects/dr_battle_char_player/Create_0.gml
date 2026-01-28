@@ -48,7 +48,7 @@ _magic_strc = [];
 
 // ------ 初始化动画
 var st = MyAlarm_Add(,function(){
-	//Dr_Battle_FriendAnimMode(_char_id,DR_PLAYER_INDEX.INTRO,true,false)
+	//Dr_Battle_PlayFriendAnimMode(_char_id,DR_PLAYER_INDEX.INTRO,true,false)
 	Dr_Battle_PlaySpriteAnimOnce(_char_spr,DR_PLAYER_INDEX.INTRO,0,true)
 	audio_play_sound(_char_intro_sound,0,0)
 },25)

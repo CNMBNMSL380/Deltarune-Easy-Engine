@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Char_SetFriend",
   "parent":{
-    "name":"InTeam",
-    "path":"folders/Scripts/Char/InTeam.yy",
+    "name":"Friend",
+    "path":"folders/Scripts/Char/Friend.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

@@ -20,8 +20,6 @@ text_not_use_color = "{color `gray`}"
 choice_select = true // 如果为true，则启动选择界面
 text_choice_num = 0;
 
-
-
 pos_y = 240;
 border_color = make_colour_rgb(51,32,51);
 bg_color = c_black;

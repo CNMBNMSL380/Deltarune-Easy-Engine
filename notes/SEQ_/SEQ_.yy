@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"v1",
+  "%Name":"SEQ_",
+  "name":"SEQ_",
+  "parent":{
+    "name":"Event",
+    "path":"folders/Scripts/Event.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}

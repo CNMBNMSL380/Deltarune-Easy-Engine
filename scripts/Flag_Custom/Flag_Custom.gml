@@ -4,6 +4,11 @@ function Flag_Custom(){
 	Flag_RegisterType(FLAG_STATIC,flag_static);
 	Flag_CustomStatic();
 	
+	#macro FLAG_PLAYER_TEAM "playerTeam"
+	var flag_player_team = new Flag_Storage();
+	Flag_RegisterType(FLAG_PLAYER_TEAM,flag_player_team);
+	Flag_CustomPlayerTeam();
+	
 	#macro FLAG_DYNAMIC "dynamic"
 	var flag_dynamic = new Flag_Storage();
 	Flag_RegisterType(FLAG_DYNAMIC,flag_dynamic);
@@ -11,7 +16,7 @@ function Flag_Custom(){
 	
 	#macro FLAG_TEMP "temp"
 	var flag_temp = new Flag_Storage();
-	Flag_RegisterType(FLAG_TEMP,flag_temp,false);
+	Flag_RegisterType(FLAG_TEMP,flag_temp);
 	Flag_CustomTemp();
 	
 	#macro FLAG_INFO "info"
@@ -21,7 +26,7 @@ function Flag_Custom(){
 	
 	#macro FLAG_SETTINGS "settings"
 	var flag_settings = new Flag_Storage();
-	Flag_RegisterType(FLAG_SETTINGS,flag_settings,false);
+	Flag_RegisterType(FLAG_SETTINGS,flag_settings);
 	Flag_CustomSettings();
 	
 	#macro FLAG_PLOT "plot"
