@@ -62,7 +62,6 @@ _player_friend_class = Dr_Battle_CreateClass(_player_friend);
 _battle_board_inst = Dr_Battle_CreateBoard();
 
 // ------- 初始化决心
-show_message(_player_friend_ow_obj)
 _player_soul_start_x= _player_friend_ow_obj[0][4];
 _player_soul_start_y = _player_friend_ow_obj[0][5] - 40;
 

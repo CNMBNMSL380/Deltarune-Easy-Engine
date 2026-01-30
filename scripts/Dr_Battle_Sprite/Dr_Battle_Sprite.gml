@@ -15,7 +15,7 @@ function Dr_Battle_GetSpriteListBase(TARGET){
 				return TARGET._char_spr
 			}
 			else{
-				show_debug_message(string("Dr_Battle_GetSpriteBase:getInst"+TARGET + " : 未创建或不是精灵列表"));
+				show_debug_message(string("Dr_Battle_GetSpriteBase:getInst"+string( TARGET) + " : 未创建或不是精灵列表"));
 			}
 		}	
 	}
@@ -28,10 +28,9 @@ function Dr_Battle_GetSpriteListBase(TARGET){
 				return map;
 			}
 		}
-		show_debug_message(string("Dr_Battle_GetSpriteBase:getString / getInt"+TARGET + " : 未找到精灵表"));		
+		show_debug_message(string("Dr_Battle_GetSpriteBase:getString / getInt"+string( TARGET) + " : 未找到精灵表"));		
 	}
-	else if(is_struct(TARGET)){
-		
+	else if(is_struct(TARGET)){	
 		return TARGET
 	}
 	return undefined;
@@ -92,7 +91,6 @@ function Dr_Battle_SetFriendSpriteMode(BASE = undefined,MODE){
 		for(var i = 0; i < array_length(Main._player_friend) ; i++){
 			var base = Dr_Battle_GetSpriteListBase(Main._player_friend[i] );
 			base._mode = MODE;
-			show_message(base)
 		}
 	}
 	return true;

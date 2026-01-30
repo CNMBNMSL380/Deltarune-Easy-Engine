@@ -39,11 +39,9 @@ function Create_Friend(add_frend = []){
 		//show_message(instances)
 		for(var i = 0; i < array_length(instances) ; i++){
 			//获取坐标，并设置好准备生成对象的数值
-			show_message(instances[i])
 			var insX = ((instances[i].x) *camera.scale_x) - ((camera.x) * camera.scale_x );
 			var insY = ((instances[i].y) *camera.scale_y) - ((camera.y) * camera.scale_y );
 			var arr = [insX,insY]
-			show_message(arr)
 			//准备打包数据，并传给_player_friend_ow_obj
 			friendTeam[i] = [insX,insY,DEPTH_DR_BTL.CHAR - (2*i) , btlInstances[i] , team_x[i] , team_y[i]]; 
 			

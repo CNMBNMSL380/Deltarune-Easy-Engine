@@ -10,7 +10,7 @@ Dr_Draw(function(){
 	
 	
 	draw_sprite_ext(spr_pixel,0,0,329+pos_y - 5 ,640,320,0,bg_color,1)
-	draw_sprite_ext(spr_pixel,0,0,327+pos_y - 5,640,2,0,border_color,1)
+	draw_sprite_ext(spr_pixel,0,0,326+pos_y - 5,640,2,0,border_color,1)
 	with(dr_battle_ui_friendClass){
 		event_user(0);	
 	}

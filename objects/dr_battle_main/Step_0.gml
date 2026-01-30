@@ -182,7 +182,6 @@ if(_stage != DR_BATTLE_STAGE.PLAYER){
                 // 依次执行玩家行动事件
                 if(array_length(UI.text_inst) == 0 or !instance_exists(UI.text_inst[0])){
 					var mcyEvent = _player_mercy_event[_player_mercy_slot];
-					show_message(mcyEvent.friend)
 					Dr_Battle_PlaySpriteAnimOnce(_player_friend[mcyEvent.friend],DR_PLAYER_INDEX.MERCY);
 					var ins =  Dr_Battle_GetEnemyInstance(mcyEvent.enemy)
 					var val= Dr_Battle_SpareEnemy(ins);

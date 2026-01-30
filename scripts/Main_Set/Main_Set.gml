@@ -132,8 +132,6 @@ function Dr_Battle_SetStage(STAGE){
 		var Main = dr_battle_main;
 		var BTLborder = dr_battle_board;
 		instance_activate_object(BTLborder);	
-		Main._stage_time = 100;
-	
 		BTLborder.anim_mod = true
 		BTLborder.alarm[0] = 1;
 		
@@ -441,7 +439,7 @@ function Dr_Battle_SetPlayerMenu(MENU,BUTTON = -1,REFRESH_TEXT = true){
 function Dr_Battle_SetStageTimeMax(TIME = 100){
 	live_ext;
 	var Main = dr_battle_main;
-	Main._stage_timeMax = TIME;
+	Main._stage_timeMax = TIME + 25;
 }
 function Dr_Battle_SetStageTime(TIME = -2){
 	live_ext;

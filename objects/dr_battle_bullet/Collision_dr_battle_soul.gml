@@ -1,4 +1,7 @@
 /// @description 碰撞伤害
 live;
-Char_HurtYourFriendInTeam(0,12);
+if(start == 0){
+	Dr_Battle_HurtYourFriend(,25,true)
+	start = 1;
+}
 instance_destroy();

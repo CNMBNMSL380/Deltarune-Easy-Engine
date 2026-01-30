@@ -126,7 +126,9 @@ Dr_Battle_AddEnemyEvent(_enemy_id,DR_BATTLE_ENEMY.INIT,function(){
 	})}
 	// --------- 设置生成回合事件
 	{Dr_Battle_AddEnemyEvent(_enemy_id,DR_BATTLE_ENEMY.CREATE_TURN,function(SLOT){
+		if(_enemy_id == 0)
 		instance_create_depth(0,0,0,dr_battle_turn);
+		
 	})}
 	// --------- 设置回合结束事件
 	{Dr_Battle_AddEnemyEvent(_enemy_id,DR_BATTLE_ENEMY.END_TURN,function(SLOT){
