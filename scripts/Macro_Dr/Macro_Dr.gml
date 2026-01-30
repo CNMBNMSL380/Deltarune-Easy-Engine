@@ -41,6 +41,7 @@ function Macro_Dr(){
 		ITEM_IDLE,
 		MERCY,
 		DEFEND,
+		HURT,
 		DEFEATE, 
 		WIN,
 		

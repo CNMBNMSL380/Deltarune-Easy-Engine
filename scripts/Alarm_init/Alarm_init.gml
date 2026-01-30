@@ -12,7 +12,7 @@ function MyAlarm_Exists(ID){
 	
 }
 /// 添加一个闹钟
-	function MyAlarm_Add(ID = "Alarm " + string(random_range(0,100)), EVENT = function(){} , TIME , START = true , REPEAT = 1, LOOP = false, EQUAL_ROOM = true, ROOM_ID = room){
+function MyAlarm_Add(ID = "Alarm " + string(random_range(0,100)), EVENT = function(){} , TIME , START = true , REPEAT = 1, LOOP = false, EQUAL_ROOM = true, ROOM_ID = room){
     live_ext
 	///@agg 计时器ID
 	///@arg事件
@@ -21,6 +21,17 @@ function MyAlarm_Exists(ID){
 	///@重复多少次
 	///@重复
 	///@房间一致？
+	
+	/*
+		注意，有BUG！
+		目前察觉是如果多次执行会导致计时器会被重复执行
+		然后就是有内存泄漏风险，但只在使用重复执行计时器才会出现
+		但扔不确定只执行一次会不会发生泄漏，仍不确定
+		所以还是那句话，操你妈了个YYG
+		后续不再使用GMS自带的计时器，而是自制计时器
+	*/
+	
+	
 	
 	// ---- 创建一个要执行的事件
 	var myTimeEvent = function(ID, EQUAL_ROOM , ROOM, EVENT, LOOP){
