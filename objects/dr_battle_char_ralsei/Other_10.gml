@@ -16,3 +16,5 @@ Dr_Battle_AddSprite(_char_spr, DR_PLAYER_INDEX.DEFEND, spr_battleChar_ralsei_def
 Dr_Battle_AddSprite(_char_spr, DR_PLAYER_INDEX.HURT, spr_battleChar_ralsei_hurt);
 Dr_Battle_AddSprite(_char_spr, DR_PLAYER_INDEX.DEFEATE, spr_battleChar_ralsei_defeated);
 Dr_Battle_AddSprite(_char_spr, DR_PLAYER_INDEX.WIN, spr_battleChar_ralsei_victory);
+
+
