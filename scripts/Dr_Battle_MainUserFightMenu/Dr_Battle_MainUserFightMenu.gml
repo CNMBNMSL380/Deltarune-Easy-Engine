@@ -4,7 +4,7 @@
 	var fightSlot = choose(0,1,2);				
 	var fightMenu = [];
 	var is_empty = true
-	for(var i = 0; i< array_length(goToEvent) ; i++){
+	for(var i = 0; i < array_length(goToEvent) ; i++){
 		//如果按钮为攻击按钮
 		if(goToEvent[i].friend_button == 0){
 				//如果没有检测到对象，则跳过
@@ -31,7 +31,7 @@
 	}
 	if(!is_empty){
 		//Dr_Battle_SetStageTimeMax(50+( 50 * max(0,fightNum - fightSlot)));
-		Dr_Battle_SetStageTime(1000)
+		Dr_Battle_SetStageTime(200)
 	}
 	else{
 		Dr_Battle_SetStageTime(0)

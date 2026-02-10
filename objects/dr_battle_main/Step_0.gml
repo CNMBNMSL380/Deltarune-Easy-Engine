@@ -3,7 +3,6 @@ live;
 
 // 贴图动画进步器启动
 Dr_Battle_SpriteAnimStep();
-show_debug_message(Char_GetTeamHp(0))
 // 检查玩家输入（确认/取消）
 input_con = Input_IsPressed(INPUT.CONFIRM);
 input_can = Input_IsPressed(INPUT.CANCEL);
@@ -316,4 +315,13 @@ if(_stage != DR_BATTLE_STAGE.START_BATTLE and _stage !=DR_BATTLE_STAGE.END_BATTL
         Dr_Battle_SetStage(DR_BATTLE_STAGE.END_BATTLE);		
         game_win = 2;
     }
+}
+if(_stage != DR_BATTLE_STAGE.START_BATTLE){
+	if(Char_IsLoser()){
+		var soul_x = _player_soul_inst.x;
+		var soul_y = _player_soul_inst.y;
+		Flag_Set(FLAG_TEMP,"GAMEOVER_SOUL_X",soul_x);
+		Flag_Set(FLAG_TEMP,"GAMEOVER_SOUL_Y",soul_x);
+		room_goto(room_gameover);
+	}
 }

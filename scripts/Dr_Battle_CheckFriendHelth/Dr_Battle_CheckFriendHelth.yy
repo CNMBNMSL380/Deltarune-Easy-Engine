@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Dr_Battle_HealYourFriend",
+  "%Name":"Dr_Battle_CheckFriendHelth",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Dr_Battle_HealYourFriend",
+  "name":"Dr_Battle_CheckFriendHelth",
   "parent":{
     "name":"Tool_Health",
     "path":"folders/Objects/Battle_Dr/SCR/Friend/Tool_Health.yy",

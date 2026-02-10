@@ -4,6 +4,9 @@ function Char_HealYourFriendInTeam(SLOT,HEAL,SFX = true){
 		var hp = ( (Char_GetTeamHp(SLOT) + HEAL) < Char_GetTeamMaxHp(SLOT) ? Char_GetTeamHp(SLOT) + HEAL : Char_GetTeamMaxHp(SLOT));
 		Char_SetTeamHp(SLOT,hp);
 		if(SFX){audio_play_sound(snd_item_heal,0,0)}
+		//如果检测到有DR_UI
+		
+		//if()
 		return true;
 	}
 }

@@ -1,10 +1,4 @@
 live;
-//if(false){
-//	Flag_Set(FLAG_TEMP,"GAMEOVER_SOUL_X",x-camera.x);
-//	Flag_Set(FLAG_TEMP,"GAMEOVER_SOUL_Y",y-camera.y);
-//	room_goto(room_gameover);
-//}
-
 /*
 	----------！注意事项！--------------
 	如果阶段已经进入回合中(IN_TRUN)之后如果框的所有大小仍为0，

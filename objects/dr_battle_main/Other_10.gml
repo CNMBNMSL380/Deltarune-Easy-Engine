@@ -29,5 +29,5 @@ _player_item_is_use = [];
 _player_fight_slot = 0;
 
 for(var i=0; i<array_length(_player_friend); i++){
-	Dr_Battle_SetFriendSpriteMode(_player_friend[i],DR_PLAYER_INDEX.IDLE);
+	Dr_Battle_SetSpriteMode(_player_friend[i],DR_PLAYER_INDEX.IDLE);
 }

@@ -35,17 +35,18 @@ _enemy_event = ds_list_create();
 _sprite_list = ds_list_create();
 _sprite_index_list_step = ds_list_create();
 
-//基本控制变量
+//// --------------基本控制变量
 _stage = DR_BATTLE_STAGE.START_BATTLE;					//阶段
-//存储友军
+// ----------存储友军
 _player_friend = [];									// 
 _player_friend_ow_obj = [];								//用于ow的队友，战斗结束后调用
 _player_friend_class = [];								//队友Class，用于设置UI
-//友军基本信息
+// ----------友军基本信息
 _player_menu = DR_BATTLE_PLAYERMENU.BUTTON;				//玩家设置
 _player_button = 0;										//选择按钮
 _player_friend_num = 0;									//选中队友编号
 
+//按钮选择
 _player_choice_friend = 0;								//选中队友
 _player_choice_enemy = 0;								//选择敌人					
 _player_choice_act = 0;								//ACT类，选择要执行的类
@@ -58,9 +59,6 @@ _player_item_choice_char = 0;
 _player_soul_inst = noone;
 _player_soul_start_x = 320;
 _player_soul_start_y = 320;
-
-//Fight储存
-
 
 //储存准备对敌人进行进攻或行动的事件
 _player_GoToEvent = [];						//储存用于玩家回合结束接下来要触发的事件

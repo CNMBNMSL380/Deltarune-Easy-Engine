@@ -7,3 +7,5 @@ with(dr_battle_char_player){
 }
 instance_deactivate_object(dr_battle_board);	
 Dr_Battle_EnemyFunc(,DR_BATTLE_ENEMY.BATTLE_START);
+
+Dr_Battle_CheckFriendHelth(,false);

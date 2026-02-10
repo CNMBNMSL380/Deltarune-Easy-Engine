@@ -5,8 +5,8 @@
   "isDnD":false,
   "name":"Dr_Battle_HurtYourFriend",
   "parent":{
-    "name":"Friend",
-    "path":"folders/Objects/Battle_Dr/SCR/Friend.yy",
+    "name":"Tool_Health",
+    "path":"folders/Objects/Battle_Dr/SCR/Friend/Tool_Health.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

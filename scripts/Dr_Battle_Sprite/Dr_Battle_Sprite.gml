@@ -81,7 +81,7 @@ function Dr_Battle_SetSpriteImage(BASE,MODE,SPRITE){
 	var base = Dr_Battle_GetSpriteListBase(BASE);	
 	ds_map_replace(base,MODE,SPRITE);
 }
-function Dr_Battle_SetFriendSpriteMode(BASE = undefined,MODE){
+function Dr_Battle_SetSpriteMode(BASE = undefined,MODE){
 	var Main = dr_battle_main;
 	if(BASE != undefined){
 		var base = Dr_Battle_GetSpriteListBase(BASE);
@@ -99,7 +99,7 @@ function Dr_Battle_PlaySpriteAnimOnce(BASE,MODE,EXTIME = 0,IS_SETMODE = true,DEL
 	// 用于播放动画，但只能播放一次
 	var base = Dr_Battle_GetSprite(BASE,MODE);
 	if(base !=undefined){
-		if(IS_SETMODE){ Dr_Battle_SetFriendSpriteMode(BASE,MODE); }
+		if(IS_SETMODE){ Dr_Battle_SetSpriteMode(BASE,MODE); }
 		
 		var sprite = base.sprite;
 		var indMax = sprite_get_number(sprite) - MAX - 1;

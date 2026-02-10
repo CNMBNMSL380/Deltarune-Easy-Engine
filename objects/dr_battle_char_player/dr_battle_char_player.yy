@@ -36,6 +36,7 @@
     {"$GMObjectProperty":"v2","%Name":"_char_ico","filters":[],"listItems":[],"multiselect":false,"name":"_char_ico","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resource":{"name":"spr_battle_ico_kris","path":"sprites/spr_battle_ico_kris/spr_battle_ico_kris.yy",},"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"spr_battle_ico_kris","varDescription":"记录在UI栏的要用的图标","varFriendlyName":"角色战斗图标","varType":5,},
     {"$GMObjectProperty":"v2","%Name":"_char_spr","filters":[],"listItems":[],"multiselect":false,"name":"_char_spr","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"-1","varDescription":"用来存储角色使用的精灵","varFriendlyName":"角色精灵列表","varType":0,},
     {"$GMObjectProperty":"v2","%Name":"_magic","filters":[],"listItems":[],"multiselect":false,"name":"_magic","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"False","varDescription":"启动后，角色将使用magic而不是ACT，当然你可以使用magic里指定的ACT行动列表","varFriendlyName":"角色的魔法模式","varType":3,},
+    {"$GMObjectProperty":"v2","%Name":"is_controlled","filters":[],"listItems":[],"multiselect":false,"name":"is_controlled","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"true","varType":3,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

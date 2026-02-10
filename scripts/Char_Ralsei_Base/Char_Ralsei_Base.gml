@@ -3,7 +3,7 @@ function Char_Ralsei_Base() : Char_Base() constructor{
 	char_name = "Ralsei";
 	char_obj = char_ralsei;
 	char_battle_obj = dr_battle_char_ralsei;
-	char_hp = 70;
+	char_hp = 20;
 	char_maxhp = 70;
 	char_atk = 12;
 	char_def = 15;
