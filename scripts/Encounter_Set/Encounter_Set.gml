@@ -1,15 +1,42 @@
-///@arg id
-///@arg enemy_0
-///@arg enemy_1
-///@arg enemy_2
-///@arg menu_dialog
-///@arg bgm*
-///@arg menu_mercy_flee_enabled*
-///@arg pause_bgm*
-///@arg quick*
-///@arg soul_x*
-///@arg soul_y*
-function Encounter_Set(ID,ENEMY_0,ENEMY_1,ENEMY_2,MENU_DIALOG,BGM=-1,MENU_MERCY_FLEE_ENABLED=true,PAUSE_BGM=true,QUICK=false,SOUL_X=48,SOUL_Y=454) {
+function Encounter_Set(ID,BASE = new Encounter_Dr_Base(),FUNC = function(){}){
+	if(is_struct(BASE)){
+		BASE.e_id = ID;
+		if(ID>=0){
+			var map=global._encounter;
+			var map_e=-1;
+			
+			if(ds_map_exists(map,ID)){
+				map_e=ds_map_find_value(map,ID);
+				ds_map_clear(map_e);
+			}
+			else{
+				map_e=ds_map_create();
+				ds_map_add(map,ID,map_e);
+			}
+			ds_map_add(map_e,"base",BASE);
+			ds_map_add(map_e,"func",FUNC);
+		}
+		
+		return true;
+	}
+}
+
+
+// 废弃方法，只保留兼容
+function Encounter_Old_Set(ID,ENEMY_0,ENEMY_1,ENEMY_2,MENU_DIALOG,BGM=-1,MENU_MERCY_FLEE_ENABLED=true,PAUSE_BGM=true,QUICK=false,SOUL_X=48,SOUL_Y=454) {
+	///@arg id
+	///@arg enemy_0
+	///@arg enemy_1
+	///@arg enemy_2
+	///@arg menu_dialog
+	///@arg bgm*
+	///@arg menu_mercy_flee_enabled*
+	///@arg pause_bgm*
+	///@arg quick*
+	///@arg soul_x*
+	///@arg soul_y*
+	
+	//此方法设置UT的敌人遭遇
 	if(ID>=0){
 		var map=global._encounter;
 		var map_e=-1;
@@ -34,6 +61,4 @@ function Encounter_Set(ID,ENEMY_0,ENEMY_1,ENEMY_2,MENU_DIALOG,BGM=-1,MENU_MERCY_
 	}else{
 		return false;
 	}
-
-
 }

@@ -1,4 +1,8 @@
-﻿live;
+﻿if(!runtime_enabled){
+	exit;
+}
+
+live;
 //Dr_Draw(function(){
 	if(!surface_exists(_surface1) or !surface_exists(_surface2) or
 	!surface_exists(_surface3) or !surface_exists(_surface4) ){
@@ -27,4 +31,3 @@
 		draw_clear_alpha(color_bg,0);
 	}surface_reset_target();
 //});
-

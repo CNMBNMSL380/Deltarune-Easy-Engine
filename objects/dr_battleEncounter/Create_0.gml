@@ -23,17 +23,15 @@ event_user(0)
 alarm[0]=1;
 
 function Create_Friend(add_frend = []){
+	//准备好初始变量
 	var instances = [];
 	var btlInstances = [];
 	var friendTeam = [];
+	//开始判定
 	if(array_length(add_frend) <= 0){
 		for(var i = 0 ; i < Char_GetTeamLenght(); i++){		
-			////instances[i] = Char_GetTeamByID(i -1).Get("obj");
 			instances[i] = (i == 0 ? char_player : Char_GetTeamObj(i))
-			//show_message(string(i)+ " : "+ string (instances[i]))
-			//btlInstances[i] = Char_GetTeamByID(i -1).Get("btlObj");
 			btlInstances[i] = Char_GetTeamBattleObj(i)
-			//show_message(string(i)+ " : "+ string (btlInstances[i]))
 		}	
 		//show_message(btlInstances)
 		//show_message(instances)
@@ -43,7 +41,13 @@ function Create_Friend(add_frend = []){
 			var insY = ((instances[i].y) *camera.scale_y) - ((camera.y) * camera.scale_y );
 			var arr = [insX,insY]
 			//准备打包数据，并传给_player_friend_ow_obj
-			friendTeam[i] = [insX,insY,DEPTH_DR_BTL.CHAR - (2*i) , btlInstances[i] , team_x[i] , team_y[i]]; 
+			friendTeam[i] = [
+			insX,			//原地址坐标X
+			insY,			//原地址坐标Y
+			DEPTH_DR_BTL.CHAR - (2*i) ,		//深度
+			btlInstances[i] ,	//战斗实例
+			team_x[i] ,			//位移地址X
+			team_y[i]];			//位移地址Y
 			
 		}
 	}

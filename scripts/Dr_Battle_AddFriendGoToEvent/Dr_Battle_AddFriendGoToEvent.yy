@@ -1,9 +1,9 @@
 {
   "$GMScript":"v1",
-  "%Name":"Dr_Battle_SetFriendMenuMod",
+  "%Name":"Dr_Battle_AddFriendGoToEvent",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Dr_Battle_SetFriendMenuMod",
+  "name":"Dr_Battle_AddFriendGoToEvent",
   "parent":{
     "name":"Friend",
     "path":"folders/Objects/Battle_Dr/SCR/Friend.yy",

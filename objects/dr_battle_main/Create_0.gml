@@ -77,16 +77,17 @@ _player_item_event = [];
 _player_item_slot = 0;
 _player_item_is_use = [];
 
-_player_fight_slot = 0;
+_fight_menu_slot = 0;
+//TP
+_player_tp = 50;
 
 
 //每个阶段读秒结束后进入下一个阶段，下面是储存用于读秒变量
 _stage_time = 0;
 _stage_timeMax = 100;
 _stage_timeSpeed = 1;
-//TP
-_player_tp = 50;
-
+//玩家攻击实例
+_fight_menu_inst = [];
 
 //基础对话
 _dialogue_style = "{scale 2}{voice 1}{speed 2}{shadow true}{gui true}";

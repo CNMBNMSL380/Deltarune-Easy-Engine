@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"Encounter_Dr_textBattle",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"Encounter_Dr_textBattle",
+  "parent":{
+    "name":"X1",
+    "path":"folders/Scripts/Encounter/Base/X1.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

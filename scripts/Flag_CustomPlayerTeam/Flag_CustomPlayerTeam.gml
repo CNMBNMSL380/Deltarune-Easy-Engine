@@ -13,8 +13,8 @@ function Flag_CustomPlayerTeam(){
 		//一般它可以同时设置多个队友，不过最好只有2个
 		Set("team",[		
 			new Char_Kris_Base(),
-			new Char_Susie_Base(), 
-			new Char_Ralsei_Base()
+			//new Char_Susie_Base(), 
+			//new Char_Ralsei_Base()
 		]);
 	}
 }

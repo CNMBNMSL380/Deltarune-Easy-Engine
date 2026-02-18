@@ -7,6 +7,7 @@ friend_ins = noone;
 firend_atk = 10;
 friend_ico = -1;
 
+enemy_slot = -1;
 enemy_ins = noone;
 enemy_def = 10;
 

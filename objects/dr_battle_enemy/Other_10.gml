@@ -116,13 +116,17 @@ Dr_Battle_AddEnemyEvent(_enemy_id,DR_BATTLE_ENEMY.INIT,function(){
 	{Dr_Battle_AddEnemyEvent(_enemy_id,DR_BATTLE_ENEMY.DIALOG_CALL,function(SLOT){
 		Dr_Battle_CallDialog("nmsl",,3)
 	})}
-	// --------- 设置敌人事件
+	// --------- 设置敌人受伤事件
 	{Dr_Battle_AddEnemyEvent(_enemy_id,DR_BATTLE_ENEMY.HURT,function(SLOT){
-		//show_message("敌人受伤："+ string(SLOT));
+		show_debug_message("敌人受伤："+ string(SLOT[0]));
+		if(hp <= 0 ){
+			Dr_Battle_DestroyEnemy(_enemy_id);
+		}
+		
 	})}
 	// --------- 设置敌人摧毁事件
 	{Dr_Battle_AddEnemyEvent(_enemy_id,DR_BATTLE_ENEMY.DELETE,function(SLOT){
-		show_message("敌人被摧毁")
+		//show_message("敌人被摧毁")
 	})}
 	// --------- 设置生成回合事件
 	{Dr_Battle_AddEnemyEvent(_enemy_id,DR_BATTLE_ENEMY.CREATE_TURN,function(SLOT){

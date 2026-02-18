@@ -237,13 +237,20 @@ if(_stage != DR_BATTLE_STAGE.PLAYER){
             instance_destroy(dr_battle_menu_fight)
             Dr_Battle_SetStage(DR_BATTLE_STAGE.DIALOG);					
         }
-        //if(input_con){
-        //    // 玩家主动触发攻击
-        //    with(dr_battle_menu_fight){
-        //        event_user(0)
-        //    }
-        //    dr_battle_main._player_fight_slot ++;
-        //}
+        if(input_con){
+            // 玩家主动触发攻击
+			if(_fight_menu_slot < array_length(_fight_menu_inst)){
+				for(var j = 0; j < array_length(_fight_menu_inst[_fight_menu_slot]); j++){	
+				    with(_fight_menu_inst[_fight_menu_slot][j]){
+				        event_user(0)
+				    }
+					if(_fight_menu_slot == array_length(_fight_menu_inst)-1 ){
+						Dr_Battle_SetStageTime(75);
+					}
+				}
+	            dr_battle_main._fight_menu_slot ++;
+			}
+        }
     }
 	// ----------------  进入敌人战斗回合
 	
@@ -310,7 +317,12 @@ if(_stage != DR_BATTLE_STAGE.PLAYER){
 
 
 // 检查是否胜利（敌人全部消灭或收到胜利信号）
-if(_stage != DR_BATTLE_STAGE.START_BATTLE and _stage !=DR_BATTLE_STAGE.END_BATTLE and _stage != DR_BATTLE_STAGE.BLACK ){
+if(_stage != DR_BATTLE_STAGE.START_BATTLE and 
+_stage !=DR_BATTLE_STAGE.END_BATTLE and 
+_stage != DR_BATTLE_STAGE.BLACK and
+_stage != DR_BATTLE_STAGE.FIGHT
+
+){
     if(game_win = 1 or array_length(_enemy) = 0){
         Dr_Battle_SetStage(DR_BATTLE_STAGE.END_BATTLE);		
         game_win = 2;

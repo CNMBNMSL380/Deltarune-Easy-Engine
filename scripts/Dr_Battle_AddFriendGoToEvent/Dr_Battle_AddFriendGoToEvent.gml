@@ -1,5 +1,5 @@
 // Script assets have changed for v2.3.0 see
-function Dr_Battle_SetFriendMenuMod(SLOT,INST,MENU,BUTTON,CHOICE_ACT = -1,CHOICE_MAGIC = -1,CHOICE_ENEMY = -1,CHOICE_FRIEND = -1,CHOICE_ITEM = -1,NOT_CLEAR = false , USETP = 0){
+function Dr_Battle_AddFriendGoToEvent(SLOT,INST,MENU,BUTTON,CHOICE_ACT = -1,CHOICE_MAGIC = -1,CHOICE_ENEMY = -1,CHOICE_FRIEND = -1,CHOICE_ITEM = -1,NOT_CLEAR = false , USETP = 0){
 	///@arg 索引
 	///@arg 实例
 	///@arg 设置

@@ -12,7 +12,7 @@ function Dr_Battle_NextToFriend(BUTTON, MENU, ACT = -1, MAGIC = -1, ENEMY = -1, 
 	friendClass[friendNum]._header_ico_index = BUTTON + 1;
 	//设置事件并发布
 	var event_len = array_length(Main._player_GoToEvent);
-	Dr_Battle_SetFriendMenuMod(event_len, Main._player_friend[Main._player_friend_num], MENU, BUTTON, ACT, MAGIC, ENEMY, FRIEND, ITEM, false , USETP);		
+	Dr_Battle_AddFriendGoToEvent(event_len, Main._player_friend[Main._player_friend_num], MENU, BUTTON, ACT, MAGIC, ENEMY, FRIEND, ITEM, false , USETP);		
 	//增值
 	Main._player_friend_num ++;
 	//检查下一个队友是否处于可操控状态
@@ -36,7 +36,7 @@ function Dr_Battle_NextToFriend(BUTTON, MENU, ACT = -1, MAGIC = -1, ENEMY = -1, 
 	
     //if ((friendNum + 1) < array_length(friendMain)) {
 	//	//设置准备在下一个阶段要准备的回合
-    //    Dr_Battle_SetFriendMenuMod(friendNum, Main._player_friend[friendNum], MENU, BUTTON, ACT, MAGIC, ENEMY, FRIEND, ITEM, false , USETP);		
+    //    Dr_Battle_AddFriendGoToEvent(friendNum, Main._player_friend[friendNum], MENU, BUTTON, ACT, MAGIC, ENEMY, FRIEND, ITEM, false , USETP);		
 	//			
 	//	//当前的队友选择界面收缩
     //    friendClass[friendNum].animSwitch();
@@ -58,7 +58,7 @@ function Dr_Battle_NextToFriend(BUTTON, MENU, ACT = -1, MAGIC = -1, ENEMY = -1, 
 	//		Dr_Battle_AddTp(-USETP);
 			
 	//	}	
-    //    Dr_Battle_SetFriendMenuMod(friendNum , Main._player_friend[friendNum ], MENU, BUTTON, ACT, MAGIC, ENEMY, FRIEND, ITEM, false , USETP);
+    //    Dr_Battle_AddFriendGoToEvent(friendNum , Main._player_friend[friendNum ], MENU, BUTTON, ACT, MAGIC, ENEMY, FRIEND, ITEM, false , USETP);
     //    
     //    return true;
     //}

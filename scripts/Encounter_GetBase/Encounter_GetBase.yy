@@ -1,12 +1,12 @@
 {
   "$GMScript":"v1",
-  "%Name":"Flag_CustomFriends",
+  "%Name":"Encounter_GetBase",
   "isCompatibility":false,
   "isDnD":false,
-  "name":"Flag_CustomFriends",
+  "name":"Encounter_GetBase",
   "parent":{
-    "name":"Custom",
-    "path":"folders/Scripts/Flag/Custom.yy",
+    "name":"Encounter",
+    "path":"folders/Scripts/Encounter.yy",
   },
   "resourceType":"GMScript",
   "resourceVersion":"2.0",

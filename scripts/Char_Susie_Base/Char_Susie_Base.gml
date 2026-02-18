@@ -3,7 +3,7 @@ function Char_Susie_Base() : Char_Base() constructor{
 	char_name = "Susie";
 	char_obj = char_susic;
 	char_battle_obj = dr_battle_char_susie;
-	char_hp = -20;
+	char_hp = 20;
 	char_maxhp = 150;
 	char_atk = 12;
 	char_def = 15;
